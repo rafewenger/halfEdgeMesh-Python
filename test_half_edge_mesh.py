@@ -10,7 +10,8 @@ from time import time, localtime, strftime
 import sys
 import half_edge_mesh
 import half_edge_mesh_IO
-
+from half_edge_mesh import VERTEX_BASE, HALF_EDGE_BASE, CELL_BASE
+from half_edge_mesh import HALF_EDGE_MESH_BASE
 
 def main(argv):
 
@@ -28,7 +29,7 @@ def main(argv):
 
     parse_command_line(sys.argv)
 
-    mesh = half_edge_mesh.HALF_EDGE_MESH_BASE()
+    mesh = HALF_EDGE_MESH_BASE(VERTEX_BASE,HALF_EDGE_BASE,CELL_BASE)
 
     half_edge_mesh_IO.open_and_read_off_file(input_filename, mesh)
 

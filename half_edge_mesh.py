@@ -269,11 +269,17 @@ class CELL_BASE:
         self.num_vertices = 0
 
 
+# Pass vertex, half edge and cell classes to HALF_EDGE_MESH_BASE.
 class HALF_EDGE_MESH_BASE:
 
     # Private member functions.
 
-    def __init__(self):
+    def __init__(self, classV, classHE, classC):
+
+        ## Set class types of vertices, half edges and cells.
+        self.VERTEX_TYPE = classV;
+        self.HALF_EDGE_TYPE = classHE;
+        self.CELL_TYPE = classC;
 
         ## Dictionary of vertices.
         self._vertex_dict = dict()
@@ -309,7 +315,7 @@ class HALF_EDGE_MESH_BASE:
         if (iv in self._vertex_dict):
             return self._vertex_dict[iv]
 
-        v = VERTEX_BASE()
+        v = self.VERTEX_TYPE()
         v.index = iv
         self._vertex_dict[iv] = v
 
@@ -325,7 +331,7 @@ class HALF_EDGE_MESH_BASE:
             raise Exception("Illegal argument to AddHalfEdge(). Half edge with index " +\
                 str(ihalf_edge) + " already exists.")
 
-        half_edge = HALF_EDGE_BASE()
+        half_edge = self.HALF_EDGE_TYPE()
         half_edge.index = ihalf_edge
         self._half_edge_dict[ihalf_edge] = half_edge
         half_edge.cell = cell
@@ -380,7 +386,7 @@ class HALF_EDGE_MESH_BASE:
     #  - Raises an exception if some cell already has index icell.
     #  - Use MaxCellIndex() to find an unused cell index.
     def _AddCell(self, icell):
-        cell = CELL_BASE()
+        cell = self.CELL_TYPE()
         cell.index = icell
         self._cell_dict[icell] = cell
         self._max_cell_index = max(self._max_cell_index, icell)
@@ -453,7 +459,7 @@ class HALF_EDGE_MESH_BASE:
     #  - Return -1 if _cell_dict is empty.
     def MaxCellIndex(self):
         return self._max_cell_index
-        
+
 
     # Functions to add vertices or cells.
 
