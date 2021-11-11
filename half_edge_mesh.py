@@ -47,8 +47,8 @@ class VERTEX_BASE:
     def Dimension(self) :
         return self._DIM
 
-    def Coord(self, ic) :
-        return self.coord[ic]
+    def KthCoord(self, k) :
+        return self.coord[k]
 
     def Index(self) :
         return self.index
@@ -98,9 +98,9 @@ class VERTEX_BASE:
         if (self.Dimension() < 1):
             return ""
 
-        s = str(self.Coord(0))
+        s = str(self.KthCoord(0))
         for ic in range(1,self.Dimension()):
-            s = s + " " + str(self.Coord(ic))
+            s = s + " " + str(self.KthCoord(ic))
 
         return s
 
