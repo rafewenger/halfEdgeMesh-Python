@@ -1,4 +1,10 @@
-# Test half_edge_mesh.py
+## \file test_half_edge_mesh.py
+#    Test program for half_edge_mesh.py.
+#
+#  - Reads a .off file into HALF_EDGE_MESH_BASE.
+#  - Checks mesh, manifold and orientations properties of the mesh.
+#  - Writes the mesh to a .off file.
+
 
 from time import time, localtime, strftime
 import sys
