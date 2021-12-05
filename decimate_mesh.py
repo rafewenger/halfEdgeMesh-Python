@@ -21,6 +21,7 @@ def main(argv):
     global input_filename, output_filename
     global flag_silent, flag_terse, flag_no_warn, flag_time
     global flag_collapse_edges, flag_collapse_short_edges
+    global flag_split_cells, flag_split_all_cells
     global flag_allow_non_manifold, flag_fail_on_non_manifold
     global flag_reduce_checks
 
@@ -32,16 +33,7 @@ def main(argv):
     # Initialize
     input_filename = None
     output_filename = None
-    flag_silent = False
-    flag_terse = False
-    flag_no_warn = False
-    flag_time = False
-    flag_collapse_edges = False
-    flag_collapse_short_edges = False
-    flag_allow_non_manifold = False
-    flag_fail_on_non_manifold = False
-    flag_reduce_checks = False
-
+    InitFlags()
 
     parse_command_line(sys.argv)
 
@@ -61,9 +53,16 @@ def main(argv):
         if (flag_collapse_edges):
             prompt_and_collapse_edges(mesh, flag_terse, flag_no_warn)
 
+        if (flag_split_cells):
+            prompt_and_split_cells(mesh, flag_terse, flag_no_warn)
+
         if (flag_collapse_short_edges):
             collapse_shortest_edge_in_each_cell\
                 (mesh, flag_terse, flag_no_warn)
+
+        if (flag_split_all_cells):
+            split_all_cells(mesh, flag_terse, flag_no_warn)
+
 
         passed_check = check_mesh(mesh, flag_silent and flag_no_warn)
 
@@ -168,12 +167,11 @@ def collapse_shortest_edge_in_each_cell(mesh, flag_terse, flag_no_warn):
     global flag_reduce_checks
 
     n = mesh.NumCells()
-
-    # SHOULD call reduce_checks_on_large_datasets
     flag_check = not(flag_reduce_checks)
 
     # Create a list of the cell indices.
     cell_indices_list = list(mesh.CellIndices());
+    cell_indices_list.sort()
 
     # DO NOT iterate over CellIndices() directly, since collapse/split/join
     #   may delete cells.
@@ -188,6 +186,233 @@ def collapse_shortest_edge_in_each_cell(mesh, flag_terse, flag_no_warn):
 
         collapse_shortest_cell_edge\
             (mesh, icell, flag_terse, flag_no_warn, flag_check)
+        kount = kount+1
+
+        if (flag_reduce_checks):
+            if (kount == n/2):
+                check_mesh(mesh, flag_no_warn)
+
+
+# *** Split cell routines.
+
+## Split cell with diagonal (half_edgeA.FromVertex(), half_edgeB.FromVertex())
+#  - Returns split edge.
+#  - Returns None if split fails.
+def split_cell(mesh, half_edgeA, half_edgeB,\
+                flag_terse, flag_no_warn, flag_check):
+    ihalf_edgeA = half_edgeA.Index()
+    ihalf_edgeB = half_edgeB.Index()
+    vA = half_edgeA.FromVertex()
+    vB = half_edgeB.FromVertex()
+    ivA = vA.Index()
+    ivB = vB.Index()
+    icell = half_edgeA.CellIndex()
+
+    flag = check_split_cell(mesh, half_edgeA, half_edgeB, flag_no_warn)
+
+    if (mesh.IsIllegalSplitCell(half_edgeA, half_edgeB)):
+        return None
+
+    if (flag or flag_allow_non_manifold):
+        if not(flag_terse):
+            print(f"Splitting cell {icell} at diagonal ({ivA},{ivB}).")
+
+        split_edge = mesh.SplitCell(ihalf_edgeA, ihalf_edgeB)
+        if (split_edge is None):
+            print(f"Split of cell {icell} at diagonal ({ivA},{ivB}) failed.")
+
+        if (flag_check):
+            check_mesh(mesh, flag_no_warn)
+
+        return split_edge
+    else:
+        if not(flag_terse):
+            print(f"Skipping split of cell {icell} at diagonal ({ivA},{ivB}).")
+
+        return None
+
+
+## Get at most max_num cells with more than three vertices.
+def get_cells_with_more_than_three_vertices(mesh, max_num):
+    THREE = 3
+
+    cell_list = []
+    if (max_num < 1):
+        return cell_list
+
+    for icell in range(0,mesh.MaxCellIndex()):
+        cell = mesh.Cell(icell)
+        if (icell is None):
+            continue
+
+        if (cell.NumVertices() > THREE):
+            cell_list.append(icell)
+
+        if (len(cell_list) >= max_num):
+            # Stop getting more cells.
+            return cell_list
+
+    return cell_list
+
+
+## Prompt and split cells.
+def prompt_and_split_cells(mesh, flag_terse, flag_no_warn):
+    THREE = 3
+    MAX_NUM = 10
+
+    cell_list = get_cells_with_more_than_three_vertices(mesh, MAX_NUM)
+
+    if (len(cell_list) == 0):
+        if not(flag_no_warn):
+            print("All cells are triangle. No cells can be split.")
+        return
+
+    print_cells_with_more_than_three_vertices(MAX_NUM, cell_list)
+    print()
+
+    while(True):
+
+        icell = int(input("Enter cell (-1 to end): "))
+
+        if (icell < 0):
+            return
+
+        if (icell > mesh.MaxCellIndex()):
+            print(f"No cell has index {icell}.")
+            print(f"  Maximum cell index: {mesh.MaxCellIndex()}")
+            continue
+
+        cell = mesh.Cell(icell)
+        if (cell is None):
+            print(f"No cell has index {icell}.")
+            print()
+            continue
+
+        if (cell.NumVertices() <= THREE):
+            print(f"Cell {icell} has fewer than four vertices and cannot be split.")
+            print()
+            continue
+
+        half_edge = cell.HalfEdge()
+        sys.stdout.write(f"Vertices in cell {icell}:")
+        for k in range(0,cell.NumVertices()):
+            sys.stdout.write(f"  {half_edge.FromVertexIndex()}")
+            half_edge = half_edge.NextHalfEdgeInCell()
+        sys.stdout.write("\n")
+
+        while True:
+            input_list = input("Enter two distinct vertex indices (-1 to end): ").split()
+            if (len(input_list) >= 2):
+                ivA = int(input_list[0])
+                ivB = int(input_list[1])
+                break
+            elif (len(input_list) == 1):
+                ivA = int(input_list[0])
+                if (ivA < 0):
+                    return
+                ivB = int(input("Enter a second vertex index (-1 to end):"))
+                break
+
+        if (ivA < 0) or (ivB < 0):
+            return
+
+        if (ivA == ivB):
+            print()
+            print("Vertices are not distinct. Start again.")
+            print()
+            continue
+
+        half_edgeA = None
+        half_edgeB = None
+        half_edge = cell.HalfEdge()
+        for k in range(0, cell.NumVertices()):
+            if (half_edge.FromVertexIndex() == ivA):
+                half_edgeA = half_edge
+            if (half_edge.FromVertexIndex() == ivB):
+                half_edgeB = half_edge
+
+            half_edge = half_edge.NextHalfEdgeInCell()
+
+        if (half_edgeA is None) or (half_edgeB is None):
+            print()
+            print(f"Vertices are not in cell {icell}.")
+            print("Start again.")
+            print()
+            continue
+
+        if (half_edgeA.ToVertexIndex() == ivB) or\
+            (half_edgeB.ToVertexIndex() == ivA):
+            print ()
+            print(f"({ivA},{ivB}) is a cell edge, not a cell diagaonal.")
+            print("  Vertices must not be adjacent.")
+            print("Start again.")
+            print()
+            continue
+
+        split_cell\
+            (mesh, half_edgeA, half_edgeB, flag_terse, flag_no_warn, True)
+
+        print()
+
+
+## Split cell at largest angle.
+#  - Split cell at vertex forming the largest angle.
+#  - Split as many times as necessary to triangulate.
+def split_cell_at_largest_angle\
+        (mesh, cell, flag_terse, flag_no_warn, flag_check):
+
+    cos_minA, cos_maxA, ihalf_edge_min, ihalf_edge_max =\
+        cell.ComputeCosMinMaxAngle()
+
+    half_edgeA = mesh.HalfEdge(ihalf_edge_max)
+
+    while not(half_edgeA.Cell().IsTriangle()):
+        half_edgeB = half_edgeA.PrevHalfEdgeInCell().PrevHalfEdgeInCell()
+        vA = half_edgeA.FromVertex()
+        vB = half_edgeB.FromVertex()
+        ivA = vA.Index()
+        ivB = vB.Index()
+
+        split_edge = split_cell(mesh, half_edgeA, half_edgeB,\
+                                flag_terse, flag_no_warn, flag_check)
+        if (split_edge is None):
+            # Cannot split cell at largest angle.
+            return
+
+        if (flag_check):
+            check_mesh(mesh, flag_no_warn)
+
+        # Get largest angle in remaining cell.
+        cellA = split_edge.Cell()
+        cos_minA, cos_maxA, ihalf_edge_min, ihalf_edge_max =\
+            cell.ComputeCosMinMaxAngle()
+        half_edgeA = mesh.HalfEdge(ihalf_edge_max)
+
+
+## Split all cells.
+def split_all_cells(mesh, flag_terse, flag_no_warn):
+    global flag_reduce_checks
+
+    n = mesh.MaxCellIndex()
+    flag_check = not(flag_reduce_checks)
+
+    # Create a list of the cell indices.
+    cell_indices_list = list(mesh.CellIndices());
+    cell_indices_list.sort()
+
+    # DO NOT iterate over CellIndices() directly, since collapse/split/join
+    #   may delete cells.
+    kount = 0
+    for icell in cell_indices_list:
+
+        # Check if cell index is valid.
+        #   cell may be none if it has been deleted from the cell dictionary
+        cell = mesh.Cell(icell)
+        if (cell is None):
+            continue
+
+        split_cell_at_largest_angle\
+            (mesh, cell, flag_terse, flag_no_warn, flag_check)
         kount = kount+1
 
         if (flag_reduce_checks):
@@ -315,8 +540,44 @@ def check_edge_collapse(mesh, half_edge, flag_no_warn):
 
     return return_flag
 
+## Print a warning message if splitting cell at diagonal
+#    (half_edgeA.FromVertex(), half_edgeB.FromVertex())
+#    will change the mesh topology.
+#  - Return true if split does not change manifold topology.
+def check_split_cell(mesh, half_edgeA, half_edgeB, flag_no_warn):
+    vA = half_edgeA.FromVertex()
+    vB = half_edgeB.FromVertex()
+    ivA = vA.Index()
+    ivB = vB.Index()
+    icell = half_edgeA.CellIndex()
+    half_edgeC = mesh.FindEdge(vA, vB)
 
-# Return true and print warning message if data set is large
+    flag_cell_edge = False
+    return_flag = True
+
+    if (mesh.IsIllegalSplitCell(half_edgeA, half_edgeB)):
+        if (vA is half_edgeB.ToVertex()) or (vB is half_edgeA.FromVertex()):
+            flag_cell_edge = True
+
+        if not(flag_no_warn):
+            if flag_cell_edge:
+                print(f"({ivA},{ivB}) is a cell edge, not a cell diagonal.")
+            else:
+                print(f"Illegal split of cell {icell} with diagonal ({ivA}{ivB}).")
+        return_flag = False;
+
+    if not(half_edgeC is None) and not(flag_cell_edge):
+        if not(flag_no_warn):
+            sys.stdout.write\
+                (f"Splitting cell {icell} with diagonal ({ivA},{ivB})");
+            sys.stdout.write\
+                (" creates an edge incident on three or nmore cells.\n")
+        return_flag = False
+
+    return return_flag
+
+
+## Return true and print warning message if data set is large
 def reduce_checks_on_large_datasets\
     (mesh, flag_no_warn, large_data_num_cells):
 
@@ -331,12 +592,38 @@ def reduce_checks_on_large_datasets\
         return False
 
 
-# *** Parse/print/prompt functions. ***
+# *** Init/parse/print/prompt functions. ***
+
+## Initialize global flags.
+def InitFlags():
+        global input_filename, output_filename
+        global flag_silent, flag_terse, flag_no_warn, flag_time
+        global flag_collapse_edges, flag_collapse_short_edges
+        global flag_split_cells, flag_split_all_cells
+        global flag_allow_non_manifold, flag_fail_on_non_manifold
+        global flag_reduce_checks
+
+        # Initialize
+        input_filename = None
+        output_filename = None
+        flag_silent = False
+        flag_terse = False
+        flag_no_warn = False
+        flag_time = False
+        flag_collapse_edges = False
+        flag_collapse_short_edges = False
+        flag_split_cells = False
+        flag_split_all_cells = False
+        flag_allow_non_manifold = False
+        flag_fail_on_non_manifold = False
+        flag_reduce_checks = False
+
 
 def parse_command_line(argv):
     global input_filename, output_filename
     global flag_silent, flag_terse, flag_no_warn, flag_time
     global flag_collapse_edges, flag_collapse_short_edges
+    global flag_split_cells, flag_split_all_cells
     global flag_allow_non_manifold, flag_fail_on_non_manifold
     global flag_reduce_checks
 
@@ -347,6 +634,10 @@ def parse_command_line(argv):
             flag_collapse_edges = True
         elif (s == "-collapse_short_edges"):
             flag_collapse_short_edges = True
+        elif (s == "-split_cells"):
+            flag_split_cells = True
+        elif (s == "-split_all_cells"):
+            flag_split_all_cells = True
         elif (s == "-allow_non_manifold"):
             flag_allow_non_manifold = True
         elif (s == "-fail_on_non_manifold"):
@@ -435,7 +726,18 @@ def prompt_for_mesh_edge(mesh, flag_only_internal):
         return half_edge0
 
 
-# Print timeX in seconds.
+## Print cells with more than three vertices.
+def print_cells_with_more_than_three_vertices(max_num, cell_list):
+    sys.stdout.write("Cells with more than three vertices")
+    if (len(cell_list) >= max_num):
+        sys.stdout.write(" (partial list)")
+    sys.stdout.write(": ")
+    for i in range(0,len(cell_list)):
+        sys.stdout.write(f"  {cell_list[i]}")
+    sys.stdout.write("\n")
+
+
+## Print timeX in seconds.
 def print_time(label, timeX):
     print(label + "{:.4f}".format(timeX) + " seconds")
 
@@ -483,6 +785,7 @@ def usage_msg(out):
     out.write("Usage: python3 decimate_mesh.py [OPTIONS] <input filename> [<output_filename>]\n")
     out.write("Options:\n")
     out.write("  [-collapse_edges] [-collapse_short_edges]\n")
+    out.write("  [-split_cells] [-split_all_cells]\n")
     out.write("  [-allow_non_manifold] [-fail_on_non_manifold]\n")
     out.write("  [-s | -terse] [-no_warn] [-reduce_checks] [-time] [-h]\n")
 
@@ -500,6 +803,8 @@ def help():
     print("Options:")
     print("-collapse_edges:  Prompt and collapse edges.")
     print("-collapse_short_edges:  Attempt to collapse short edge in each cell.")
+    print("-split_cells:     Prompt and split cells across diagonals.")
+    print("-split_all_cells: Attempt to split all cells.")
     print("-terse:   Terse output. Suppress messages output after each")
     print("    collapse/join/split iteration.")
     print("  Does not suppress warning messages at each iteration.")

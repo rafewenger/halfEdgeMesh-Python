@@ -61,6 +61,32 @@ class VERTEX_DCMT_BASE(half_edge_mesh.VERTEX_BASE):
     def ClearVisitedFlagsInAdjacentVertices(self):
         self.SetVisitedFlagsInAdjacentVertices(False)
 
+    ## Compare first and last half edges in half_edges_from[].
+    #  - Swap half edges if last half edge is a boundary edge
+    #    and first half edge is internal or if both are internal,
+    #    but half_edge_from[-1].PrevHalfEdgeInCell() is boundary,
+    #    while half_edge_from[0].PrevHalfEdgeInCell()) is interior.
+    def _ProcessFirstLastHalfEdgesFrom(self):
+        if (self.NumHalfEdgesFrom() < 2):
+            # No swap
+            return
+
+        if (self.KthHalfEdgeFrom(0).IsBoundary()):
+            # No swap
+            return
+
+        if (self.KthHalfEdgeFrom(-1).IsBoundary()):
+            self._SwapHalfEdgesInHalfEdgeFromList(0,-1)
+            return
+
+        if (self.KthHalfEdgeFrom(0).PrevHalfEdgeInCell().IsBoundary()):
+            # No swap.
+            return
+
+        if (self.KthHalfEdgeFrom(-1).PrevHalfEdgeInCell().IsBoundary()):
+            self._SwapHalfEdgesInHalfEdgeFromList(0,-1)
+            return
+
 
     # *** Public ***
 
@@ -472,6 +498,81 @@ class HALF_EDGE_MESH_DCMT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
         return v1
 
 
+    ## Split cell with diagonal connecting the two from vertices.
+    #  - Diagonal (half_edgeA.FromVertex(), half_edgeB.FromVertex()).
+    def SplitCell(self, ihalf_edgeA, ihalf_edgeB):
+        half_edgeA = self.HalfEdge(ihalf_edgeA)
+        half_edgeB = self.HalfEdge(ihalf_edgeB)
+
+        if (half_edgeA is None) or (half_edgeB is None):
+            raise Exception("Programming error. Arguments to SplitCell are not half edge indices.")
+
+        if self.IsIllegalSplitCell(half_edgeA, half_edgeB):
+            return None
+
+        vA = half_edgeA.FromVertex()
+        vB = half_edgeB.FromVertex()
+        half_edgeC = self.FindEdge(vA, vB)
+
+        cellA = half_edgeA.Cell()
+        numvA = cellA.NumVertices()    # Store before adding diagA to mesh
+        icellB = self.MaxCellIndex()+1
+        cellB = self._AddCell(icellB)
+        idiagA = self.MaxHalfEdgeIndex()+1
+        diagA = self._AddHalfEdge(idiagA, cellA, vB)
+        idiagB = self.MaxHalfEdgeIndex()+1
+        diagB = self._AddHalfEdge(idiagB, cellB, vA)
+
+        # Link diagA and diagB around edge.
+        diagA.next_half_edge_around_edge = diagB
+        diagB.next_half_edge_around_edge = diagA
+
+        if not(half_edgeC is None):
+            # Link half_edge_around_edge cycle of half_edgeC and diagA/diagB
+            self._SwapNextHalfEdgeAroundEdge(half_edgeC, diagA)
+
+        # Add diagA and diagB to vertex half_edge_from[] lists.
+        diagA.from_vertex.half_edge_from.append(diagA)
+        diagB.from_vertex.half_edge_from.append(diagB)
+
+        # Change cell of half edges from half_edgeB to half_edgeA.
+        half_edge = half_edgeB
+        k = 0
+        while (k < numvA) and not(half_edge is half_edgeA):
+            half_edge.cell = cellB
+            half_edge = half_edge.NextHalfEdgeInCell()
+            k = k+1
+
+        # Set num_vertices in cellA and cellB
+        cellB.num_vertices = k+1
+        cellA.num_vertices = numvA+1-k
+
+        # Set cellB.half_edge.
+        cellB.half_edge = half_edgeB
+
+        # Change cellA.half_edge, if necessary.
+        if not(cellA.HalfEdge().Cell() is cellA):
+            cellA.half_edge = half_edgeA
+
+        hprevA = half_edgeA.PrevHalfEdgeInCell()
+        hprevB = half_edgeB.PrevHalfEdgeInCell()
+
+        # Link half edges in cell.
+        self._RelinkHalfEdgesInCell(hprevB, diagA)
+        self._RelinkHalfEdgesInCell(diagA, half_edgeA)
+        self._RelinkHalfEdgesInCell(hprevA, diagB)
+        self._RelinkHalfEdgesInCell(diagB, half_edgeB)
+
+        # Swap first and last edges in half_edge_list[], if necessary.
+        # diagA and diagB are not boundary edges, but
+        #  diagA.PrevEdgeInCell() or diagB.PrevEdgeInCell() could
+        #  be boundary edges.
+        diagA.FromVertex()._ProcessFirstLastHalfEdgesFrom()
+        diagB.FromVertex()._ProcessFirstLastHalfEdgesFrom()
+
+        return diagA
+
+
     # *** Functions to check potential edge collapses. ***
 
     ## Return true if half edge endpoints and v are in a mesh triangle.
@@ -618,11 +719,32 @@ class HALF_EDGE_MESH_DCMT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
             return False
 
 
-    # Return True if edge collapse is illegal.
+    ## Return True if edge collapse is illegal.
     # - NOTE: Function suffix is 'H' (for half_edge argument).
     def IsIllegalEdgeCollapseH(self, half_edge):
         return self.IsIllegalEdgeCollapseV\
                     (half_edge.FromVertex(), half_edge.ToVertex())
+
+
+    ## Return True if split cell is illegal.
+    # - Split cell is illegal
+    #     if half_edgeA and half_edgeB are in different cells or
+    #     if half_edgeA.FromVertex() and half_edgeB.FromVertex()
+    #       are adjacent vertices.
+    def IsIllegalSplitCell(self, half_edgeA, half_edgeB):
+        if not(half_edgeA.Cell() is half_edgeB.Cell()):
+            return True
+
+        if (half_edgeA is half_edgeB):
+            return True
+
+        if (half_edgeA.FromVertex() is half_edgeB.ToVertex()):
+            return True
+
+        if (half_edgeA.ToVertex() is half_edgeB.FromVertex()):
+            return True
+
+        return False
 
 
     # *** Compute mesh information. ***
