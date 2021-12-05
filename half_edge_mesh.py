@@ -96,6 +96,14 @@ class VERTEX_BASE:
 
         return num
 
+    ## Swap half edges in list half_edge_from[].
+    #  - Internal (protected) routine.
+    def _SwapHalfEdgesInHalfEdgeFromList(self, k0, k1):
+        temp = self.half_edge_from[k0]
+        self.half_edge_from[k0] = self.half_edge_from[k1]
+        self.half_edge_from[k1] = temp
+
+
     ## Move boundary half edge to half_edge_from[0].
     #  - If there are no boundary half edges in half_edge_from[],
     #    but half_edge_from[k].PrevHalfEdgeInCell() is a boundary
@@ -119,9 +127,7 @@ class VERTEX_BASE:
             half_edge = self.half_edge_from[k]
 
             if (half_edge.IsBoundary()):
-                temp = self.half_edge_from[0]
-                self.half_edge_from[0] = half_edge
-                self.half_edge_from[k] = temp
+                self._SwapHalfEdgesInHalfEdgeFromList(0,k)
                 return
 
         # No boundary half edges found.
@@ -139,10 +145,9 @@ class VERTEX_BASE:
         for k in range(1,self.NumHalfEdgesFrom()):
             half_edge = self.half_edge_from[k]
             if (half_edge.PrevHalfEdgeInCell().IsBoundary):
-                temp = self.half_edge_from[0]
-                self.half_edge_from[0] = half_edge
-                self.half_edge_from[k] = temp
+                self._SwapHalfEdgesInHalfEdgeFromList(0,k)
                 return
+
 
     ## Return string containing coordinates separated by spaces.
     def CoordStr(self):
