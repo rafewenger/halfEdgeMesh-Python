@@ -416,6 +416,123 @@ class HALF_EDGE_MESH_DCMT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
         self._cell_dict.pop(icell,0)
 
 
+    # *** Internal split functions.
+
+    def _SplitInternalEdge(self, half_edgeA):
+        if (half_edgeA is None):
+            raise Exception\
+                ("Programming error. Argument to _SplitInternalEdge is None.")
+
+        half_edgeB = half_edgeA.NextHalfEdgeAroundEdge()
+        if not(half_edgeB.NextHalfEdgeAroundEdge() is half_edgeA):
+            raise Exception\
+                ("Programming error. Half edge passed to _SplitInternalEdge is in an edge shared by three or more cells.")
+
+        if (half_edgeB is half_edgeA):
+            raise Exception\
+                ("Programming error. Half edge passed to _SplitInternalEdge is a boundary edge. Call _SplitBoundaryEdge().")
+
+        vA = half_edgeA.FromVertex()
+        vB = half_edgeB.FromVertex()
+        cellA = half_edgeA.Cell()
+        cellB = half_edgeB.Cell()
+        numvA = cellA.NumVertices()
+        numvB = cellB.NumVertices()
+        nextA = half_edgeA.NextHalfEdgeInCell()
+        nextB = half_edgeB.NextHalfEdgeInCell()
+
+        # Create a new vertex.
+        ivnew = self.MaxVertexIndex()+1
+        newv = self.AddVertex(ivnew)
+
+        if (newv is None):
+            raise Exception("Error creating new vertex. Out of memory?")
+
+        # Set newv to midpoint of (vA,vB).
+        compute_midpoint(vA.coord, vB.coord, newv.coord)
+
+        # Create two new half edges.
+        inew_half_edgeA = self.MaxHalfEdgeIndex()+1
+
+        # _AddHalfEdge increments cellA.num_vertices.
+        new_half_edgeA = self._AddHalfEdge(inew_half_edgeA, cellA, newv)
+
+        inew_half_edgeB = self.MaxHalfEdgeIndex()+1
+
+        # _AddHalfEdge increments cellB.num_vertices.
+        new_half_edgeB = self._AddHalfEdge(inew_half_edgeB, cellB, newv)
+
+        newv.half_edge_from.append(new_half_edgeA)
+        newv.half_edge_from.append(new_half_edgeB)
+
+        # Relink half edges in cell.
+        self._RelinkHalfEdgesInCell(half_edgeA, new_half_edgeA)
+        self._RelinkHalfEdgesInCell(half_edgeB, new_half_edgeB)
+        self._RelinkHalfEdgesInCell(new_half_edgeA, nextA)
+        self._RelinkHalfEdgesInCell(new_half_edgeB, nextB)
+
+        # Unlink half_edgeA.next_half_edge_around_edge and
+        #   half_edgeB.next_half_edge_around_edge.
+        half_edgeA.next_half_edge_around_edge = half_edgeA
+        half_edgeB.next_half_edge_around_edge = half_edgeB
+
+        # Link half edges around edge.
+        self._LinkHalfEdgesAroundEdge(half_edgeA, new_half_edgeB)
+        self._LinkHalfEdgesAroundEdge(half_edgeB, new_half_edgeA)
+
+        # half_edgeA and half_edgeB are not boundary edges,
+        #   but the previous edges in the cell might be boundary edges.
+        vA.MoveBoundaryHalfEdgeToIncidentHalfEdge0()
+        vB.MoveBoundaryHalfEdgeToIncidentHalfEdge0()
+
+        return newv
+
+
+    ## Split a boundary edge.
+    #  - Returns new vertex.
+    #  @pre half_edgeA is a boundary edge.
+    def _SplitBoundaryEdge(self, half_edgeA):
+        if (half_edgeA is None):
+            raise Exception\
+                ("Programming error. Argument to _SplitBoundaryEdge is None.")
+
+        if not(half_edgeA.IsBoundary()):
+            raise Exception\
+                ("Programming error. Half edge passed to _SplitBoundaryEdges is not a boundary edge. Call _SplitInternalEdge().")
+
+        vA = half_edgeA.FromVertex()
+        vB = half_edgeA.ToVertex()
+        cellA = half_edgeA.Cell()
+        numvA = cellA.NumVertices()
+        nextA = half_edgeA.NextHalfEdgeInCell()
+
+        # Create a new vertex.
+        ivnew = self.MaxVertexIndex()+1
+        newv = self.AddVertex(ivnew)
+
+        if (newv is None):
+            raise Exception("Error creating new vertex. Out of memory?")
+
+        # Set newv to midpoint of (vA,vB).
+        compute_midpoint(vA.coord, vB.coord, newv.coord)
+
+        # Create new half edge.
+        inew_half_edgeA = self.MaxHalfEdgeIndex()+1
+
+        # _AddHalfEdge() increments cellA.num_vertices.
+        new_half_edgeA = self._AddHalfEdge(inew_half_edgeA,cellA,newv)
+
+        newv.half_edge_from.append(new_half_edgeA)
+
+        # Relink half edges in cell.
+        self._RelinkHalfEdgesInCell(half_edgeA, new_half_edgeA)
+        self._RelinkHalfEdgesInCell(new_half_edgeA, nextA)
+
+        # No need to move edges in half_edge_from[] lists.
+
+        return newv
+
+
     # Public member functions.
 
     # *** Collapse/join/split functions ***
@@ -571,6 +688,20 @@ class HALF_EDGE_MESH_DCMT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
         diagB.FromVertex()._ProcessFirstLastHalfEdgesFrom()
 
         return diagA
+
+
+    ## Split edge at midpoint.
+    #  - Returns new vertex.
+    def SplitEdge(self, ihalf_edgeA):
+        half_edgeA = self.HalfEdge(ihalf_edgeA)
+        if (half_edgeA is None):
+            raise Exception\
+                ("Programming error. Argument to SplitEdge is not a half edge index.")
+
+        if (half_edgeA.IsBoundary()):
+            return self._SplitBoundaryEdge(half_edgeA)
+        else:
+            return self._SplitInternalEdge(half_edgeA)
 
 
     # *** Functions to check potential edge collapses. ***

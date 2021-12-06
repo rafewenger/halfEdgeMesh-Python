@@ -22,6 +22,7 @@ def main(argv):
     global flag_silent, flag_terse, flag_no_warn, flag_time
     global flag_collapse_edges, flag_collapse_short_edges
     global flag_split_cells, flag_split_all_cells
+    global flag_split_edges, flag_split_long_edges
     global flag_allow_non_manifold, flag_fail_on_non_manifold
     global flag_reduce_checks
 
@@ -50,6 +51,9 @@ def main(argv):
                 reduce_checks_on_large_datasets\
                     (mesh, flag_no_warn, LARGE_DATA_NUM_CELLS)
 
+        if (flag_split_edges):
+            prompt_and_split_edges(mesh, flag_terse, flag_no_warn)
+
         if (flag_collapse_edges):
             prompt_and_collapse_edges(mesh, flag_terse, flag_no_warn)
 
@@ -59,6 +63,9 @@ def main(argv):
         if (flag_collapse_short_edges):
             collapse_shortest_edge_in_each_cell\
                 (mesh, flag_terse, flag_no_warn)
+
+        if (flag_split_long_edges):
+            split_longest_edge_in_each_cell(mesh, flag_terse, flag_no_warn)
 
         if (flag_split_all_cells):
             split_all_cells(mesh, flag_terse, flag_no_warn)
@@ -193,7 +200,85 @@ def collapse_shortest_edge_in_each_cell(mesh, flag_terse, flag_no_warn):
                 check_mesh(mesh, flag_no_warn)
 
 
-# *** Split cell routines.
+# *** Split edge routines. ***
+
+## Split edge.
+def split_edge(mesh, half_edge, flag_terse, flag_no_warn, flag_check):
+
+    if not(flag_terse):
+        print("Splitting edge (" + half_edge.EndpointsStr(",") + ").")
+
+    vnew = mesh.SplitEdge(half_edge.Index())
+    if (vnew is None):
+        print("Split of edge (" + half_edge.EndpointsStr(",") + ") failed.")
+
+    if (flag_check):
+        check_mesh(mesh, flag_no_warn)
+
+
+## Prompt and split edges.
+def prompt_and_split_edges(mesh, flag_terse, flag_no_warn):
+
+    while True:
+        half_edge0 = prompt_for_mesh_edge(mesh, False)
+
+        if (half_edge0 is None):
+            # End.
+            print()
+            return
+
+        split_edge(mesh, half_edge0, flag_terse, flag_no_warn, True)
+
+        print()
+
+
+## Split longest cell edge.
+def split_longest_cell_edge\
+    (mesh, icell, flag_terse, flag_no_warn, flag_check):
+    cell = mesh.Cell(icell)
+    if (cell is None):
+        return
+
+    minL, maxL, ihalf_edge_min, ihalf_edge_max =\
+        cell.ComputeMinMaxEdgeLengthSquared()
+
+    half_edge_max = mesh.HalfEdge(ihalf_edge_max)
+
+    split_edge(mesh, half_edge_max, flag_terse, flag_no_warn, flag_check)
+
+
+## Split longest edge in each cell.
+def split_longest_edge_in_each_cell(mesh, flag_terse, flag_no_warn):
+
+    n = mesh.NumCells()
+    flag_check = not(flag_reduce_checks)
+
+    # Create a list of the cell indices.
+    cell_indices_list = list(mesh.CellIndices());
+    cell_indices_list.sort()
+
+    # DO NOT iterate over CellIndices() directly, since collapse/split/join
+    #   may delete cells.
+    kount = 0
+    for icell in cell_indices_list:
+
+        # Check if cell index is valid.
+        #   cell may be none if it has been deleted from the cell dictionary
+        cell = mesh.Cell(icell)
+        if (cell is None):
+            continue
+
+        split_longest_cell_edge\
+            (mesh, icell, flag_terse, flag_no_warn, flag_check)
+        kount = kount + 1
+
+        if (flag_reduce_checks):
+            # Check mesh halfway through.
+            if (kount == n/2):
+                check_mesh(mesh, flag_no_warn)
+
+
+# *** Split cell routines. ***
 
 ## Split cell with diagonal (half_edgeA.FromVertex(), half_edgeB.FromVertex())
 #  - Returns split edge.
@@ -600,6 +685,7 @@ def InitFlags():
         global flag_silent, flag_terse, flag_no_warn, flag_time
         global flag_collapse_edges, flag_collapse_short_edges
         global flag_split_cells, flag_split_all_cells
+        global flag_split_edges, flag_split_long_edges
         global flag_allow_non_manifold, flag_fail_on_non_manifold
         global flag_reduce_checks
 
@@ -614,6 +700,8 @@ def InitFlags():
         flag_collapse_short_edges = False
         flag_split_cells = False
         flag_split_all_cells = False
+        flag_split_edges = False
+        flag_split_long_edges = False
         flag_allow_non_manifold = False
         flag_fail_on_non_manifold = False
         flag_reduce_checks = False
@@ -624,6 +712,7 @@ def parse_command_line(argv):
     global flag_silent, flag_terse, flag_no_warn, flag_time
     global flag_collapse_edges, flag_collapse_short_edges
     global flag_split_cells, flag_split_all_cells
+    global flag_split_edges, flag_split_long_edges
     global flag_allow_non_manifold, flag_fail_on_non_manifold
     global flag_reduce_checks
 
@@ -634,9 +723,16 @@ def parse_command_line(argv):
             flag_collapse_edges = True
         elif (s == "-collapse_short_edges"):
             flag_collapse_short_edges = True
+        elif (s == "-split_edges"):
+            flag_split_edges = True
+        elif (s == "-split_long_edges"):
+            flag_split_long_edges = True
         elif (s == "-split_cells"):
             flag_split_cells = True
         elif (s == "-split_all_cells"):
+            flag_split_all_cells = True
+        elif (s == "-split_long_edges_cells"):
+            flag_split_long_edges = True
             flag_split_all_cells = True
         elif (s == "-allow_non_manifold"):
             flag_allow_non_manifold = True
@@ -785,7 +881,8 @@ def usage_msg(out):
     out.write("Usage: python3 decimate_mesh.py [OPTIONS] <input filename> [<output_filename>]\n")
     out.write("Options:\n")
     out.write("  [-collapse_edges] [-collapse_short_edges]\n")
-    out.write("  [-split_cells] [-split_all_cells]\n")
+    out.write("  [-split_edges] [-split_long_edges]\n")
+    out.write("  [-split_cells] [-split_all_cells] [-split_long_edges_cells]\n")
     out.write("  [-allow_non_manifold] [-fail_on_non_manifold]\n")
     out.write("  [-s | -terse] [-no_warn] [-reduce_checks] [-time] [-h]\n")
 
@@ -801,10 +898,14 @@ def help():
     print("    Collapse/split/join mesh edges or cells.")
     print()
     print("Options:")
-    print("-collapse_edges:  Prompt and collapse edges.")
-    print("-collapse_short_edges:  Attempt to collapse short edge in each cell.")
-    print("-split_cells:     Prompt and split cells across diagonals.")
+    print("-collapse_edges:   Prompt and collapse edges.")
+    print("-collapse_short_edges: Attempt to collapse short edge in each cell.")
+    print("-split_edges:      Prompt and split edges.")
+    print("-split_long_edges: Split longest edge in each cell.")
+    print("-split_cells:      Prompt and split cells across diagonals.")
     print("-split_all_cells: Attempt to split all cells.")
+    print("-split_long_edges_cells: Split long edges in each cell")
+    print("     and then split all cells.")
     print("-terse:   Terse output. Suppress messages output after each")
     print("    collapse/join/split iteration.")
     print("  Does not suppress warning messages at each iteration.")
