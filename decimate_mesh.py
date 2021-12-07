@@ -22,6 +22,7 @@ def main(argv):
     global flag_silent, flag_terse, flag_no_warn, flag_time
     global flag_collapse_edges, flag_collapse_short_edges
     global flag_split_cells, flag_split_all_cells
+    global flag_join_cells, flag_join_each_cell
     global flag_split_edges, flag_split_long_edges
     global flag_allow_non_manifold, flag_fail_on_non_manifold
     global flag_reduce_checks
@@ -60,6 +61,9 @@ def main(argv):
         if (flag_split_cells):
             prompt_and_split_cells(mesh, flag_terse, flag_no_warn)
 
+        if (flag_join_cells):
+            prompt_and_join_cells(mesh, flag_terse, flag_no_warn)
+
         if (flag_collapse_short_edges):
             collapse_shortest_edge_in_each_cell\
                 (mesh, flag_terse, flag_no_warn)
@@ -70,6 +74,8 @@ def main(argv):
         if (flag_split_all_cells):
             split_all_cells(mesh, flag_terse, flag_no_warn)
 
+        if (flag_join_each_cell):
+            join_each_cell(mesh, flag_terse, flag_no_warn)
 
         passed_check = check_mesh(mesh, flag_silent and flag_no_warn)
 
@@ -327,7 +333,7 @@ def get_cells_with_more_than_three_vertices(mesh, max_num):
 
     for icell in range(0,mesh.MaxCellIndex()):
         cell = mesh.Cell(icell)
-        if (icell is None):
+        if (cell is None):
             continue
 
         if (cell.NumVertices() > THREE):
@@ -505,6 +511,97 @@ def split_all_cells(mesh, flag_terse, flag_no_warn):
                 check_mesh(mesh, flag_no_warn)
 
 
+# *** Join cell routines ***
+
+def join_two_cells(mesh, half_edge, flag_terse, flag_no_warn, flag_check):
+    half_edgeX = half_edge.NextHalfEdgeAroundEdge()
+    icell = half_edge.CellIndex()
+    icellX = half_edgeX.CellIndex()
+
+    flag = check_join_cell(mesh, half_edge, flag_no_warn)
+
+    if (mesh.IsIllegalJoinCells(half_edge)):
+        return
+
+    if flag:
+        if not(flag_terse):
+            print(f"Joining cell {icell} to cell {icellX} by deleting edge (" +\
+                    half_edge.EndpointsStr(",") + ").")
+
+        half_edgeB = mesh.JoinTwoCells(half_edge.Index())
+        if (half_edgeB is None):
+            print(f"Join of cell {icell} to cell {icellX} failed.")
+        else:
+            if (flag_check):
+                check_mesh(mesh, flag_no_warn)
+
+        return
+    else:
+        if not(flag_terse):
+            print(f"Skipping join of cell {icell} with cell {icellX}.");
+
+
+## Prompt and join cells.
+def prompt_and_join_cells(mesh, flag_terse, flag_no_warn):
+
+    while True:
+        half_edge0 = prompt_for_mesh_edge(mesh, True)
+
+        if (half_edge0 is None):
+            # End.
+            print()
+            return
+
+        join_two_cells(mesh, half_edge0, flag_terse, flag_no_warn, True)
+
+        print()
+
+
+## Attempt to join each cell by deleting longest edge.
+def join_each_cell(mesh, flag_terse, flag_no_warn):
+    # Don't join cells with MAX_NUMV or more vertices.
+    MAX_NUMV = 6
+    n = mesh.NumCells()
+
+    flag_check = not(flag_reduce_checks)
+
+    # Create a list of the cell indices.
+    cell_indices_list = list(mesh.CellIndices());
+    cell_indices_list.sort()
+
+    # DO NOT iterate over CellIndices() directly, since collapse/split/join
+    #   may delete cells.
+    kount = 0
+    for icell in cell_indices_list:
+
+        # Check if cell index is valid.
+        #   cell may be none if it has been deleted from the cell dictionary
+        cell = mesh.Cell(icell)
+        if (cell is None):
+            continue
+
+        if (cell.NumVertices() >= MAX_NUMV):
+            # Don't let the cell get to large.
+            continue
+
+        Lmin, Lmax, ihalf_edge_min, ihalf_edge_max =\
+            cell.ComputeMinMaxEdgeLengthSquared()
+        half_edge = mesh.HalfEdge(ihalf_edge_min)
+
+        half_edgeX = half_edge.NextHalfEdgeAroundEdge()
+        if (half_edgeX.Cell().NumVertices() >= MAX_NUMV):
+            # Don't let the cell get too large.
+            continue
+
+        join_two_cells\
+            (mesh, half_edge, flag_terse, flag_no_warn, flag_check)
+        kount = kount+1
+
+        if (flag_reduce_checks):
+            if (kount == n/2):
+                check_mesh(mesh, flag_no_warn)
+
+
 # *** Check routines ***
 
 def check_oriented_manifold(mesh, flag_no_warn):
@@ -573,7 +670,7 @@ def check_mesh(mesh, flag_no_warn):
 
 ## Print a warning message if collapsing half_edge is illegal or
 #    will change mesh topology.
-#  - Return true if collapse is not illegal and does not change
+#  - Return True if collapse is not illegal and does not change
 #    mesh topology.
 def check_edge_collapse(mesh, half_edge, flag_no_warn):
     icell = half_edge.CellIndex()
@@ -628,7 +725,7 @@ def check_edge_collapse(mesh, half_edge, flag_no_warn):
 ## Print a warning message if splitting cell at diagonal
 #    (half_edgeA.FromVertex(), half_edgeB.FromVertex())
 #    will change the mesh topology.
-#  - Return true if split does not change manifold topology.
+#  - Return True if split does not change manifold topology.
 def check_split_cell(mesh, half_edgeA, half_edgeB, flag_no_warn):
     vA = half_edgeA.FromVertex()
     vB = half_edgeB.FromVertex()
@@ -662,7 +759,43 @@ def check_split_cell(mesh, half_edgeA, half_edgeB, flag_no_warn):
     return return_flag
 
 
-## Return true and print warning message if data set is large
+## Print a warning if joining cells separated by half_edge is illegal.
+#  - Return true if join is legal.
+def check_join_cell(mesh, half_edge, flag_no_warn):
+    TWO = 2
+    return_flag = True
+
+    if (mesh.IsIllegalJoinCells(half_edge)):
+        half_edgeX = half_edge.NextHalfEdgeAroundEdge()
+
+        if not(flag_no_warn):
+            if (half_edge.IsBoundary()):
+                print("Only one cell contains edge (" +\
+                    half_edge.EndpointsStr(",") + ").")
+            elif not(half_edge.FromVertex().IsIncidentOnMoreThanTwoEdges()):
+                print(f"Half edge endpoint {half_edge.FromVertexIndex()} is incident on only two edges.")
+            elif not(half_edge.ToVertex().IsIncidentOnMoreThanTwoEdges()):
+                print(f"Half edge endpoint {half_edge.ToVertexIndex()} is incident on only two edges.")
+            elif not(half_edge is half_edgeX.NextHalfEdgeAroundEdge()):
+                print("More than two cells are incident on edge (" +\
+                        half_edge.EndpointsStr(",") + ").")
+            else:
+                cell = half_edge.Cell()
+                cellX = half_edgeX.Cell()
+                num_shared_vertices =\
+                    mesh.CountNumVerticesSharedByTwoCells(cell, cellX)
+                if (num_shared_vertices > TWO):
+                    print(f"Cells {cell.Index()} and {cellX.Index()} share {num_shared_vertices} vertices.")
+                else:
+                    print("Joint of two cells incident on edge (" +\
+                            half_edge.Endpoints(Str(",")) + ") is illegal.")
+
+        return_flag = False
+
+    return return_flag
+
+
+## Return True and print warning message if data set is large
 def reduce_checks_on_large_datasets\
     (mesh, flag_no_warn, large_data_num_cells):
 
@@ -685,6 +818,7 @@ def InitFlags():
         global flag_silent, flag_terse, flag_no_warn, flag_time
         global flag_collapse_edges, flag_collapse_short_edges
         global flag_split_cells, flag_split_all_cells
+        global flag_join_cells, flag_join_each_cell
         global flag_split_edges, flag_split_long_edges
         global flag_allow_non_manifold, flag_fail_on_non_manifold
         global flag_reduce_checks
@@ -700,6 +834,8 @@ def InitFlags():
         flag_collapse_short_edges = False
         flag_split_cells = False
         flag_split_all_cells = False
+        flag_join_cells = False
+        flag_join_each_cell = False
         flag_split_edges = False
         flag_split_long_edges = False
         flag_allow_non_manifold = False
@@ -712,6 +848,7 @@ def parse_command_line(argv):
     global flag_silent, flag_terse, flag_no_warn, flag_time
     global flag_collapse_edges, flag_collapse_short_edges
     global flag_split_cells, flag_split_all_cells
+    global flag_join_cells, flag_join_each_cell
     global flag_split_edges, flag_split_long_edges
     global flag_allow_non_manifold, flag_fail_on_non_manifold
     global flag_reduce_checks
@@ -734,6 +871,10 @@ def parse_command_line(argv):
         elif (s == "-split_long_edges_cells"):
             flag_split_long_edges = True
             flag_split_all_cells = True
+        elif (s == "-join_cells"):
+            flag_join_cells = True
+        elif (s == "-join_each_cell"):
+            flag_join_each_cell = True;
         elif (s == "-allow_non_manifold"):
             flag_allow_non_manifold = True
         elif (s == "-fail_on_non_manifold"):
@@ -788,7 +929,21 @@ def prompt_for_mesh_edge(mesh, flag_only_internal):
             continue
 
         if (flag_only_internal):
-            print("NOT YET IMPLEMENTED")
+            num_internal_half_edges_from = 0
+            sys.stdout.write(f"Internal half edges from {iv0}:")
+            for k in range(0,v0.NumHalfEdgesFrom()):
+                half_edge = v0.KthHalfEdgeFrom(k)
+                if not(half_edge.IsBoundary()):
+                    sys.stdout.write\
+                        ("  (" + half_edge.EndpointsStr(",") + ")")
+                    num_internal_half_edges_from =\
+                        num_internal_half_edges_from+1;
+            print()
+
+            if (num_internal_half_edges_from == 0):
+                print(f"No internal half edges from {iv0}.")
+                print("Start again.")
+                print()
         else:
             sys.stdout.write(f"Half edges from {iv0}:")
             for k in range(0,v0.NumHalfEdgesFrom()):
@@ -883,6 +1038,7 @@ def usage_msg(out):
     out.write("  [-collapse_edges] [-collapse_short_edges]\n")
     out.write("  [-split_edges] [-split_long_edges]\n")
     out.write("  [-split_cells] [-split_all_cells] [-split_long_edges_cells]\n")
+    out.write("  [-join_cells] [-join_each_cell]\n")
     out.write("  [-allow_non_manifold] [-fail_on_non_manifold]\n")
     out.write("  [-s | -terse] [-no_warn] [-reduce_checks] [-time] [-h]\n")
 
@@ -903,11 +1059,14 @@ def help():
     print("-split_edges:      Prompt and split edges.")
     print("-split_long_edges: Split longest edge in each cell.")
     print("-split_cells:      Prompt and split cells across diagonals.")
-    print("-split_all_cells: Attempt to split all cells.")
+    print("-split_all_cells:  Attempt to split all cells.")
     print("-split_long_edges_cells: Split long edges in each cell")
-    print("     and then split all cells.")
+    print("      and then split all cells.")
+    print("-join_cells:       Prompt and join cells sharing edges.")
+    print("-join_each_cell:   Attempt to join each cell with adjacent cell")
+    print("      sharing the longest cell edge.")
     print("-terse:   Terse output. Suppress messages output after each")
-    print("    collapse/join/split iteration.")
+    print("      collapse/join/split iteration.")
     print("  Does not suppress warning messages at each iteration.")
     print("  Does not suppress final mesh information.")
     print("-s:       Silent. Output only wanrings and error messages.")

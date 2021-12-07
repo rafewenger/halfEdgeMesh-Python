@@ -33,7 +33,7 @@ class VERTEX_DCMT_BASE(half_edge_mesh.VERTEX_BASE):
         super(VERTEX_DCMT_BASE,self).__init__()
 
         ## Internal flag used for detecting vertex adjacencies.
-        self._visited_flag = True
+        self._visited_flag = False
 
     ## Return visited_flag.
     def IsVisited(self):
@@ -60,6 +60,7 @@ class VERTEX_DCMT_BASE(half_edge_mesh.VERTEX_BASE):
     ## Set visited_flag to False in all neighbors of self.
     def ClearVisitedFlagsInAdjacentVertices(self):
         self.SetVisitedFlagsInAdjacentVertices(False)
+
 
     ## Compare first and last half edges in half_edges_from[].
     #  - Swap half edges if last half edge is a boundary edge
@@ -90,12 +91,12 @@ class VERTEX_DCMT_BASE(half_edge_mesh.VERTEX_BASE):
 
     # *** Public ***
 
-    ## Return true if vertex is incident on more than edges.
+    ## Return True if vertex is incident on more than edges.
     def IsIncidentOnMoreThanTwoEdges(self):
         TWO = 2
         num_half_edges_from = self.NumHalfEdgesFrom()
 
-        if (NUM_HALF_EDGES_FROM > TWO):
+        if (num_half_edges_from > TWO):
             return True
 
         if not(self.IsBoundary()):
@@ -135,6 +136,18 @@ class HALF_EDGE_DCMT_BASE(half_edge_mesh.HALF_EDGE_BASE):
 
 ## Cell class supporting mesh decimation.
 class CELL_DCMT_BASE(half_edge_mesh.CELL_BASE):
+
+    ## Set visited_flag to flag in all cell vertices.
+    def SetVisitedFlagsInAllVertices(self, flag):
+        half_edge = self.HalfEdge()
+        for k in range(0,self.NumVertices()):
+            half_edge.FromVertex()._visited_flag = flag
+            half_edge = half_edge.NextHalfEdgeInCell()
+
+    ## Set visited_flag to False in all cell vertices.
+    def ClearVisitedFlagsInAllVertices(self):
+        self.SetVisitedFlagsInAllVertices(False)
+
 
     ## Return min and max squared edge lengths in a cell.
     #  - Return also half edges with min and max edge lengths.
@@ -690,6 +703,66 @@ class HALF_EDGE_MESH_DCMT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
         return diagA
 
 
+    ## Joint two cells sharing an edge.
+    #  - Returns edge incident on the joined cell.
+    def JoinTwoCells(self, ihalf_edgeA):
+        half_edgeA = self.HalfEdge(ihalf_edgeA)
+        if (half_edgeA is None):
+            raise Exception("Programming error. Argument to JoinTwoCells is not a cell index.")
+
+        if (self.IsIllegalJoinCells(half_edgeA)):
+            return None
+
+        half_edgeB = half_edgeA.NextHalfEdgeAroundEdge()
+        if (half_edgeB.NextHalfEdgeAroundEdge() != half_edgeA):
+            raise Exception("Programming error. Half edge passed to JoinToCells is in an edge shared by three or more cells.")
+
+        vA = half_edgeA.FromVertex()
+        vB = half_edgeB.FromVertex()
+        cellA = half_edgeA.Cell()
+        cellB = half_edgeB.Cell()
+        numvA = cellA.NumVertices()
+        numvB = cellB.NumVertices()
+        prevA = half_edgeA.PrevHalfEdgeInCell()
+        prevB = half_edgeB.PrevHalfEdgeInCell()
+        nextA = half_edgeA.NextHalfEdgeInCell()
+        nextB = half_edgeB.NextHalfEdgeInCell()
+
+        if not(vA.IsIncidentOnMoreThanTwoEdges()) or\
+            not(vB.IsIncidentOnMoreThanTwoEdges()):
+            # Can't remove an edge if some endpoint only has degree 2.
+            return None
+
+        # Change cellA.HalfEdge() if necessary.
+        if (cellA.HalfEdge() is half_edgeA):
+            cellA.half_edge = half_edgeA.NextHalfEdgeInCell()
+
+        # Change edges in cellB to be in cellA.
+        half_edge = half_edgeB.NextHalfEdgeInCell()
+        for k in range(0, numvB-1):
+            half_edge.cell = cellA
+            half_edge = half_edge.NextHalfEdgeInCell()
+
+        # Set number of vertices in cell.
+        cellA.num_vertices = numvA + numvB - 2
+
+        # Relink half edges in cell.
+        self._RelinkHalfEdgesInCell(prevA, nextB)
+        self._RelinkHalfEdgesInCell(prevB, nextA)
+
+        # Delete cellB and half_edgeA and half_edgeB.
+        self._DeleteHalfEdge(half_edgeA)
+        self._DeleteHalfEdge(half_edgeB)
+        self._DeleteCell(cellB)
+
+        # half_edgeA and half_edgeB are not boundary edges,
+        #   but the previous edges in the cell might be boundary edges.
+        vA.MoveBoundaryHalfEdgeToIncidentHalfEdge0()
+        vB.MoveBoundaryHalfEdgeToIncidentHalfEdge0()
+
+        return nextA
+
+
     ## Split edge at midpoint.
     #  - Returns new vertex.
     def SplitEdge(self, ihalf_edgeA):
@@ -706,7 +779,7 @@ class HALF_EDGE_MESH_DCMT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
 
     # *** Functions to check potential edge collapses. ***
 
-    ## Return true if half edge endpoints and v are in a mesh triangle.
+    ## Return True if half edge endpoints and v are in a mesh triangle.
     def IsInTriangle(self, half_edge0, v):
         # Cannot have more than max_numh half edges around an edge.
         max_numh = half_edge0.FromVertex().NumHalfEdgesFrom() +\
@@ -729,7 +802,7 @@ class HALF_EDGE_MESH_DCMT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
 
         return False
 
-    ## Return true if both endpoints (vfrom,vto) of half_edge
+    ## Return True if both endpoints (vfrom,vto) of half_edge
     #    are neighbors of some vertex vC, but (vfrom, vto, vC)
     #    is not a mesh triangle.
     #  - Returns also ivC, the index of the third vertex vC.
@@ -766,7 +839,7 @@ class HALF_EDGE_MESH_DCMT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
         return False, 0
 
 
-    ## Return true if cell icell is a triangle whose 3 edges
+    ## Return True if cell icell is a triangle whose 3 edges
     #    are boundary edges.
     def IsIsolatedTriangle(self, icell):
         THREE = 3
@@ -788,7 +861,7 @@ class HALF_EDGE_MESH_DCMT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
         return True;
 
 
-    ## Return true if cell icell is in the boundary of a tetrahedron.
+    ## Return True if cell icell is in the boundary of a tetrahedron.
     def IsInTetrahedron(self, icell):
         cell0 = self.Cell(icell)
         if (cell0 is None):
@@ -821,6 +894,24 @@ class HALF_EDGE_MESH_DCMT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
             half_edge = half_edge.NextHalfEdgeAroundEdge()
 
         return False
+
+
+    ## Count number of vertices shared by two cells.
+    def CountNumVerticesSharedByTwoCells(self, cellA, cellB):
+        num_shared_vertices = 0
+
+        cellB.ClearVisitedFlagsInAllVertices()
+        cellA.SetVisitedFlagsInAllVertices(True)
+
+        half_edgeB = cellB.HalfEdge()
+        for k in range(0, cellB.NumVertices()):
+            v = half_edgeB.FromVertex()
+            if (v.IsVisited()):
+                num_shared_vertices = num_shared_vertices+1
+
+            half_edgeB = half_edgeB.NextHalfEdgeInCell()
+
+        return num_shared_vertices
 
 
     ## Return True if edge collapse is illegal.
@@ -875,6 +966,37 @@ class HALF_EDGE_MESH_DCMT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
         if (half_edgeA.ToVertex() is half_edgeB.FromVertex()):
             return True
 
+        return False
+
+
+    ## Return True if join cells is illegal.
+    #  - Join cells is illegal if half_edge is a boundary half edge
+    #    or more than two cells are incident on the edge
+    #    or some endpoint of half edge has degree 2.
+    def IsIllegalJoinCells(self, half_edge):
+        TWO = 2
+
+        if (half_edge.IsBoundary()):
+            return True
+
+        if not(half_edge.FromVertex().IsIncidentOnMoreThanTwoEdges()):
+            return True
+
+        if not(half_edge.ToVertex().IsIncidentOnMoreThanTwoEdges()):
+            return True
+
+        half_edgeX = half_edge.NextHalfEdgeAroundEdge()
+        if not(half_edge is half_edgeX.NextHalfEdgeAroundEdge()):
+            # More than two cells are incident on edge
+            #  (half_edge.FromVertex(), half_edge.ToVertex()).
+            return True
+
+        if (self.CountNumVerticesSharedByTwoCells\
+                (half_edge.Cell(), half_edgeX.Cell()) > TWO):
+                # Cells share more than two vertices.
+                return True
+
+        # Join is LEGAL
         return False
 
 
