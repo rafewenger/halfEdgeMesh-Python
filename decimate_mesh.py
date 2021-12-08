@@ -586,7 +586,9 @@ def join_each_cell(mesh, flag_terse, flag_no_warn):
 
         Lmin, Lmax, ihalf_edge_min, ihalf_edge_max =\
             cell.ComputeMinMaxEdgeLengthSquared()
-        half_edge = mesh.HalfEdge(ihalf_edge_min)
+        # CORRECTED: 12-07-2021 - RW
+        # OBSOLETE: half_edge = mesh.HalfEdge(ihalf_edge_min)
+        half_edge = mesh.HalfEdge(ihalf_edge_max)
 
         half_edgeX = half_edge.NextHalfEdgeAroundEdge()
         if (half_edgeX.Cell().NumVertices() >= MAX_NUMV):
