@@ -789,8 +789,8 @@ def check_join_cell(mesh, half_edge, flag_no_warn):
                 if (num_shared_vertices > TWO):
                     print(f"Cells {cell.Index()} and {cellX.Index()} share {num_shared_vertices} vertices.")
                 else:
-                    print("Joint of two cells incident on edge (" +\
-                            half_edge.Endpoints(Str(",")) + ") is illegal.")
+                    print("Join of two cells incident on edge (" +\
+                            half_edge.EndpointsStr(",") + ") is illegal.")
 
         return_flag = False
 
