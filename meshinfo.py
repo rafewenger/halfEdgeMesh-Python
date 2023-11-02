@@ -177,7 +177,7 @@ def parse_command_line(argv):
         if (s == "-more"):
             flag_more_info = True
         elif (s == "-h"):
-            help_msg()
+            help()
         else:
             sys.stderr.write("Usage error. Option " + s + " is undefined.")
             usage_error();
