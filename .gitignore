@@ -1,0 +1,8 @@
+
+
+# Ignore files in directory __pycache__/ (Windows python cache.)
+__pycache__/
+
+# Ignore all files ending in ~ (Assume these are backup)
+*~
+
