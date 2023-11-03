@@ -20,9 +20,9 @@
 #    Such checks would be too time consuming for large meshes.
 #    The calling function is responsible to ensure that objects
 #    not None and indices are in a specified range.
-# - Version 0.0.1
+# - Version 0.0.2
 
-#  Copyright (C) 2021 Rephael Wenger
+#  Copyright (C) 2021-2023 Rephael Wenger
 #
 #  This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public License
@@ -66,12 +66,13 @@ class VERTEX_BASE:
 
     ## Return true if vertex is on the boundary or vertex is
     #    is not incident on any cells.
-    #  - Added: 12-02-2021 - RW
     def IsBoundary(self):
         if (self.NumHalfEdgesFrom() == 0):
             # Vertex is not incident on any cells.
             return True
 
+        # Check PrevHalfEdgeInCell() in case cells are inconsistently oriented
+        #  and both boundary half edges point to vertex.
         return (self.KthHalfEdgeFrom(0).IsBoundary() or
                 self.KthHalfEdgeFrom(0).PrevHalfEdgeInCell().IsBoundary());
 
@@ -108,12 +109,13 @@ class VERTEX_BASE:
     #  - If there are no boundary half edges in half_edge_from[],
     #    but half_edge_from[k].PrevHalfEdgeInCell() is a boundary
     #    half edge, move half_edge_from[k] to half_edge_from[0].
+    #  - If cells are inconsistenly oriented and there are no boundary
+    #    half edges in half_edge_from[] but
+    #    half_edge_from[k].PrevHalfEdgeInCell() is a boundary half edge
+    #    move half_edge_from[k] to half_edge_from[0].
     #  - Does nothing if half_edge_from[0] is a boundary half edge
     #    or if vertex is not incident on any boundary half edges (from or to).
-    #  - A more accurate name would be:
-    #      MoveBoundaryHalfEdgeToHalfEdgeFrom0() but...
-    #  - Revised: 12-02-2021 - RW
-    def MoveBoundaryHalfEdgeToIncidentHalfEdge0(self):
+    def MoveBoundaryHalfEdgeToHalfEdgeFrom0(self):
 
         if (self.NumHalfEdgesFrom() < 1):
             return
@@ -242,7 +244,6 @@ class HALF_EDGE_BASE:
     ## Return half edge with minimum index in cycle of half edges around edge.
     #  - Useful in getting a unique half edge representing an edge.
     #  - Could return self.
-    #  - Added: 11-25-2021 - RW
     def MinIndexHalfEdgeAroundEdge(self):
 
         # Cannot have more than max_numh half edges around this edge.
@@ -300,6 +301,21 @@ class HALF_EDGE_BASE:
         else:
             return self.NextHalfEdgeInCell().NextHalfEdgeAroundEdge()
 
+
+    ## Compute coordinates of edge midpoint.
+    def ComputeMidpointCoord(self):
+        ivfrom = self.FromVertex()
+        ivto = self.ToVertex()
+        midpoint_coord = []
+        for ic in range(ivfrom.Dimension()):
+            c0 = ivfrom.coord[ic]
+            c1 = ivto.coord[ic]
+            midc = (c0+c1)/2.0
+            midpoint_coord.append(midc)
+
+        return midpoint_coord
+
+
     ## Return string of half edge endpoints.
     def EndpointsStr(self, separator):
         s = str(self.FromVertexIndex()) + separator
@@ -351,9 +367,30 @@ class CELL_BASE:
         return(self.half_edge)
 
     ## Return true if cell has exactly 3 vertices.
-    #  - Added: 12-02-2021 - RW
     def IsTriangle(self):
         return (self.NumVertices() == 3)
+
+
+    ## Compute centroid of cell.
+    def ComputeCentroid(self):
+        if (self.NumVertices() < 1):
+            raise Exception("Cannot compute centroid of cell with 0 vertices.")
+
+        half_edge = self.HalfEdge()
+        dimension = half_edge.FromVertex().Dimension()
+        centroid_coord = [ 0.0 ] * dimension
+
+        for i in range(self.NumVertices()):
+            for ic in range(dimension):
+                from_vertex = half_edge.FromVertex()
+                centroid_coord[ic] = centroid_coord[ic] + from_vertex.coord[ic]
+            half_edge = half_edge.NextHalfEdgeInCell()
+
+        for ic in range(dimension):
+            centroid_coord[ic] = centroid_coord[ic]/self.NumVertices()
+
+        return centroid_coord
+
 
     ## Initialize
     def __init__(self):
@@ -407,7 +444,7 @@ class HALF_EDGE_MESH_BASE:
 
     ## Create vertex with index iv, if vertex iv does not exist.
     # - Return vertex.
-    # = Returns vertex, even if vertex already exists.
+    # - Returns vertex, even if vertex already exists.
     def _CreateVertex(self,iv):
         if (iv < 0):
             raise Exception("Illegal argument to _CreateVertex().  Vertex index must be non-negative.")
@@ -466,14 +503,6 @@ class HALF_EDGE_MESH_BASE:
 
         vfrom.half_edge_from.append(half_edge)
 
-        # Deleted: 12-02-2021 - RW
-        # Revised version of MoveBoundaryHalfEdgeToIncidentHalfEdge0()
-        #   requires prev_half_edge_in_cell to be set before call.
-        # Calls have been move to _AddCell().
-        # Making these calls here will cause a segmentation fault.
-        # Deleted: vfrom.MoveBoundaryHalfEdgeToIncidentHalfEdge0()
-        # Deleted: vto.MoveBoundaryHalfEdgeToIncidentHalfEdge0()
-
         return half_edge
 
 
@@ -508,7 +537,7 @@ class HALF_EDGE_MESH_BASE:
                     str(iv) +\
                     "\n  in HALF_EDGE_MESH_BASE::_MoveBoundaryHalfEdgeFrom0().")
 
-            v.MoveBoundaryHalfEdgeToIncidentHalfEdge0()
+            v.MoveBoundaryHalfEdgeToHalfEdgeFrom0()
 
 
     ## Add cell with index icell.
@@ -593,7 +622,6 @@ class HALF_EDGE_MESH_BASE:
 
     ## Count number of isolated vertices.
     #  - Isolated vertices are not in any mesh cell.
-    #  - Added: 12-02-2021 - RW
     def CountNumIsolatedVertices(self):
         num_isolated_vertices = 0
         for iv in self.VertexIndices():
@@ -609,7 +637,6 @@ class HALF_EDGE_MESH_BASE:
 
 
     ## Count number of edges.
-    #  - Added: 12-02-2021 - RW
     def CountNumEdges(self):
         num_edges = 0;
         for ihalf_edge in self.HalfEdgeIndices():
@@ -626,7 +653,6 @@ class HALF_EDGE_MESH_BASE:
 
 
     ## Count number of boundary edges.
-    #  - Added: 12-02-2021 - RW
     def CountNumBoundaryEdges(self):
         num_boundary_edges = 0
         for ihalf_edge in self.HalfEdgeIndices():
@@ -641,7 +667,6 @@ class HALF_EDGE_MESH_BASE:
 
 
     ## Count number of cells with a given number of vertices.
-    #  - Added: 12-02-2021 - RW
     def CountNumCellsOfSize(self, numv):
         num_cells = 0
         for icell in self.CellIndices():
@@ -658,7 +683,6 @@ class HALF_EDGE_MESH_BASE:
 
     ## Count number of cells with number of vertices
     #    greater than or equal to.
-    #  - Added: 12-02-2021 - RW
     def CountNumCellsOfSizeGE(self, numv):
         num_cells = 0
         for icell in self.CellIndices():
@@ -674,17 +698,14 @@ class HALF_EDGE_MESH_BASE:
 
 
     ## Count number of triangles.
-    #  - Added: 12-02-2021 - RW
     def CountNumTriangles(self):
         return self.CountNumCellsOfSize(3)
 
     ## Count number of quadrilaterals.
-    #  - Added: 12-02-2021 - RW
     def CountNumQuads(self):
         return self.CountNumCellsOfSize(4)
 
     ## Count number of pentagons.
-    #  - Added: 12-02-2021 - RW
     def CountNumPentagons(self):
         return self.CountNumCellsOfSize(5)
 
@@ -749,7 +770,6 @@ class HALF_EDGE_MESH_BASE:
         # Link last half edge (hprev) and first half edge (half_edge0)
         self._LinkHalfEdgesInCell(hprev, half_edge0)
 
-        # - Added: 12-02-2024 - RW
         # - This call must be AFTER _LinkHalfEdgesInCell(hprev, half_edge0)
         self._MoveBoundaryHalfEdgeToHalfEdgeFrom0(cell_vertex)
 

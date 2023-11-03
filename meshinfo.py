@@ -17,12 +17,14 @@ from half_edge_mesh_DCMT import HALF_EDGE_MESH_DCMT_BASE
 
 def main(argv):
 
-    global input_filename, flag_more_info
+    global input_filename, flag_more_info, flag_midpoints, flag_centroids
 
 
     # Initialize
     input_filename = None
     flag_more_info = False
+    flag_midpoints = False
+    flag_centroids = False
 
     parse_command_line(sys.argv)
 
@@ -32,11 +34,18 @@ def main(argv):
     half_edge_mesh_IO.open_and_read_off_file(input_filename, mesh)
 
     try:
-        print_mesh_size(mesh, flag_more_info)
-        print_min_max_edge_lengths(mesh, flag_more_info)
-        print_min_cell_edge_length_ratio(mesh, flag_more_info)
-        print_min_max_angles(mesh, flag_more_info)
-        print_manifold_info(mesh, flag_more_info)
+        if (flag_midpoints):
+            print_edge_midpoints(mesh)
+
+        if (flag_centroids):
+            print_cell_centroids(mesh)
+
+        if not(flag_midpoints or flag_centroids):
+            print_mesh_size(mesh, flag_more_info)
+            print_min_max_edge_lengths(mesh, flag_more_info)
+            print_min_cell_edge_length_ratio(mesh, flag_more_info)
+            print_min_max_angles(mesh, flag_more_info)
+            print_manifold_info(mesh, flag_more_info)
 
     except Exception as e:
         print(e)
@@ -166,16 +175,52 @@ def print_manifold_info(mesh, flag_more_info):
         print(f"Inconsistent orientation of cells {icellB} and {icellBX}.")
 
 
+# *** Print Edge Midpoints ***
+def print_edge_midpoints(mesh):
+
+    for ihalf_edge in mesh.HalfEdgeIndices():
+        half_edge = mesh.HalfEdge(ihalf_edge)
+        if (half_edge is None):
+            # Shouldn't happen, but just in case.
+            continue
+
+        min_index_half_edge = half_edge.MinIndexHalfEdgeAroundEdge()
+        if (half_edge is min_index_half_edge):
+            midpoint_coord = half_edge.ComputeMidpointCoord()
+            str_mid = str(midpoint_coord)
+            str_edge = half_edge.EndpointsStr(",")
+            print(f"Midpoint of edge ({str_edge}): {str_mid}")
+
+
+# *** Print Cell Centroids ***
+def print_cell_centroids(mesh):
+
+    for icell in mesh.CellIndices():
+        cell = mesh.Cell(icell)
+        if (cell is None):
+            # Shouldn't happen, but just in case.
+            continue
+
+        centroid = cell.ComputeCentroid()
+        str_centroid = str(centroid)
+        str_icell = str(icell)
+        print(f"Centroid of cell ({str_icell}): {str_centroid}")
+            
+
 # *** Parse/output functions ***
 
 def parse_command_line(argv):
-    global input_filename, flag_more_info
+    global input_filename, flag_more_info, flag_midpoints, flag_centroids
 
     iarg = 1
     while (iarg < len(argv) and argv[iarg][0] == '-'):
         s = argv[iarg]
         if (s == "-more"):
             flag_more_info = True
+        elif (s == "-midpoints"):
+            flag_midpoints = True
+        elif (s == "-centroids"):
+            flag_centroids = True
         elif (s == "-h"):
             help()
         else:
