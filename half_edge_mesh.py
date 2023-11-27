@@ -20,7 +20,7 @@
 #    Such checks would be too time consuming for large meshes.
 #    The calling function is responsible to ensure that objects
 #    not None and indices are in a specified range.
-# - Version 0.0.2
+# - Version 0.0.3
 
 #  Copyright (C) 2021-2023 Rephael Wenger
 #
@@ -149,6 +149,8 @@ class HALF_EDGE_MESH_BASE:
         return half_edge
 
 
+    ## Set hprev and hnext as consecutive edges in a cell.
+    #  @pre hprev and hnext must be in the same cell.
     def _LinkHalfEdgesInCell(self, hprev, hnext):
         if (hprev.Cell() != hnext.Cell()):
             raise Exception("Link of half edges failed in _LinkHalfEdgesInCell.  Half edges are in different cells.")
@@ -156,6 +158,9 @@ class HALF_EDGE_MESH_BASE:
         hprev.next_half_edge_in_cell = hnext
         hnext.prev_half_edge_in_cell = hprev
 
+
+    ## Add half_edgeB into linked list of half edges around edge
+    #    indicated by half_edgeA.
     def _LinkHalfEdgesAroundEdge(self, half_edgeA, half_edgeB):
         half_edgeC = half_edgeA.next_half_edge_around_edge;
         half_edgeA.next_half_edge_around_edge = half_edgeB;
@@ -164,7 +169,7 @@ class HALF_EDGE_MESH_BASE:
 
     ## Move boundary half edge to half_edge_from[0] for each vertex
     #    in array cell_vertex[].
-    #  - Added: 12-02-2024 - RW
+    #  - Added: 12-02-2023 - RW
     #  @param cell_vertex[] List of cell vertex indices.
     #  @pre   Each vertex should already have been created.
     def _MoveBoundaryHalfEdgeToHalfEdgeFrom0(self, cell_vertex):
@@ -331,7 +336,7 @@ class HALF_EDGE_MESH_BASE:
             raise Exception\
                 ("Programming error. Cannot split a cell with odd number of vertices into quadrilaterals.")
 
-        # Store cell vertices in a list.
+        # Store cell vertices in a list, starting at half_edge.FromVertexIndex().
         ivlist = []
         half_edge = half_edge0
         for i in range(0,numv):
@@ -342,7 +347,7 @@ class HALF_EDGE_MESH_BASE:
         cell_centroid = half_edge0.Cell().ComputeCentroid()
 
         # Delete cell.
-        icell = half_edge.CellIndex()
+        icell = half_edge0.CellIndex()
         self.DeleteCell(icell)
 
         # Create new vertex.
@@ -440,6 +445,7 @@ class HALF_EDGE_MESH_BASE:
 
     ## Return half edge (v0,v1) or (v1,v0) if it exists
     #  - Return None if no edge found.
+    #  - Note: This routines takes vertices, not vertex indices as arguments.
     def FindEdge(self, v0, v1):
         half_edge = v0.FindHalfEdgeTo(v1.Index())
 
@@ -634,7 +640,6 @@ class HALF_EDGE_MESH_BASE:
 
     ## Delete cell with index icell.
     #  @param icell Cell index. Should be in CellIndices().
-    #  @param cell_vertex[] List of the cell vertex indices.
     def DeleteCell(self, icell):
         cell = self.Cell(icell)
         self._DeleteCell(cell)

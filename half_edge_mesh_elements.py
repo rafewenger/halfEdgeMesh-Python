@@ -20,7 +20,7 @@
 #    Such checks would be too time consuming for large meshes.
 #    The calling function is responsible to ensure that objects
 #    not None and indices are in a specified range.
-# - Version 0.0.2
+# - Version 0.0.3
 
 #  Copyright (C) 2021-2023 Rephael Wenger
 #
@@ -79,6 +79,7 @@ class HMESH_VERTEX_BASE:
 
     ## Find half edge with from vertex self and
     #     ToVertexIndex() iv.
+    #  - Return None if no half edge found.
     def FindHalfEdgeTo(self, iv):
         for k in range(0, self.NumHalfEdgesFrom()):
             half_edge = self.half_edge_from[k]
@@ -420,6 +421,20 @@ class HMESH_CELL_BASE:
             centroid_coord[ic] = centroid_coord[ic]/self.NumVertices()
 
         return centroid_coord
+
+
+    ## Return string of cell vertices.
+    def VerticesStr(self, separator):
+        s = ""
+        half_edge = self.HalfEdge()
+        for i in range(self.NumVertices()):
+            if (i > 0):
+                s = s + ", "
+
+            s = s + str(half_edge.FromVertexIndex())
+            half_edge = half_edge.NextHalfEdgeInCell()
+
+        return s
 
 
     ## Initialize
