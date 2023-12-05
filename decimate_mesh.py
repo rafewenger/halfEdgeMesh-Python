@@ -1,7 +1,8 @@
 ## \file decimate_mesh.py
 #  Some simple mesh decimation routines.
 #  - Collapse, join, split edges and cells.
-#  Uses data structure HALF_EDGE_MESH_EDIT_BASE.
+#  - Uses data structure HALF_EDGE_MESH_EDIT_BASE.
+#  @version 0.3.1
 
 import math
 from math import sqrt
@@ -957,11 +958,11 @@ def print_mesh_info(mesh):
         print(f"  Num cells with angles <= {A}: {num_cells}.")
 
     max_angle = math.degrees(acos(angle_info.cos_max_angle))
-    print(f"Minimum cell angle: {max_angle:.4f}")
+    print(f"Maximum cell angle: {max_angle:.4f}")
     for j in range(len(angle_info.large_angle_bounds)):
         A = angle_info.large_angle_bounds[j]
         num_cells = angle_info.num_cells_with_angle_ge_large[j]
-        print(F"Num cells with angles >= {A}: {num_cells}.")
+        print(f"  Num cells with angles >= {A}: {num_cells}.")
 
     if (flag_manifoldV and flag_manifoldE and is_oriented):
         print("Mesh is an oriented manifold.")
