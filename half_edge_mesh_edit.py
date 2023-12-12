@@ -17,7 +17,7 @@
 # You should have received a copy of the GNU Lesser General Public
 # License along with this library; if not, write to the Free Software
 #  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-# - Version 0.0.2
+# - Version 0.4.0
 
 import half_edge_mesh
 
@@ -501,11 +501,37 @@ class HALF_EDGE_MESH_EDIT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
         vB = half_edgeB.FromVertex()
         half_edge = self.FindEdge(vA,vB)
         if not(half_edge is None):
-            # Mesh is non-conforming!?!
             # Some cell in mesh intersects half_edgeA.Cell() in (vA,vB)
             #   but (vA,vB) is not an edge of half_edgeA.Cell().
             # Split would create edge (vA,vB) in 3 or more cells.
             return True
+
+        return False
+
+
+    ## Return True if triangulate cell from vertex changes mesh topology
+    # - Triangulate cell from vertex changes mesh topology
+    #     if some triangulation diagonal is already a mesh edge.
+    def DoesTriangulateCellFromVertexChangeTopology(self, ihalf_edgeA):
+        NUM_VERT_PER_TRIANGLE = 3;
+        half_edgeA = self.HalfEdge(ihalf_edgeA)
+        cellA = half_edgeA.Cell()
+        vA = half_edgeA.FromVertex()
+
+        if (cellA.NumVertices() <= NUM_VERT_PER_TRIANGLE):
+            # Triangulate cell from vertex does nothing.
+            return False
+
+        half_edgeB = half_edgeA.NextHalfEdgeInCell()
+        for i in range(2,cellA.NumVertices()-1):
+            half_edgeB = half_edgeB.NextHalfEdgeInCell()
+            vB = half_edgeB.FromVertex()
+            half_edge = self.FindEdge(vA,vB)
+            if not(half_edge is None):
+                # Some cell in mesh intersects half_edgeA.Cell() in (vA,vB)
+                #   but (vA,vB) is not an edge of half_edgeA.Cell().
+                # Triangulation would create edge (vA,vB) in 3 or more cells.
+                return True
 
         return False
 

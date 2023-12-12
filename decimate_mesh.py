@@ -1,7 +1,8 @@
 ## \file decimate_mesh.py
 #  Some simple mesh decimation routines.
 #  - Collapse, join, split edges and cells.
-#  Uses data structure HALF_EDGE_MESH_EDIT_BASE.
+#  - Uses data structure HALF_EDGE_MESH_EDIT_BASE.
+#  @version 0.4.0
 
 import math
 from math import sqrt
@@ -403,6 +404,7 @@ def split_each_cell(mesh, flag_terse, flag_no_warn):
 
 
 ## Triangulate cell from vertex half_edge0.FromVertex()
+#  - Return true if triangulation succeeds.
 def triangulate_cell_from_vertex\
         (mesh, ihalf_edge, flag_no_warn, flag_check):
     half_edge = mesh.HalfEdge(ihalf_edge)
@@ -411,7 +413,13 @@ def triangulate_cell_from_vertex\
     cell = half_edge.Cell()
     if (cell.IsTriangle()):
         # Cell is already a triangle.
-        return
+        return False
+
+    if mesh.DoesTriangulateCellFromVertexChangeTopology(ihalf_edge):
+        if not(flag_no_warn):
+            print(f"Triangulating cell {icell} from vertex {iv} changes mesh topology.")
+            print(f"  Skipping triangulation of cell {icell} from vertex {iv}.")
+        return False
 
     if not(flag_terse):
         print(f"Triangulating cell {icell} from vertex {iv}.")
@@ -421,22 +429,45 @@ def triangulate_cell_from_vertex\
     if (flag_check):
         check_mesh(mesh, flag_no_warn)
 
+    return True
+
+
+## Triangulate cell containing half edge.
+#  - Attempt to triangulate from half_edgeA.FromVertex().
+#  - If triangulation fails, try other vertices.
+def triangulate_cell\
+        (mesh, ihalf_edgeA, flag_terse, flag_no_warn, flag_check):
+    half_edge = mesh.HalfEdge(ihalf_edgeA)
+    cellA = half_edge.Cell()
+    for i in range(0,cellA.NumVertices()):
+        ihalf_edge = half_edge.Index()
+        if triangulate_cell_from_vertex\
+            (mesh, ihalf_edge, flag_no_warn, flag_check):
+            return True
+        half_edge = half_edge.NextHalfEdgeInCell()
+
+    # Unable to find acceptable triangulation.
+    return False
+
 
 ## Triangulate cell from vertex with largest angle.
+#  - Attempt to triangulate from vertex with largest angle.
+#  - If triangulation fails, try other vertices.
 def triangulate_cell_from_vertex_with_largest_angle\
         (mesh, icell, flag_terse, flag_no_warn, flag_check):
     cell = mesh.Cell(icell)
     cos_minA, cos_maxA, ihalf_edge_min, ihalf_edge_max, flag_zero =\
         compute_cos_min_max_cell_angles(cell)
 
-    triangulate_cell_from_vertex\
-        (mesh, ihalf_edge_max, flag_no_warn, flag_check)
+    return triangulate_cell\
+        (mesh, ihalf_edge_max, flag_terse, flag_no_warn, flag_check)
 
 
 ## Triangulate each cell.
 def triangulate_each_cell(mesh, flag_terse, flag_no_warn):
     global flag_reduce_checks
 
+    NUM_VERT_PER_TRIANGLE = 3;
     n = mesh.MaxCellIndex()
     flag_check = not(flag_reduce_checks)
 
@@ -455,8 +486,12 @@ def triangulate_each_cell(mesh, flag_terse, flag_no_warn):
         if (cell is None):
             continue
 
-        triangulate_cell_from_vertex_with_largest_angle\
+        if (cell.NumVertices() <= NUM_VERT_PER_TRIANGLE):
+            continue
+
+        flag = triangulate_cell_from_vertex_with_largest_angle\
             (mesh, icell, flag_terse, flag_no_warn, flag_check)
+
         kount = kount+1
 
         if (flag_reduce_checks):
@@ -957,11 +992,11 @@ def print_mesh_info(mesh):
         print(f"  Num cells with angles <= {A}: {num_cells}.")
 
     max_angle = math.degrees(acos(angle_info.cos_max_angle))
-    print(f"Minimum cell angle: {max_angle:.4f}")
+    print(f"Maximum cell angle: {max_angle:.4f}")
     for j in range(len(angle_info.large_angle_bounds)):
         A = angle_info.large_angle_bounds[j]
         num_cells = angle_info.num_cells_with_angle_ge_large[j]
-        print(F"Num cells with angles >= {A}: {num_cells}.")
+        print(f"  Num cells with angles >= {A}: {num_cells}.")
 
     if (flag_manifoldV and flag_manifoldE and is_oriented):
         print("Mesh is an oriented manifold.")
