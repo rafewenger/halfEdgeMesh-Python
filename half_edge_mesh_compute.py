@@ -324,9 +324,15 @@ def compute_cos_min_max_cell_angles(cell):
     return cos_minA, cos_maxA, iminA_half_edge, imaxA_half_edge, flag_zero
 
 
+## Compute cos of min and max angles in mesh.
 #  - Returns cos_min_max_angle_info.
 #  - Ignore vertices incident on 0 length edges.
-#  @param A Angle, in degrees.
+#  @param small_angle_bounds[] Array of small angle bounds.
+#    - Computes number of cells with angles less than
+#      or equal to small_angle_bounds[i] for each i.
+#  @param large_angle_bounds[] Array of large angle bounds.
+#    - Computes number of cells with angles greater than
+#      or equal to large_angle_bounds[i] for each i.
 def compute_angle_info\
     (mesh, small_angle_bounds, large_angle_bounds):
     angle_info = HMESH_ANGLE_INFO()
