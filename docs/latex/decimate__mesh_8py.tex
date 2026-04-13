@@ -1,0 +1,96 @@
+\doxysection{decimate\+\_\+mesh.\+py File Reference}
+\hypertarget{decimate__mesh_8py}{}\label{decimate__mesh_8py}\index{decimate\_mesh.py@{decimate\_mesh.py}}
+
+
+Some simple mesh decimation routines.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacedecimate__mesh}{decimate\+\_\+mesh}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_ac17a5eaf461150351d0e7e5c7d5c3353}{decimate\+\_\+mesh.\+main}} (argv)
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a1486d2f4fe0ffc527480af7793951a53}{decimate\+\_\+mesh.\+collapse\+\_\+edge}} (mesh, ihalf\+\_\+edge, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Collapse edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_acb6da180eea3f078be33477b2c223521}{decimate\+\_\+mesh.\+collapse\+\_\+shortest\+\_\+cell\+\_\+edge}} (mesh, icell, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Collapse shortest cell edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_ae7411a56990a3b3ebfb871053392a91f}{decimate\+\_\+mesh.\+collapse\+\_\+shortest\+\_\+edge\+\_\+in\+\_\+each\+\_\+cell}} (mesh, flag\+\_\+terse, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Collapse shortest edge in each cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a91fa321f196a4cba52ba4865a8133b64}{decimate\+\_\+mesh.\+print\+\_\+illegal\+\_\+edge\+\_\+collapse}} (half\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Print illegal edge collapse message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_aa0f5e402d448063e0577f21b2ff81493}{decimate\+\_\+mesh.\+print\+\_\+edge\+\_\+collapse\+\_\+topology\+\_\+change}} (mesh, half\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Print information about any topology changes caused by edge collapse. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a1715343944e4265175ab5af6d098d5ac}{decimate\+\_\+mesh.\+print\+\_\+skipped\+\_\+edge\+\_\+collapse}} (half\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Print skipped edge collapse. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a188ac33f241c6f756475ac8be0cc7051}{decimate\+\_\+mesh.\+split\+\_\+edge}} (mesh, half\+\_\+edge, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Split edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_ac63bc94629356643272f55e07663ea81}{decimate\+\_\+mesh.\+split\+\_\+longest\+\_\+cell\+\_\+edge}} (mesh, icell, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Split longest cell edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_ac0f56313cebeb622f5ace865f2507302}{decimate\+\_\+mesh.\+split\+\_\+longest\+\_\+edge\+\_\+in\+\_\+each\+\_\+cell}} (mesh, flag\+\_\+terse, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Split longest edge in each cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_adc26ab32757daf3e9c5af0202cb78e75}{decimate\+\_\+mesh.\+split\+\_\+cell}} (mesh, ihalf\+\_\+edgeA, ihalf\+\_\+edgeB, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Split cell with diagonal (half\+\_\+edge\+A.\+From\+Vertex(), half\+\_\+edge\+B.\+From\+Vertex()) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a9824114b8530b2288845093a930486e6}{decimate\+\_\+mesh.\+split\+\_\+cell\+\_\+at\+\_\+largest\+\_\+angle}} (mesh, icell, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Split cell at largest angle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_aee4370b6339df257f527312970d47f00}{decimate\+\_\+mesh.\+split\+\_\+each\+\_\+cell}} (mesh, flag\+\_\+terse, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Split each cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_acc2506851414b6525690c3e0c87e4cd6}{decimate\+\_\+mesh.\+triangulate\+\_\+cell\+\_\+from\+\_\+vertex}} (mesh, ihalf\+\_\+edge, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Triangulate cell from vertex half\+\_\+edge0.\+From\+Vertex() \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_af69247d165dc73f9336b3fbf124adb38}{decimate\+\_\+mesh.\+triangulate\+\_\+cell}} (mesh, ihalf\+\_\+edgeA, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Triangulate cell containing half edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a8a5cfd960bd69f57c6b6cabfd51fdea5}{decimate\+\_\+mesh.\+triangulate\+\_\+cell\+\_\+from\+\_\+vertex\+\_\+with\+\_\+largest\+\_\+angle}} (mesh, icell, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Triangulate cell from vertex with largest angle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_ad61e39da4acf7b208551e15f797a4d8a}{decimate\+\_\+mesh.\+triangulate\+\_\+each\+\_\+cell}} (mesh, flag\+\_\+terse, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Triangulate each cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_aa138996d34f13c27525db6de92ced614}{decimate\+\_\+mesh.\+join\+\_\+two\+\_\+cells}} (mesh, ihalf\+\_\+edge, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a43008b2a1481184d57317efc12e71645}{decimate\+\_\+mesh.\+join\+\_\+each\+\_\+cell}} (mesh, flag\+\_\+terse, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Attempt to join each cell by deleting longest edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a534971eb81149eaa1e842727ff965bb8}{decimate\+\_\+mesh.\+exit\+\_\+on\+\_\+non\+\_\+manifold}} ()
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a06e066a8b4e163709c87ba57512f7ff2}{decimate\+\_\+mesh.\+check\+\_\+oriented\+\_\+manifold}} (mesh, flag\+\_\+no\+\_\+warn)
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_ad013e19864dffa236c07cb8c554365d5}{decimate\+\_\+mesh.\+check\+\_\+mesh}} (mesh, flag\+\_\+no\+\_\+warn)
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_af3a968c78d61e5169f70d19f86740852}{decimate\+\_\+mesh.\+check\+\_\+input\+\_\+oriented\+\_\+manifold}} (mesh, input\+\_\+filename, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Check if input is an oriented manifold. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a3bb4e870b0f0e7f887fb2c837a0839cb}{decimate\+\_\+mesh.\+check\+\_\+input\+\_\+mesh}} (mesh, input\+\_\+filename, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Check mesh read from input\+\_\+filename. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a54f6a54908fe6bcb92aa440e4b8b8c2d}{decimate\+\_\+mesh.\+check\+\_\+edge\+\_\+collapse}} (mesh, ihalf\+\_\+edge, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Print a warning message if collapsing half\+\_\+edge is illegal or will change mesh topology. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_ad1dbcc990b476304a3a05a419f14cf7a}{decimate\+\_\+mesh.\+check\+\_\+split\+\_\+cell}} (mesh, ihalf\+\_\+edgeA, ihalf\+\_\+edgeB, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Print a warning message if splitting cell at diagonal (half\+\_\+edge\+A.\+From\+Vertex(), half\+\_\+edge\+B.\+From\+Vertex()) will change the mesh topology. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_ac81307ac3a07b8ebc164ce43ef50b5ff}{decimate\+\_\+mesh.\+check\+\_\+join\+\_\+cell}} (mesh, ihalf\+\_\+edge, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Print a warning if joining cells separated by half\+\_\+edge is illegal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_af3643a82851d06ddc60d1aed85a062a3}{decimate\+\_\+mesh.\+reduce\+\_\+checks\+\_\+on\+\_\+large\+\_\+datasets}} (mesh, flag\+\_\+no\+\_\+warn, large\+\_\+data\+\_\+num\+\_\+cells)
+\begin{DoxyCompactList}\small\item\em Return True and print warning message if data set is large. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_af6821f04b665e5428a4d32f15e950660}{decimate\+\_\+mesh.\+Init\+Flags}} ()
+\begin{DoxyCompactList}\small\item\em Initialize global flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a90cb0c14f0923c04d7cd0e52de59cd83}{decimate\+\_\+mesh.\+parse\+\_\+command\+\_\+line}} (argv)
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_af0584a3cbcca2c9c061304a81c006445}{decimate\+\_\+mesh.\+print\+\_\+time}} (label, timeX)
+\begin{DoxyCompactList}\small\item\em Print timeX in seconds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a77599532054ac968b4e547b88592a939}{decimate\+\_\+mesh.\+print\+\_\+mesh\+\_\+info}} (mesh)
+\begin{DoxyCompactList}\small\item\em Print mesh information, such as number of vertices, edges, cells min and max edge lengths and cell angles. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_aa94034a15efa09d5b53a50cf30e1620d}{decimate\+\_\+mesh.\+usage\+\_\+msg}} (out)
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a8160c3396065e7a324f1d09e4ea452d3}{decimate\+\_\+mesh.\+usage\+\_\+error}} ()
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a5be8927618192fbe388d40d459dc644c}{decimate\+\_\+mesh.\+help}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Some simple mesh decimation routines. 
+
+
+\begin{DoxyItemize}
+\item Collapse, join, split edges and cells.
+\item Uses data structure HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+EDIT\+\_\+\+BASE.
+\item Version 0.\+5.\+0 
+\end{DoxyItemize}

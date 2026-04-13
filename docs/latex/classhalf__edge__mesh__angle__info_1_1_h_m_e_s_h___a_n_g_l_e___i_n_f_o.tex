@@ -1,0 +1,233 @@
+\doxysection{half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+ANGLE\+\_\+\+INFO Class Reference}
+\hypertarget{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o}{}\label{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o}\index{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}}
+
+
+Class storing information about min/max angles and number of cells with angles less than or equal to or greater than or equal to some bound.  
+
+
+Inheritance diagram for half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+ANGLE\+\_\+\+INFO\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_aed8d35c0bb8eccb9f9e1019f610cc8de}{Clear\+Lists}} (self)
+\begin{DoxyCompactList}\small\item\em Clear all lists. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_ab5f5f99ac0052cb628f8e41d3f6faf97}{Initialize}} (self)
+\begin{DoxyCompactList}\small\item\em Initialize structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a435ff75dbd990b54d7afd38d7772b07a}{Set\+Small\+Angle\+Bounds}} (self, \+\_\+small\+\_\+angle\+\_\+bounds)
+\begin{DoxyCompactList}\small\item\em Set list small\+\_\+angle\+\_\+bounds to \+\_\+small\+\_\+angle\+\_\+bounds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_aea322b7bf5d0dbb34b877295cda8f3d9}{Set\+Large\+Angle\+Bounds}} (self, \+\_\+large\+\_\+angle\+\_\+bounds)
+\begin{DoxyCompactList}\small\item\em Set list large\+\_\+angle\+\_\+bounds to \+\_\+large\+\_\+angle\+\_\+bounds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a39fc512a6fbb04ab52e79dc7915e50ff}{Increment\+Num\+Cells\+With\+Angle\+LESmall}} (self, i)
+\begin{DoxyCompactList}\small\item\em Increment num\+\_\+cells\+\_\+with\+\_\+angle\+\_\+le\+\_\+small\mbox{[}i\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a1b53fad946f03a264f04fa1588748a63}{Increment\+Num\+Cells\+With\+Angle\+GELarge}} (self, i)
+\begin{DoxyCompactList}\small\item\em Increment num\+\_\+cells\+\_\+with\+\_\+angle\+\_\+ge\+\_\+large\mbox{[}i\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o}{half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+MIN\+\_\+\+MAX\+\_\+\+ANGLE\+\_\+\+INFO}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o_a23c2e25cfbfaf248196ea13d9608a74e}{Set\+Min\+Angle}} (self, cos\+\_\+angle, ihalf\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Set cos\+\_\+min\+\_\+angle and half edge whose from vertex is min angle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o_a59385fe67dee5ec9bb41ca25debf9819}{Set\+Max\+Angle}} (self, cos\+\_\+angle, ihalf\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Set cos\+\_\+max\+\_\+angle and half edge whose from vertex is max angle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o_a3908386a777d16a5950c65eaf2e45297}{Set\+Min\+Max\+Angle}} (self, cos\+\_\+angle, ihalf\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Set both min and max angle to cos\+\_\+angle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o_aff1924edb839d5e7199f4a09e5eb4e25}{Copy}} (self, info)
+\begin{DoxyCompactList}\small\item\em Copy min angle, max angle, imin, and imax. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a22593cb4c60ee55ed5d6f7f4ff213bca}{small\+\_\+angle\+\_\+bounds}}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a33669ba71ddb38485885e5d3ac190725}{large\+\_\+angle\+\_\+bounds}}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_ab3c18049d03ca0f0e515959bc4b532ef}{num\+\_\+cells\+\_\+with\+\_\+angle\+\_\+le\+\_\+small}}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a4344990e8b5412c3f0365126f75e6e5b}{num\+\_\+cells\+\_\+with\+\_\+angle\+\_\+ge\+\_\+large}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o}{half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+MIN\+\_\+\+MAX\+\_\+\+ANGLE\+\_\+\+INFO}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o_a45f825c05366046c959f730d8bb8773f}{cos\+\_\+min\+\_\+angle}}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o_acc5854a8f5d69c104c870c55c6f9e5dd}{cos\+\_\+max\+\_\+angle}}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o_abd4d77aeb59736dd9704a3594ebf4fcd}{imin}}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o_adea0d7ac1239c06cdead06df8a260085}{imax}}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o_ab6e7c74cfa389da1678ed900aa4bb338}{flag\+\_\+zero}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+list \mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a7104a853fdf77eac4bbf69566361d1bf}{small\+\_\+angle\+\_\+bounds}} = \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em List of small angle bounds. \end{DoxyCompactList}\item 
+list \mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_af8774e6b3cbca61ac5f7442d193e0e17}{large\+\_\+angle\+\_\+bounds}} = \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em List of large angle bounds. \end{DoxyCompactList}\item 
+list \mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a34a983bd3b94fd2cb165f6ba8da76ca1}{num\+\_\+cells\+\_\+with\+\_\+angle\+\_\+le\+\_\+small}} = \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em num\+\_\+cells\+\_\+with\+\_\+angles\+\_\+le\mbox{[}i\mbox{]} = Number of cells with angles less than or equal to small\+\_\+angle\+\_\+bounds\mbox{[}i\mbox{]}. \end{DoxyCompactList}\item 
+list \mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_acf3e2720a83c190cb164c7b99792d542}{num\+\_\+cells\+\_\+with\+\_\+angle\+\_\+ge\+\_\+large}} = \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em num\+\_\+cells\+\_\+with\+\_\+angles\+\_\+ge\mbox{[}i\mbox{]} = Number of cells with angles greater than or equal to large\+\_\+angle\+\_\+bounds\mbox{[}i\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o}{half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+MIN\+\_\+\+MAX\+\_\+\+ANGLE\+\_\+\+INFO}}}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o_a07277ccb5cd3ecc25ae24904dbdb72b1}{cos\+\_\+min\+\_\+angle}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Cosine of min angle. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o_ac281923e6d91589856bea73968ce3923}{cos\+\_\+max\+\_\+angle}} = 0.\+0
+\begin{DoxyCompactList}\small\item\em Cosine of max angle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o_ae2e94652c645c48c95991eb0b1ddf619}{imin}} = 0
+\begin{DoxyCompactList}\small\item\em Index of half edge whose from vertex forms min angle. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o_a92bdced21b79ff52d4d6a1d015a4bffa}{imax}} = 0
+\begin{DoxyCompactList}\small\item\em Index of half edge whose from vertex forms max angle. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o_a04f7ffdf6b0b4348885cd2e4f5638a0a}{flag\+\_\+zero}} = False
+\begin{DoxyCompactList}\small\item\em True if computation encounters a zero length edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class storing information about min/max angles and number of cells with angles less than or equal to or greater than or equal to some bound. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_aed8d35c0bb8eccb9f9e1019f610cc8de}\label{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_aed8d35c0bb8eccb9f9e1019f610cc8de} 
+\index{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}!ClearLists@{ClearLists}}
+\index{ClearLists@{ClearLists}!half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}}
+\doxysubsubsection{\texorpdfstring{ClearLists()}{ClearLists()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+ANGLE\+\_\+\+INFO.\+Clear\+Lists (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Clear all lists. 
+
+\Hypertarget{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a1b53fad946f03a264f04fa1588748a63}\label{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a1b53fad946f03a264f04fa1588748a63} 
+\index{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}!IncrementNumCellsWithAngleGELarge@{IncrementNumCellsWithAngleGELarge}}
+\index{IncrementNumCellsWithAngleGELarge@{IncrementNumCellsWithAngleGELarge}!half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}}
+\doxysubsubsection{\texorpdfstring{IncrementNumCellsWithAngleGELarge()}{IncrementNumCellsWithAngleGELarge()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+ANGLE\+\_\+\+INFO.\+Increment\+Num\+Cells\+With\+Angle\+GELarge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{i }\end{DoxyParamCaption})}
+
+
+
+Increment num\+\_\+cells\+\_\+with\+\_\+angle\+\_\+ge\+\_\+large\mbox{[}i\mbox{]}. 
+
+\Hypertarget{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a39fc512a6fbb04ab52e79dc7915e50ff}\label{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a39fc512a6fbb04ab52e79dc7915e50ff} 
+\index{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}!IncrementNumCellsWithAngleLESmall@{IncrementNumCellsWithAngleLESmall}}
+\index{IncrementNumCellsWithAngleLESmall@{IncrementNumCellsWithAngleLESmall}!half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}}
+\doxysubsubsection{\texorpdfstring{IncrementNumCellsWithAngleLESmall()}{IncrementNumCellsWithAngleLESmall()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+ANGLE\+\_\+\+INFO.\+Increment\+Num\+Cells\+With\+Angle\+LESmall (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{i }\end{DoxyParamCaption})}
+
+
+
+Increment num\+\_\+cells\+\_\+with\+\_\+angle\+\_\+le\+\_\+small\mbox{[}i\mbox{]}. 
+
+\Hypertarget{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_ab5f5f99ac0052cb628f8e41d3f6faf97}\label{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_ab5f5f99ac0052cb628f8e41d3f6faf97} 
+\index{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}}
+\doxysubsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+ANGLE\+\_\+\+INFO.\+Initialize (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Initialize structure. 
+
+
+\begin{DoxyItemize}
+\item Set cos\+\_\+min\+\_\+angle to -\/1.
+\item Set cos\+\_\+max\+\_\+angle to 1. 
+\end{DoxyItemize}
+
+Reimplemented from \mbox{\hyperlink{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o_a356fe3df5676ff4ea50fa692ac3ce694}{half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+MIN\+\_\+\+MAX\+\_\+\+ANGLE\+\_\+\+INFO}}.
+
+\Hypertarget{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_aea322b7bf5d0dbb34b877295cda8f3d9}\label{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_aea322b7bf5d0dbb34b877295cda8f3d9} 
+\index{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}!SetLargeAngleBounds@{SetLargeAngleBounds}}
+\index{SetLargeAngleBounds@{SetLargeAngleBounds}!half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}}
+\doxysubsubsection{\texorpdfstring{SetLargeAngleBounds()}{SetLargeAngleBounds()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+ANGLE\+\_\+\+INFO.\+Set\+Large\+Angle\+Bounds (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{\+\_\+large\+\_\+angle\+\_\+bounds }\end{DoxyParamCaption})}
+
+
+
+Set list large\+\_\+angle\+\_\+bounds to \+\_\+large\+\_\+angle\+\_\+bounds. 
+
+\Hypertarget{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a435ff75dbd990b54d7afd38d7772b07a}\label{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a435ff75dbd990b54d7afd38d7772b07a} 
+\index{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}!SetSmallAngleBounds@{SetSmallAngleBounds}}
+\index{SetSmallAngleBounds@{SetSmallAngleBounds}!half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}}
+\doxysubsubsection{\texorpdfstring{SetSmallAngleBounds()}{SetSmallAngleBounds()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+ANGLE\+\_\+\+INFO.\+Set\+Small\+Angle\+Bounds (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{\+\_\+small\+\_\+angle\+\_\+bounds }\end{DoxyParamCaption})}
+
+
+
+Set list small\+\_\+angle\+\_\+bounds to \+\_\+small\+\_\+angle\+\_\+bounds. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_af8774e6b3cbca61ac5f7442d193e0e17}\label{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_af8774e6b3cbca61ac5f7442d193e0e17} 
+\index{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}!large\_angle\_bounds@{large\_angle\_bounds}}
+\index{large\_angle\_bounds@{large\_angle\_bounds}!half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}}
+\doxysubsubsection{\texorpdfstring{large\_angle\_bounds}{large\_angle\_bounds}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily list half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+ANGLE\+\_\+\+INFO.\+large\+\_\+angle\+\_\+bounds = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+List of large angle bounds. 
+
+\Hypertarget{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a33669ba71ddb38485885e5d3ac190725}\label{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a33669ba71ddb38485885e5d3ac190725} 
+\index{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}!large\_angle\_bounds@{large\_angle\_bounds}}
+\index{large\_angle\_bounds@{large\_angle\_bounds}!half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}}
+\doxysubsubsection{\texorpdfstring{large\_angle\_bounds}{large\_angle\_bounds}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+ANGLE\+\_\+\+INFO.\+large\+\_\+angle\+\_\+bounds}
+
+\Hypertarget{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_acf3e2720a83c190cb164c7b99792d542}\label{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_acf3e2720a83c190cb164c7b99792d542} 
+\index{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}!num\_cells\_with\_angle\_ge\_large@{num\_cells\_with\_angle\_ge\_large}}
+\index{num\_cells\_with\_angle\_ge\_large@{num\_cells\_with\_angle\_ge\_large}!half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}}
+\doxysubsubsection{\texorpdfstring{num\_cells\_with\_angle\_ge\_large}{num\_cells\_with\_angle\_ge\_large}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily list half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+ANGLE\+\_\+\+INFO.\+num\+\_\+cells\+\_\+with\+\_\+angle\+\_\+ge\+\_\+large = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+num\+\_\+cells\+\_\+with\+\_\+angles\+\_\+ge\mbox{[}i\mbox{]} = Number of cells with angles greater than or equal to large\+\_\+angle\+\_\+bounds\mbox{[}i\mbox{]}. 
+
+\Hypertarget{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a4344990e8b5412c3f0365126f75e6e5b}\label{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a4344990e8b5412c3f0365126f75e6e5b} 
+\index{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}!num\_cells\_with\_angle\_ge\_large@{num\_cells\_with\_angle\_ge\_large}}
+\index{num\_cells\_with\_angle\_ge\_large@{num\_cells\_with\_angle\_ge\_large}!half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}}
+\doxysubsubsection{\texorpdfstring{num\_cells\_with\_angle\_ge\_large}{num\_cells\_with\_angle\_ge\_large}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+ANGLE\+\_\+\+INFO.\+num\+\_\+cells\+\_\+with\+\_\+angle\+\_\+ge\+\_\+large}
+
+\Hypertarget{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a34a983bd3b94fd2cb165f6ba8da76ca1}\label{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a34a983bd3b94fd2cb165f6ba8da76ca1} 
+\index{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}!num\_cells\_with\_angle\_le\_small@{num\_cells\_with\_angle\_le\_small}}
+\index{num\_cells\_with\_angle\_le\_small@{num\_cells\_with\_angle\_le\_small}!half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}}
+\doxysubsubsection{\texorpdfstring{num\_cells\_with\_angle\_le\_small}{num\_cells\_with\_angle\_le\_small}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily list half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+ANGLE\+\_\+\+INFO.\+num\+\_\+cells\+\_\+with\+\_\+angle\+\_\+le\+\_\+small = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+num\+\_\+cells\+\_\+with\+\_\+angles\+\_\+le\mbox{[}i\mbox{]} = Number of cells with angles less than or equal to small\+\_\+angle\+\_\+bounds\mbox{[}i\mbox{]}. 
+
+\Hypertarget{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_ab3c18049d03ca0f0e515959bc4b532ef}\label{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_ab3c18049d03ca0f0e515959bc4b532ef} 
+\index{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}!num\_cells\_with\_angle\_le\_small@{num\_cells\_with\_angle\_le\_small}}
+\index{num\_cells\_with\_angle\_le\_small@{num\_cells\_with\_angle\_le\_small}!half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}}
+\doxysubsubsection{\texorpdfstring{num\_cells\_with\_angle\_le\_small}{num\_cells\_with\_angle\_le\_small}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+ANGLE\+\_\+\+INFO.\+num\+\_\+cells\+\_\+with\+\_\+angle\+\_\+le\+\_\+small}
+
+\Hypertarget{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a7104a853fdf77eac4bbf69566361d1bf}\label{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a7104a853fdf77eac4bbf69566361d1bf} 
+\index{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}!small\_angle\_bounds@{small\_angle\_bounds}}
+\index{small\_angle\_bounds@{small\_angle\_bounds}!half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}}
+\doxysubsubsection{\texorpdfstring{small\_angle\_bounds}{small\_angle\_bounds}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily list half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+ANGLE\+\_\+\+INFO.\+small\+\_\+angle\+\_\+bounds = \mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+List of small angle bounds. 
+
+\Hypertarget{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a22593cb4c60ee55ed5d6f7f4ff213bca}\label{classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o_a22593cb4c60ee55ed5d6f7f4ff213bca} 
+\index{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}!small\_angle\_bounds@{small\_angle\_bounds}}
+\index{small\_angle\_bounds@{small\_angle\_bounds}!half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO@{half\_edge\_mesh\_angle\_info.HMESH\_ANGLE\_INFO}}
+\doxysubsubsection{\texorpdfstring{small\_angle\_bounds}{small\_angle\_bounds}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+HMESH\+\_\+\+ANGLE\+\_\+\+INFO.\+small\+\_\+angle\+\_\+bounds}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{half__edge__mesh__angle__info_8py}{half\+\_\+edge\+\_\+mesh\+\_\+angle\+\_\+info.\+py}}\end{DoxyCompactItemize}

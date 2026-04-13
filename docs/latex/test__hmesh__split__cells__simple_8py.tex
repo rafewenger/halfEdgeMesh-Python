@@ -1,0 +1,42 @@
+\doxysection{test\+\_\+hmesh\+\_\+split\+\_\+cells\+\_\+simple.\+py File Reference}
+\hypertarget{test__hmesh__split__cells__simple_8py}{}\label{test__hmesh__split__cells__simple_8py}\index{test\_hmesh\_split\_cells\_simple.py@{test\_hmesh\_split\_cells\_simple.py}}
+
+
+Test split cells into quads in half edge mesh data structure.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetest__hmesh__split__cells__simple}{test\+\_\+hmesh\+\_\+split\+\_\+cells\+\_\+simple}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetest__hmesh__split__cells__simple_acf183c4b1d904ecdf9f03664393c1be0}{test\+\_\+hmesh\+\_\+split\+\_\+cells\+\_\+simple.\+main}} (argv)
+\item 
+\mbox{\hyperlink{namespacetest__hmesh__split__cells__simple_ad708c74dc13b461ef49963888545a272}{test\+\_\+hmesh\+\_\+split\+\_\+cells\+\_\+simple.\+print\+\_\+time}} (label, timeX)
+\item 
+\mbox{\hyperlink{namespacetest__hmesh__split__cells__simple_ab74682ab77115a64a0212fd2d506849d}{test\+\_\+hmesh\+\_\+split\+\_\+cells\+\_\+simple.\+parse\+\_\+command\+\_\+line}} (argv)
+\item 
+\mbox{\hyperlink{namespacetest__hmesh__split__cells__simple_adea10ec47b44c4acdeb38e1de8179ab8}{test\+\_\+hmesh\+\_\+split\+\_\+cells\+\_\+simple.\+usage\+\_\+msg}} (out)
+\item 
+\mbox{\hyperlink{namespacetest__hmesh__split__cells__simple_af803cc30f314f26335017d7adf1dce27}{test\+\_\+hmesh\+\_\+split\+\_\+cells\+\_\+simple.\+usage\+\_\+error}} ()
+\item 
+\mbox{\hyperlink{namespacetest__hmesh__split__cells__simple_a1e44f80f50b8946f4e6d991f34dc4260}{test\+\_\+hmesh\+\_\+split\+\_\+cells\+\_\+simple.\+help}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test split cells into quads in half edge mesh data structure. 
+
+(Simple version)
+
+
+\begin{DoxyItemize}
+\item Reads a .off file into HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.
+\item Checks mesh, manifold and orientations properties of the mesh.
+\item Splits each quad cell that has an even number of vertices.
+\item Rechecks mesh, manifold and orientation properties of the mesh.
+\item Writes the mesh to a .off file. 
+\end{DoxyItemize}

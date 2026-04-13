@@ -1,0 +1,12 @@
+\chapter{Half Edge Mesh (Python implementation)\+:}
+\hypertarget{index}{}\label{index}\index{Half Edge Mesh (Python implementation):@{Half Edge Mesh (Python implementation):}}
+The mesh is stored in \doxylink{classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e}{HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE}, including lists of all the vertices, half edges and cells in the mesh.
+\begin{DoxyItemize}
+\item Each vertex, half edge and cell is in its own class.
+\item All allocations of vertices, half edges and cells should be done in \doxylink{classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e}{HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE} or a subclass of \doxylink{classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e}{HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE}.
+\item Each vertex, half edge and cell can be identified by a pointer to the object containing the vertex, half edge or cell, or by an integer index (identifier) of the vertex, half edge or cell.
+\item This is NOT a very efficient/compact implementation of half edges.
+\item This implementation is meant to be simple and (hopefully) robust for use in OSU CSE homeworks and prototypes.
+\item Note\+: Many of the simpler get functions do not check their arguments, e.\+g. Objects that are None or indices in range. Such checks would be too time consuming for large meshes. The calling function is responsible to ensure that objects not None and indices are in a specified range.
+\item Version 0.\+5.\+0 
+\end{DoxyItemize}

@@ -1,0 +1,429 @@
+\doxysection{decimate\+\_\+mesh Namespace Reference}
+\hypertarget{namespacedecimate__mesh}{}\label{namespacedecimate__mesh}\index{decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_ac17a5eaf461150351d0e7e5c7d5c3353}{main}} (argv)
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a1486d2f4fe0ffc527480af7793951a53}{collapse\+\_\+edge}} (mesh, ihalf\+\_\+edge, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Collapse edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_acb6da180eea3f078be33477b2c223521}{collapse\+\_\+shortest\+\_\+cell\+\_\+edge}} (mesh, icell, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Collapse shortest cell edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_ae7411a56990a3b3ebfb871053392a91f}{collapse\+\_\+shortest\+\_\+edge\+\_\+in\+\_\+each\+\_\+cell}} (mesh, flag\+\_\+terse, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Collapse shortest edge in each cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a91fa321f196a4cba52ba4865a8133b64}{print\+\_\+illegal\+\_\+edge\+\_\+collapse}} (half\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Print illegal edge collapse message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_aa0f5e402d448063e0577f21b2ff81493}{print\+\_\+edge\+\_\+collapse\+\_\+topology\+\_\+change}} (mesh, half\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Print information about any topology changes caused by edge collapse. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a1715343944e4265175ab5af6d098d5ac}{print\+\_\+skipped\+\_\+edge\+\_\+collapse}} (half\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Print skipped edge collapse. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a188ac33f241c6f756475ac8be0cc7051}{split\+\_\+edge}} (mesh, half\+\_\+edge, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Split edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_ac63bc94629356643272f55e07663ea81}{split\+\_\+longest\+\_\+cell\+\_\+edge}} (mesh, icell, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Split longest cell edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_ac0f56313cebeb622f5ace865f2507302}{split\+\_\+longest\+\_\+edge\+\_\+in\+\_\+each\+\_\+cell}} (mesh, flag\+\_\+terse, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Split longest edge in each cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_adc26ab32757daf3e9c5af0202cb78e75}{split\+\_\+cell}} (mesh, ihalf\+\_\+edgeA, ihalf\+\_\+edgeB, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Split cell with diagonal (half\+\_\+edge\+A.\+From\+Vertex(), half\+\_\+edge\+B.\+From\+Vertex()) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a9824114b8530b2288845093a930486e6}{split\+\_\+cell\+\_\+at\+\_\+largest\+\_\+angle}} (mesh, icell, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Split cell at largest angle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_aee4370b6339df257f527312970d47f00}{split\+\_\+each\+\_\+cell}} (mesh, flag\+\_\+terse, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Split each cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_acc2506851414b6525690c3e0c87e4cd6}{triangulate\+\_\+cell\+\_\+from\+\_\+vertex}} (mesh, ihalf\+\_\+edge, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Triangulate cell from vertex half\+\_\+edge0.\+From\+Vertex() \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_af69247d165dc73f9336b3fbf124adb38}{triangulate\+\_\+cell}} (mesh, ihalf\+\_\+edgeA, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Triangulate cell containing half edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a8a5cfd960bd69f57c6b6cabfd51fdea5}{triangulate\+\_\+cell\+\_\+from\+\_\+vertex\+\_\+with\+\_\+largest\+\_\+angle}} (mesh, icell, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Triangulate cell from vertex with largest angle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_ad61e39da4acf7b208551e15f797a4d8a}{triangulate\+\_\+each\+\_\+cell}} (mesh, flag\+\_\+terse, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Triangulate each cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_aa138996d34f13c27525db6de92ced614}{join\+\_\+two\+\_\+cells}} (mesh, ihalf\+\_\+edge, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a43008b2a1481184d57317efc12e71645}{join\+\_\+each\+\_\+cell}} (mesh, flag\+\_\+terse, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Attempt to join each cell by deleting longest edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a534971eb81149eaa1e842727ff965bb8}{exit\+\_\+on\+\_\+non\+\_\+manifold}} ()
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a06e066a8b4e163709c87ba57512f7ff2}{check\+\_\+oriented\+\_\+manifold}} (mesh, flag\+\_\+no\+\_\+warn)
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_ad013e19864dffa236c07cb8c554365d5}{check\+\_\+mesh}} (mesh, flag\+\_\+no\+\_\+warn)
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_af3a968c78d61e5169f70d19f86740852}{check\+\_\+input\+\_\+oriented\+\_\+manifold}} (mesh, input\+\_\+filename, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Check if input is an oriented manifold. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a3bb4e870b0f0e7f887fb2c837a0839cb}{check\+\_\+input\+\_\+mesh}} (mesh, input\+\_\+filename, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Check mesh read from input\+\_\+filename. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a54f6a54908fe6bcb92aa440e4b8b8c2d}{check\+\_\+edge\+\_\+collapse}} (mesh, ihalf\+\_\+edge, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Print a warning message if collapsing half\+\_\+edge is illegal or will change mesh topology. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_ad1dbcc990b476304a3a05a419f14cf7a}{check\+\_\+split\+\_\+cell}} (mesh, ihalf\+\_\+edgeA, ihalf\+\_\+edgeB, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Print a warning message if splitting cell at diagonal (half\+\_\+edge\+A.\+From\+Vertex(), half\+\_\+edge\+B.\+From\+Vertex()) will change the mesh topology. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_ac81307ac3a07b8ebc164ce43ef50b5ff}{check\+\_\+join\+\_\+cell}} (mesh, ihalf\+\_\+edge, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Print a warning if joining cells separated by half\+\_\+edge is illegal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_af3643a82851d06ddc60d1aed85a062a3}{reduce\+\_\+checks\+\_\+on\+\_\+large\+\_\+datasets}} (mesh, flag\+\_\+no\+\_\+warn, large\+\_\+data\+\_\+num\+\_\+cells)
+\begin{DoxyCompactList}\small\item\em Return True and print warning message if data set is large. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_af6821f04b665e5428a4d32f15e950660}{Init\+Flags}} ()
+\begin{DoxyCompactList}\small\item\em Initialize global flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a90cb0c14f0923c04d7cd0e52de59cd83}{parse\+\_\+command\+\_\+line}} (argv)
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_af0584a3cbcca2c9c061304a81c006445}{print\+\_\+time}} (label, timeX)
+\begin{DoxyCompactList}\small\item\em Print timeX in seconds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a77599532054ac968b4e547b88592a939}{print\+\_\+mesh\+\_\+info}} (mesh)
+\begin{DoxyCompactList}\small\item\em Print mesh information, such as number of vertices, edges, cells min and max edge lengths and cell angles. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacedecimate__mesh_aa94034a15efa09d5b53a50cf30e1620d}{usage\+\_\+msg}} (out)
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a8160c3396065e7a324f1d09e4ea452d3}{usage\+\_\+error}} ()
+\item 
+\mbox{\hyperlink{namespacedecimate__mesh_a5be8927618192fbe388d40d459dc644c}{help}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacedecimate__mesh_a54f6a54908fe6bcb92aa440e4b8b8c2d}\label{namespacedecimate__mesh_a54f6a54908fe6bcb92aa440e4b8b8c2d} 
+\index{decimate\_mesh@{decimate\_mesh}!check\_edge\_collapse@{check\_edge\_collapse}}
+\index{check\_edge\_collapse@{check\_edge\_collapse}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_edge\_collapse()}{check\_edge\_collapse()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+check\+\_\+edge\+\_\+collapse (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{ihalf\+\_\+edge,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Print a warning message if collapsing half\+\_\+edge is illegal or will change mesh topology. 
+
+
+\begin{DoxyItemize}
+\item Return True if collapse is not illegal and does not change mesh topology. 
+\end{DoxyItemize}\Hypertarget{namespacedecimate__mesh_a3bb4e870b0f0e7f887fb2c837a0839cb}\label{namespacedecimate__mesh_a3bb4e870b0f0e7f887fb2c837a0839cb} 
+\index{decimate\_mesh@{decimate\_mesh}!check\_input\_mesh@{check\_input\_mesh}}
+\index{check\_input\_mesh@{check\_input\_mesh}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_input\_mesh()}{check\_input\_mesh()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+check\+\_\+input\+\_\+mesh (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{input\+\_\+filename,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Check mesh read from input\+\_\+filename. 
+
+\Hypertarget{namespacedecimate__mesh_af3a968c78d61e5169f70d19f86740852}\label{namespacedecimate__mesh_af3a968c78d61e5169f70d19f86740852} 
+\index{decimate\_mesh@{decimate\_mesh}!check\_input\_oriented\_manifold@{check\_input\_oriented\_manifold}}
+\index{check\_input\_oriented\_manifold@{check\_input\_oriented\_manifold}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_input\_oriented\_manifold()}{check\_input\_oriented\_manifold()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+check\+\_\+input\+\_\+oriented\+\_\+manifold (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{input\+\_\+filename,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Check if input is an oriented manifold. 
+
+\Hypertarget{namespacedecimate__mesh_ac81307ac3a07b8ebc164ce43ef50b5ff}\label{namespacedecimate__mesh_ac81307ac3a07b8ebc164ce43ef50b5ff} 
+\index{decimate\_mesh@{decimate\_mesh}!check\_join\_cell@{check\_join\_cell}}
+\index{check\_join\_cell@{check\_join\_cell}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_join\_cell()}{check\_join\_cell()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+check\+\_\+join\+\_\+cell (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{ihalf\+\_\+edge,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Print a warning if joining cells separated by half\+\_\+edge is illegal. 
+
+
+\begin{DoxyItemize}
+\item Return true if join is legal. 
+\end{DoxyItemize}\Hypertarget{namespacedecimate__mesh_ad013e19864dffa236c07cb8c554365d5}\label{namespacedecimate__mesh_ad013e19864dffa236c07cb8c554365d5} 
+\index{decimate\_mesh@{decimate\_mesh}!check\_mesh@{check\_mesh}}
+\index{check\_mesh@{check\_mesh}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_mesh()}{check\_mesh()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+check\+\_\+mesh (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacedecimate__mesh_a06e066a8b4e163709c87ba57512f7ff2}\label{namespacedecimate__mesh_a06e066a8b4e163709c87ba57512f7ff2} 
+\index{decimate\_mesh@{decimate\_mesh}!check\_oriented\_manifold@{check\_oriented\_manifold}}
+\index{check\_oriented\_manifold@{check\_oriented\_manifold}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_oriented\_manifold()}{check\_oriented\_manifold()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+check\+\_\+oriented\+\_\+manifold (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacedecimate__mesh_ad1dbcc990b476304a3a05a419f14cf7a}\label{namespacedecimate__mesh_ad1dbcc990b476304a3a05a419f14cf7a} 
+\index{decimate\_mesh@{decimate\_mesh}!check\_split\_cell@{check\_split\_cell}}
+\index{check\_split\_cell@{check\_split\_cell}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_split\_cell()}{check\_split\_cell()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+check\+\_\+split\+\_\+cell (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{ihalf\+\_\+edgeA,  }\item[{}]{ihalf\+\_\+edgeB,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Print a warning message if splitting cell at diagonal (half\+\_\+edge\+A.\+From\+Vertex(), half\+\_\+edge\+B.\+From\+Vertex()) will change the mesh topology. 
+
+
+\begin{DoxyItemize}
+\item Return True if split does not change manifold topology. 
+\end{DoxyItemize}\Hypertarget{namespacedecimate__mesh_a1486d2f4fe0ffc527480af7793951a53}\label{namespacedecimate__mesh_a1486d2f4fe0ffc527480af7793951a53} 
+\index{decimate\_mesh@{decimate\_mesh}!collapse\_edge@{collapse\_edge}}
+\index{collapse\_edge@{collapse\_edge}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{collapse\_edge()}{collapse\_edge()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+collapse\+\_\+edge (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{ihalf\+\_\+edge,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn,  }\item[{}]{flag\+\_\+check }\end{DoxyParamCaption})}
+
+
+
+Collapse edge. 
+
+\Hypertarget{namespacedecimate__mesh_acb6da180eea3f078be33477b2c223521}\label{namespacedecimate__mesh_acb6da180eea3f078be33477b2c223521} 
+\index{decimate\_mesh@{decimate\_mesh}!collapse\_shortest\_cell\_edge@{collapse\_shortest\_cell\_edge}}
+\index{collapse\_shortest\_cell\_edge@{collapse\_shortest\_cell\_edge}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{collapse\_shortest\_cell\_edge()}{collapse\_shortest\_cell\_edge()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+collapse\+\_\+shortest\+\_\+cell\+\_\+edge (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{icell,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn,  }\item[{}]{flag\+\_\+check }\end{DoxyParamCaption})}
+
+
+
+Collapse shortest cell edge. 
+
+\Hypertarget{namespacedecimate__mesh_ae7411a56990a3b3ebfb871053392a91f}\label{namespacedecimate__mesh_ae7411a56990a3b3ebfb871053392a91f} 
+\index{decimate\_mesh@{decimate\_mesh}!collapse\_shortest\_edge\_in\_each\_cell@{collapse\_shortest\_edge\_in\_each\_cell}}
+\index{collapse\_shortest\_edge\_in\_each\_cell@{collapse\_shortest\_edge\_in\_each\_cell}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{collapse\_shortest\_edge\_in\_each\_cell()}{collapse\_shortest\_edge\_in\_each\_cell()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+collapse\+\_\+shortest\+\_\+edge\+\_\+in\+\_\+each\+\_\+cell (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Collapse shortest edge in each cell. 
+
+\Hypertarget{namespacedecimate__mesh_a534971eb81149eaa1e842727ff965bb8}\label{namespacedecimate__mesh_a534971eb81149eaa1e842727ff965bb8} 
+\index{decimate\_mesh@{decimate\_mesh}!exit\_on\_non\_manifold@{exit\_on\_non\_manifold}}
+\index{exit\_on\_non\_manifold@{exit\_on\_non\_manifold}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{exit\_on\_non\_manifold()}{exit\_on\_non\_manifold()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+exit\+\_\+on\+\_\+non\+\_\+manifold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacedecimate__mesh_a5be8927618192fbe388d40d459dc644c}\label{namespacedecimate__mesh_a5be8927618192fbe388d40d459dc644c} 
+\index{decimate\_mesh@{decimate\_mesh}!help@{help}}
+\index{help@{help}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{help()}{help()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacedecimate__mesh_af6821f04b665e5428a4d32f15e950660}\label{namespacedecimate__mesh_af6821f04b665e5428a4d32f15e950660} 
+\index{decimate\_mesh@{decimate\_mesh}!InitFlags@{InitFlags}}
+\index{InitFlags@{InitFlags}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{InitFlags()}{InitFlags()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+Init\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize global flags. 
+
+\Hypertarget{namespacedecimate__mesh_a43008b2a1481184d57317efc12e71645}\label{namespacedecimate__mesh_a43008b2a1481184d57317efc12e71645} 
+\index{decimate\_mesh@{decimate\_mesh}!join\_each\_cell@{join\_each\_cell}}
+\index{join\_each\_cell@{join\_each\_cell}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{join\_each\_cell()}{join\_each\_cell()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+join\+\_\+each\+\_\+cell (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Attempt to join each cell by deleting longest edge. 
+
+\Hypertarget{namespacedecimate__mesh_aa138996d34f13c27525db6de92ced614}\label{namespacedecimate__mesh_aa138996d34f13c27525db6de92ced614} 
+\index{decimate\_mesh@{decimate\_mesh}!join\_two\_cells@{join\_two\_cells}}
+\index{join\_two\_cells@{join\_two\_cells}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{join\_two\_cells()}{join\_two\_cells()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+join\+\_\+two\+\_\+cells (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{ihalf\+\_\+edge,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn,  }\item[{}]{flag\+\_\+check }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacedecimate__mesh_ac17a5eaf461150351d0e7e5c7d5c3353}\label{namespacedecimate__mesh_ac17a5eaf461150351d0e7e5c7d5c3353} 
+\index{decimate\_mesh@{decimate\_mesh}!main@{main}}
+\index{main@{main}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+main (\begin{DoxyParamCaption}\item[{}]{argv }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacedecimate__mesh_a90cb0c14f0923c04d7cd0e52de59cd83}\label{namespacedecimate__mesh_a90cb0c14f0923c04d7cd0e52de59cd83} 
+\index{decimate\_mesh@{decimate\_mesh}!parse\_command\_line@{parse\_command\_line}}
+\index{parse\_command\_line@{parse\_command\_line}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{parse\_command\_line()}{parse\_command\_line()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+parse\+\_\+command\+\_\+line (\begin{DoxyParamCaption}\item[{}]{argv }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacedecimate__mesh_aa0f5e402d448063e0577f21b2ff81493}\label{namespacedecimate__mesh_aa0f5e402d448063e0577f21b2ff81493} 
+\index{decimate\_mesh@{decimate\_mesh}!print\_edge\_collapse\_topology\_change@{print\_edge\_collapse\_topology\_change}}
+\index{print\_edge\_collapse\_topology\_change@{print\_edge\_collapse\_topology\_change}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{print\_edge\_collapse\_topology\_change()}{print\_edge\_collapse\_topology\_change()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+print\+\_\+edge\+\_\+collapse\+\_\+topology\+\_\+change (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{half\+\_\+edge }\end{DoxyParamCaption})}
+
+
+
+Print information about any topology changes caused by edge collapse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Half edge mesh. \\
+\hline
+{\em half\+\_\+edge} & Half edge to be collapsed.
+\begin{DoxyItemize}
+\item Note\+: Data structure, not half edge index. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacedecimate__mesh_a91fa321f196a4cba52ba4865a8133b64}\label{namespacedecimate__mesh_a91fa321f196a4cba52ba4865a8133b64} 
+\index{decimate\_mesh@{decimate\_mesh}!print\_illegal\_edge\_collapse@{print\_illegal\_edge\_collapse}}
+\index{print\_illegal\_edge\_collapse@{print\_illegal\_edge\_collapse}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{print\_illegal\_edge\_collapse()}{print\_illegal\_edge\_collapse()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+print\+\_\+illegal\+\_\+edge\+\_\+collapse (\begin{DoxyParamCaption}\item[{}]{half\+\_\+edge }\end{DoxyParamCaption})}
+
+
+
+Print illegal edge collapse message. 
+
+\Hypertarget{namespacedecimate__mesh_a77599532054ac968b4e547b88592a939}\label{namespacedecimate__mesh_a77599532054ac968b4e547b88592a939} 
+\index{decimate\_mesh@{decimate\_mesh}!print\_mesh\_info@{print\_mesh\_info}}
+\index{print\_mesh\_info@{print\_mesh\_info}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{print\_mesh\_info()}{print\_mesh\_info()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+print\+\_\+mesh\+\_\+info (\begin{DoxyParamCaption}\item[{}]{mesh }\end{DoxyParamCaption})}
+
+
+
+Print mesh information, such as number of vertices, edges, cells min and max edge lengths and cell angles. 
+
+\Hypertarget{namespacedecimate__mesh_a1715343944e4265175ab5af6d098d5ac}\label{namespacedecimate__mesh_a1715343944e4265175ab5af6d098d5ac} 
+\index{decimate\_mesh@{decimate\_mesh}!print\_skipped\_edge\_collapse@{print\_skipped\_edge\_collapse}}
+\index{print\_skipped\_edge\_collapse@{print\_skipped\_edge\_collapse}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{print\_skipped\_edge\_collapse()}{print\_skipped\_edge\_collapse()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+print\+\_\+skipped\+\_\+edge\+\_\+collapse (\begin{DoxyParamCaption}\item[{}]{half\+\_\+edge }\end{DoxyParamCaption})}
+
+
+
+Print skipped edge collapse. 
+
+\Hypertarget{namespacedecimate__mesh_af0584a3cbcca2c9c061304a81c006445}\label{namespacedecimate__mesh_af0584a3cbcca2c9c061304a81c006445} 
+\index{decimate\_mesh@{decimate\_mesh}!print\_time@{print\_time}}
+\index{print\_time@{print\_time}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{print\_time()}{print\_time()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+print\+\_\+time (\begin{DoxyParamCaption}\item[{}]{label,  }\item[{}]{timeX }\end{DoxyParamCaption})}
+
+
+
+Print timeX in seconds. 
+
+\Hypertarget{namespacedecimate__mesh_af3643a82851d06ddc60d1aed85a062a3}\label{namespacedecimate__mesh_af3643a82851d06ddc60d1aed85a062a3} 
+\index{decimate\_mesh@{decimate\_mesh}!reduce\_checks\_on\_large\_datasets@{reduce\_checks\_on\_large\_datasets}}
+\index{reduce\_checks\_on\_large\_datasets@{reduce\_checks\_on\_large\_datasets}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{reduce\_checks\_on\_large\_datasets()}{reduce\_checks\_on\_large\_datasets()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+reduce\+\_\+checks\+\_\+on\+\_\+large\+\_\+datasets (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{flag\+\_\+no\+\_\+warn,  }\item[{}]{large\+\_\+data\+\_\+num\+\_\+cells }\end{DoxyParamCaption})}
+
+
+
+Return True and print warning message if data set is large. 
+
+\Hypertarget{namespacedecimate__mesh_adc26ab32757daf3e9c5af0202cb78e75}\label{namespacedecimate__mesh_adc26ab32757daf3e9c5af0202cb78e75} 
+\index{decimate\_mesh@{decimate\_mesh}!split\_cell@{split\_cell}}
+\index{split\_cell@{split\_cell}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{split\_cell()}{split\_cell()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+split\+\_\+cell (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{ihalf\+\_\+edgeA,  }\item[{}]{ihalf\+\_\+edgeB,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn,  }\item[{}]{flag\+\_\+check }\end{DoxyParamCaption})}
+
+
+
+Split cell with diagonal (half\+\_\+edge\+A.\+From\+Vertex(), half\+\_\+edge\+B.\+From\+Vertex()) 
+
+
+\begin{DoxyItemize}
+\item Returns split edge.
+\item Returns None if split fails. 
+\end{DoxyItemize}\Hypertarget{namespacedecimate__mesh_a9824114b8530b2288845093a930486e6}\label{namespacedecimate__mesh_a9824114b8530b2288845093a930486e6} 
+\index{decimate\_mesh@{decimate\_mesh}!split\_cell\_at\_largest\_angle@{split\_cell\_at\_largest\_angle}}
+\index{split\_cell\_at\_largest\_angle@{split\_cell\_at\_largest\_angle}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{split\_cell\_at\_largest\_angle()}{split\_cell\_at\_largest\_angle()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+split\+\_\+cell\+\_\+at\+\_\+largest\+\_\+angle (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{icell,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn,  }\item[{}]{flag\+\_\+check }\end{DoxyParamCaption})}
+
+
+
+Split cell at largest angle. 
+
+
+\begin{DoxyItemize}
+\item Split cell at vertex forming the largest angle. 
+\end{DoxyItemize}\Hypertarget{namespacedecimate__mesh_aee4370b6339df257f527312970d47f00}\label{namespacedecimate__mesh_aee4370b6339df257f527312970d47f00} 
+\index{decimate\_mesh@{decimate\_mesh}!split\_each\_cell@{split\_each\_cell}}
+\index{split\_each\_cell@{split\_each\_cell}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{split\_each\_cell()}{split\_each\_cell()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+split\+\_\+each\+\_\+cell (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Split each cell. 
+
+\Hypertarget{namespacedecimate__mesh_a188ac33f241c6f756475ac8be0cc7051}\label{namespacedecimate__mesh_a188ac33f241c6f756475ac8be0cc7051} 
+\index{decimate\_mesh@{decimate\_mesh}!split\_edge@{split\_edge}}
+\index{split\_edge@{split\_edge}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{split\_edge()}{split\_edge()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+split\+\_\+edge (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{half\+\_\+edge,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn,  }\item[{}]{flag\+\_\+check }\end{DoxyParamCaption})}
+
+
+
+Split edge. 
+
+\Hypertarget{namespacedecimate__mesh_ac63bc94629356643272f55e07663ea81}\label{namespacedecimate__mesh_ac63bc94629356643272f55e07663ea81} 
+\index{decimate\_mesh@{decimate\_mesh}!split\_longest\_cell\_edge@{split\_longest\_cell\_edge}}
+\index{split\_longest\_cell\_edge@{split\_longest\_cell\_edge}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{split\_longest\_cell\_edge()}{split\_longest\_cell\_edge()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+split\+\_\+longest\+\_\+cell\+\_\+edge (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{icell,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn,  }\item[{}]{flag\+\_\+check }\end{DoxyParamCaption})}
+
+
+
+Split longest cell edge. 
+
+\Hypertarget{namespacedecimate__mesh_ac0f56313cebeb622f5ace865f2507302}\label{namespacedecimate__mesh_ac0f56313cebeb622f5ace865f2507302} 
+\index{decimate\_mesh@{decimate\_mesh}!split\_longest\_edge\_in\_each\_cell@{split\_longest\_edge\_in\_each\_cell}}
+\index{split\_longest\_edge\_in\_each\_cell@{split\_longest\_edge\_in\_each\_cell}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{split\_longest\_edge\_in\_each\_cell()}{split\_longest\_edge\_in\_each\_cell()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+split\+\_\+longest\+\_\+edge\+\_\+in\+\_\+each\+\_\+cell (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Split longest edge in each cell. 
+
+\Hypertarget{namespacedecimate__mesh_af69247d165dc73f9336b3fbf124adb38}\label{namespacedecimate__mesh_af69247d165dc73f9336b3fbf124adb38} 
+\index{decimate\_mesh@{decimate\_mesh}!triangulate\_cell@{triangulate\_cell}}
+\index{triangulate\_cell@{triangulate\_cell}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{triangulate\_cell()}{triangulate\_cell()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+triangulate\+\_\+cell (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{ihalf\+\_\+edgeA,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn,  }\item[{}]{flag\+\_\+check }\end{DoxyParamCaption})}
+
+
+
+Triangulate cell containing half edge. 
+
+
+\begin{DoxyItemize}
+\item Attempt to triangulate from half\+\_\+edge\+A.\+From\+Vertex().
+\item If triangulation fails, try other vertices. 
+\end{DoxyItemize}\Hypertarget{namespacedecimate__mesh_acc2506851414b6525690c3e0c87e4cd6}\label{namespacedecimate__mesh_acc2506851414b6525690c3e0c87e4cd6} 
+\index{decimate\_mesh@{decimate\_mesh}!triangulate\_cell\_from\_vertex@{triangulate\_cell\_from\_vertex}}
+\index{triangulate\_cell\_from\_vertex@{triangulate\_cell\_from\_vertex}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{triangulate\_cell\_from\_vertex()}{triangulate\_cell\_from\_vertex()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+triangulate\+\_\+cell\+\_\+from\+\_\+vertex (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{ihalf\+\_\+edge,  }\item[{}]{flag\+\_\+no\+\_\+warn,  }\item[{}]{flag\+\_\+check }\end{DoxyParamCaption})}
+
+
+
+Triangulate cell from vertex half\+\_\+edge0.\+From\+Vertex() 
+
+
+\begin{DoxyItemize}
+\item Return true if triangulation succeeds. 
+\end{DoxyItemize}\Hypertarget{namespacedecimate__mesh_a8a5cfd960bd69f57c6b6cabfd51fdea5}\label{namespacedecimate__mesh_a8a5cfd960bd69f57c6b6cabfd51fdea5} 
+\index{decimate\_mesh@{decimate\_mesh}!triangulate\_cell\_from\_vertex\_with\_largest\_angle@{triangulate\_cell\_from\_vertex\_with\_largest\_angle}}
+\index{triangulate\_cell\_from\_vertex\_with\_largest\_angle@{triangulate\_cell\_from\_vertex\_with\_largest\_angle}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{triangulate\_cell\_from\_vertex\_with\_largest\_angle()}{triangulate\_cell\_from\_vertex\_with\_largest\_angle()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+triangulate\+\_\+cell\+\_\+from\+\_\+vertex\+\_\+with\+\_\+largest\+\_\+angle (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{icell,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn,  }\item[{}]{flag\+\_\+check }\end{DoxyParamCaption})}
+
+
+
+Triangulate cell from vertex with largest angle. 
+
+
+\begin{DoxyItemize}
+\item Attempt to triangulate from vertex with largest angle.
+\item If triangulation fails, try other vertices. 
+\end{DoxyItemize}\Hypertarget{namespacedecimate__mesh_ad61e39da4acf7b208551e15f797a4d8a}\label{namespacedecimate__mesh_ad61e39da4acf7b208551e15f797a4d8a} 
+\index{decimate\_mesh@{decimate\_mesh}!triangulate\_each\_cell@{triangulate\_each\_cell}}
+\index{triangulate\_each\_cell@{triangulate\_each\_cell}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{triangulate\_each\_cell()}{triangulate\_each\_cell()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+triangulate\+\_\+each\+\_\+cell (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Triangulate each cell. 
+
+\Hypertarget{namespacedecimate__mesh_a8160c3396065e7a324f1d09e4ea452d3}\label{namespacedecimate__mesh_a8160c3396065e7a324f1d09e4ea452d3} 
+\index{decimate\_mesh@{decimate\_mesh}!usage\_error@{usage\_error}}
+\index{usage\_error@{usage\_error}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{usage\_error()}{usage\_error()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+usage\+\_\+error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacedecimate__mesh_aa94034a15efa09d5b53a50cf30e1620d}\label{namespacedecimate__mesh_aa94034a15efa09d5b53a50cf30e1620d} 
+\index{decimate\_mesh@{decimate\_mesh}!usage\_msg@{usage\_msg}}
+\index{usage\_msg@{usage\_msg}!decimate\_mesh@{decimate\_mesh}}
+\doxysubsubsection{\texorpdfstring{usage\_msg()}{usage\_msg()}}
+{\footnotesize\ttfamily decimate\+\_\+mesh.\+usage\+\_\+msg (\begin{DoxyParamCaption}\item[{}]{out }\end{DoxyParamCaption})}
+
