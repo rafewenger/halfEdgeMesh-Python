@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -24,6 +33,18 @@
    <div id="projectname">HalfEdgeMesh-Python
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -35,18 +56,23 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
+$(document).ready(function(){initNavTree('functions_func.html',''); initResizable(); });
 /* @license-end */
 </script>
-<div id="main-nav"></div>
-</div><!-- top -->
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,213 +98,216 @@ $(function() {
 <div class="textblock">Here is a list of all functions with links to the classes they belong to:</div>
 
 <h3><a id="index__5F" name="index__5F"></a>- _ -</h3><ul>
-<li>__init__()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a74ba6943b761e58348ade3c53f2de45a">half_edge_mesh.HALF_EDGE_MESH_BASE</a>, <a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a51023c7dff04382ddee57bcd084fab58">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___c_e_l_l___b_a_s_e.html#a96778e179282ef14b9e401d6c4ef2331">half_edge_mesh_elements.HMESH_CELL_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#afe627358648d0ca935c64e42c4874236">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___v_e_r_t_e_x___b_a_s_e.html#a268052b8ed029f231e3629a80a64f0a6">half_edge_mesh_elements.HMESH_VERTEX_BASE</a>, <a class="el" href="classsplit__cells__into__quads_1_1_v_e_r_t_e_x.html#a54873585dd1bb629cd358f4c329a38c1">split_cells_into_quads.VERTEX</a></li>
-<li>_AddAndLinkHalfEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a1bb9817ea50c394d8dc5a05bf4d82356">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_AddCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#ad3c3eddb9f11d25ab38aeddd65305fad">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_AddHalfEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#ab555197f8842a3db9082de2883cf2657">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_AddNewHalfEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a910cc34b5c6fc75f0d866b60a381f2e9">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_CreateVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a5c3a231473393794dd9ca4332243a7ed">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_DeleteCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a04c937f3d0c0c66ca5e7c0c1aee803d1">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_DeleteCellHalfEdges()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#afcbd09fcea68038e705b95d9816e1155">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_DeleteHalfEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#ac6c3f5ed09f4c31dd523247b1328441f">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_DeleteVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#af1e520494f387e33d98899e70a0ae8d5">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_LinkHalfEdgesAroundEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a952e09af8be3f21acf0c23d5c7aeeaac">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_LinkHalfEdgesInCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a6158b2b5c9c29a5e63f0b4231f78ec98">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_MergeHalfEdgesAroundEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#ac70b005ca4befe65c159e3745710cc04">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>_MergeHalfEdgesIncidentOnVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a5bd1876562b6792ca5a431c90cf11614">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>_MoveBoundaryHalfEdgeToHalfEdgeFrom0()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#aac24aa9800fdff5cb92153ee09a590ba">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_MoveVertexHalfEdgeFromList()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a297ca140c327538616ee6ff48d6fcaf4">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>_RelinkHalfEdgesInCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#aa62efcad16d82ca884f53ff678e014e1">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_RemoveHalfEdgeFromCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#aba08eb63df7b51b5a7cec58625fa9ee6">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_RemoveHalfEdgeFromVertexList()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a18ae7d03cdb750ecc0b1b9c29eac63ac">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_SplitCellIntoQuads()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a42d773ea26171f5177a9dc0be107ceaa">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_SplitEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a624c16faa8a7a22d3c262687991c31d8">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_SplitHalfEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a377e9c29d0cd1b862e79f0ece01cfbe8">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_SwapHalfEdgesInHalfEdgeFromList()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___v_e_r_t_e_x___b_a_s_e.html#a734b779f4745176b8eb269915563c5ac">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
-<li>_UnlinkHalfEdgeFromHalfEdgesAroundEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a8109823710f64df8642ae87054b3de22">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>__init__()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a74ba6943b761e58348ade3c53f2de45a">half_edge_mesh.HALF_EDGE_MESH_BASE</a>, <a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a51023c7dff04382ddee57bcd084fab58">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__CELL__BASE.html#a96778e179282ef14b9e401d6c4ef2331">half_edge_mesh_elements.HMESH_CELL_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#afe627358648d0ca935c64e42c4874236">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE.html#a268052b8ed029f231e3629a80a64f0a6">half_edge_mesh_elements.HMESH_VERTEX_BASE</a>, <a class="el" href="classsplit__cells__into__quads_1_1VERTEX.html#a54873585dd1bb629cd358f4c329a38c1">split_cells_into_quads.VERTEX</a></li>
+<li>_AddAndLinkHalfEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a1bb9817ea50c394d8dc5a05bf4d82356">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_AddCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#ad3c3eddb9f11d25ab38aeddd65305fad">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_AddHalfEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#ab555197f8842a3db9082de2883cf2657">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_AddNewHalfEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a910cc34b5c6fc75f0d866b60a381f2e9">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_CreateVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a5c3a231473393794dd9ca4332243a7ed">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_DeleteCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a04c937f3d0c0c66ca5e7c0c1aee803d1">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_DeleteCellHalfEdges()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#afcbd09fcea68038e705b95d9816e1155">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_DeleteHalfEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#ac6c3f5ed09f4c31dd523247b1328441f">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_DeleteVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#af1e520494f387e33d98899e70a0ae8d5">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_LinkHalfEdgesAroundEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a952e09af8be3f21acf0c23d5c7aeeaac">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_LinkHalfEdgesInCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a6158b2b5c9c29a5e63f0b4231f78ec98">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_MergeHalfEdgesAroundEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#ac70b005ca4befe65c159e3745710cc04">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>_MergeHalfEdgesIncidentOnVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a5bd1876562b6792ca5a431c90cf11614">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>_MoveBoundaryHalfEdgeToHalfEdgeFrom0()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#aac24aa9800fdff5cb92153ee09a590ba">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_MoveVertexHalfEdgeFromList()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a297ca140c327538616ee6ff48d6fcaf4">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>_RelinkHalfEdgesInCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#aa62efcad16d82ca884f53ff678e014e1">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_RemoveHalfEdgeFromCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#aba08eb63df7b51b5a7cec58625fa9ee6">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_RemoveHalfEdgeFromVertexList()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a18ae7d03cdb750ecc0b1b9c29eac63ac">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_SplitCellIntoQuads()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a42d773ea26171f5177a9dc0be107ceaa">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_SplitEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a624c16faa8a7a22d3c262687991c31d8">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_SplitHalfEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a377e9c29d0cd1b862e79f0ece01cfbe8">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_SwapHalfEdgesInHalfEdgeFromList()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE.html#a734b779f4745176b8eb269915563c5ac">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
+<li>_UnlinkHalfEdgeFromHalfEdgesAroundEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a8109823710f64df8642ae87054b3de22">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_a" name="index_a"></a>- a -</h3><ul>
-<li>AddCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#aece390bf0e179a593237df381a6f10e1">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>AddNewCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#abc93e0ea64fa695cfcb79d3da269d90b">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>AddNewVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a98ff9b14b7d0cd9ca7c4347b7d023599">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>AddVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#af0067cad8873037adebd93760f7fc468">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>AddVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a7ec57736c09987dabbbad72ff28159f9">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>AddCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#aece390bf0e179a593237df381a6f10e1">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>AddNewCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#abc93e0ea64fa695cfcb79d3da269d90b">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>AddNewVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a98ff9b14b7d0cd9ca7c4347b7d023599">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>AddVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#af0067cad8873037adebd93760f7fc468">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>AddVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a7ec57736c09987dabbbad72ff28159f9">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
-<li>Cell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#abd8374d79f2862f6b3fe16f30438a65f">half_edge_mesh.HALF_EDGE_MESH_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#a050393147b2657ddbab205f5caffb580">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>CellIndex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#a008c59898b4b2510bde31a35090eda4f">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>CellIndices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#ada70f8911bf190d53e3a4599731c63bb">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CheckAll()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a3f568d32cf99000a1ee195a0335b40aa">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CheckCells()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a4bb2a60c8766b45e755af02f67976e86">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CheckHalfEdges()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#add3c2de5f0c57bf5a8ac3f9f94e0b183">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CheckManifold()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#ab58b7bf3d067554fa08f54ba96f9c0ed">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CheckManifoldEdges()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#ab620fa2ffc41d30f6c852f3e5f567a33">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CheckManifoldVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a8ff83c3762478f604bf8444e340c0dd1">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CheckOrientation()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#aac3d121174a5e49ff82d01ad7b2cf604">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CheckVertexIndex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a6d016947854e9bb3a737f15c1674bf67">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CheckVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#ac955789cc979257e3bdce2520ce07a96">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>ClearLists()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o.html#aed8d35c0bb8eccb9f9e1019f610cc8de">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
-<li>ClearVertexVisitedFlag()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#af287f0e953b7e21fdbbd6e7f8744c0d5">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>ClearVisitedFlagsInAdjacentVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a232382e392597ce4fd317de465c44015">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>ClearVisitedFlagsInAllCellVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a450365dbf7e2786af3866e94f7fde27e">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>ClearVisitedFlagsInAllVerticesOfAllIncidentCells()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#aff18fbe8f520b926fe9cffe0203b2ed1">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>CollapseEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a77ce458bb1a8e9dbf32dad543b20b3c3">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>ComputeCentroid()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___c_e_l_l___b_a_s_e.html#a4e2d48679936b5fb6710cd32c47af897">half_edge_mesh_elements.HMESH_CELL_BASE</a></li>
-<li>ComputeMidpointCoord()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#af861ce564eac8cc77aa9bbfd1f8d23f6">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>CoordStr()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___v_e_r_t_e_x___b_a_s_e.html#a060438cb3f4e95c474d0ac1df80b638c">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
-<li>Copy()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o.html#aff1924edb839d5e7199f4a09e5eb4e25">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
-<li>CountNumBoundaryEdges()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a034c299b1cc29a6ab06af93b6438f004">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CountNumCellsOfSize()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a2a9869d271d60a2cb0b13245faede8d5">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CountNumCellsOfSizeGE()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#ababb54fabdc8cd7bf0871d727375cee7">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CountNumEdges()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a9503f85ed6bd679208818552c8617724">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CountNumHalfEdgesAroundEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#abacafcb82c6187c7cfacd652cc4cbf92">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>CountNumIncidentHalfEdges()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___v_e_r_t_e_x___b_a_s_e.html#ac1a7ef01509876781f0a4ec8ba59fbc3">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
-<li>CountNumIsolatedVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a1bdf62e3f4c3b85996dd36293eca5eb1">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CountNumPentagons()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a5c190bd6a3e18854bd77d6a9703739ee">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CountNumQuads()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a362dce76d1191529e9d5515f82bca0cb">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CountNumTriangles()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#aaac029ae628481b70d1a6a0445cc7574">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>CountNumVerticesSharedByTwoCells()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a1517c1eac68cd9fcafc86e18c1a0562f">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>Cell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#abd8374d79f2862f6b3fe16f30438a65f">half_edge_mesh.HALF_EDGE_MESH_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#a050393147b2657ddbab205f5caffb580">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>CellIndex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#a008c59898b4b2510bde31a35090eda4f">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>CellIndices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#ada70f8911bf190d53e3a4599731c63bb">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CheckAll()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a3f568d32cf99000a1ee195a0335b40aa">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CheckCells()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a4bb2a60c8766b45e755af02f67976e86">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CheckHalfEdges()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#add3c2de5f0c57bf5a8ac3f9f94e0b183">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CheckManifold()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#ab58b7bf3d067554fa08f54ba96f9c0ed">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CheckManifoldEdges()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#ab620fa2ffc41d30f6c852f3e5f567a33">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CheckManifoldVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a8ff83c3762478f604bf8444e340c0dd1">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CheckOrientation()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#aac3d121174a5e49ff82d01ad7b2cf604">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CheckVertexIndex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a6d016947854e9bb3a737f15c1674bf67">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CheckVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#ac955789cc979257e3bdce2520ce07a96">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>ClearLists()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__ANGLE__INFO.html#aed8d35c0bb8eccb9f9e1019f610cc8de">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
+<li>ClearVertexVisitedFlag()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#af287f0e953b7e21fdbbd6e7f8744c0d5">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>ClearVisitedFlagsInAdjacentVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a232382e392597ce4fd317de465c44015">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>ClearVisitedFlagsInAllCellVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a450365dbf7e2786af3866e94f7fde27e">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>ClearVisitedFlagsInAllVerticesOfAllIncidentCells()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#aff18fbe8f520b926fe9cffe0203b2ed1">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>CollapseEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a77ce458bb1a8e9dbf32dad543b20b3c3">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>ComputeCentroid()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__CELL__BASE.html#a4e2d48679936b5fb6710cd32c47af897">half_edge_mesh_elements.HMESH_CELL_BASE</a></li>
+<li>ComputeMidpointCoord()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#af861ce564eac8cc77aa9bbfd1f8d23f6">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>CoordStr()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE.html#a060438cb3f4e95c474d0ac1df80b638c">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
+<li>Copy()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__MIN__MAX__ANGLE__INFO.html#aff1924edb839d5e7199f4a09e5eb4e25">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
+<li>CountNumBoundaryEdges()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a034c299b1cc29a6ab06af93b6438f004">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CountNumCellsOfSize()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a2a9869d271d60a2cb0b13245faede8d5">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CountNumCellsOfSizeGE()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#ababb54fabdc8cd7bf0871d727375cee7">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CountNumEdges()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a9503f85ed6bd679208818552c8617724">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CountNumHalfEdgesAroundEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#abacafcb82c6187c7cfacd652cc4cbf92">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>CountNumIncidentHalfEdges()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE.html#ac1a7ef01509876781f0a4ec8ba59fbc3">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
+<li>CountNumIsolatedVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a1bdf62e3f4c3b85996dd36293eca5eb1">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CountNumPentagons()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a5c190bd6a3e18854bd77d6a9703739ee">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CountNumQuads()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a362dce76d1191529e9d5515f82bca0cb">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CountNumTriangles()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#aaac029ae628481b70d1a6a0445cc7574">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>CountNumVerticesSharedByTwoCells()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a1517c1eac68cd9fcafc86e18c1a0562f">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_d" name="index_d"></a>- d -</h3><ul>
-<li>DeleteCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a1b891c09f1c6a4ff39c3b799fcb84e63">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>Dimension()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___v_e_r_t_e_x___b_a_s_e.html#a949be5bcfbdaa2235ea876393f93f275">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
-<li>DoesEdgeCollapseChangeMeshTopologyH()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a48f6946d32dfb574fa419eb09fa8e579">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>DoesTriangulateCellFromVertexChangeTopology()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a6dbcddfce6c8466283d5fabee394f792">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>DeleteCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a1b891c09f1c6a4ff39c3b799fcb84e63">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>Dimension()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE.html#a949be5bcfbdaa2235ea876393f93f275">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
+<li>DoesEdgeCollapseChangeMeshTopologyH()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a48f6946d32dfb574fa419eb09fa8e579">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>DoesTriangulateCellFromVertexChangeTopology()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a6dbcddfce6c8466283d5fabee394f792">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_e" name="index_e"></a>- e -</h3><ul>
-<li>EndpointsStr()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#afb17b6d73c88ae35f877c298a9ac7618">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>EndpointsStr()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#afb17b6d73c88ae35f877c298a9ac7618">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_f" name="index_f"></a>- f -</h3><ul>
-<li>FindEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a89c6395f6e92befa522da36bee89abaa">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>FindHalfEdgeTo()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___v_e_r_t_e_x___b_a_s_e.html#a35c3005d244108995e9c18be56854688">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
-<li>FindTriangleHole()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a94d776885e6a1fe7dbedd55fc58fabea">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>FromVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#a414c11807682f04c8e28b16f8589b5cd">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>FromVertexIndex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#af3d41703cc119d32880ae61c09b67005">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>FindEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a89c6395f6e92befa522da36bee89abaa">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>FindHalfEdgeTo()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE.html#a35c3005d244108995e9c18be56854688">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
+<li>FindTriangleHole()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a94d776885e6a1fe7dbedd55fc58fabea">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>FromVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#a414c11807682f04c8e28b16f8589b5cd">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>FromVertexIndex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#af3d41703cc119d32880ae61c09b67005">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_g" name="index_g"></a>- g -</h3><ul>
-<li>GetEdgeList()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a941560cbc6a4aa8255d13daba753cc1a">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>GetListOfAllCellVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a04567ef8e213b5438ae3ff29884cbff5">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>GetListOfCommonVertexNeighbors()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a39e0957e2c8e75f71b966e8e6f374bdb">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>GetListOfConsecutiveCellVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a44b192483d947f4adba259e52adbb039">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>GetVertexIndices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___c_e_l_l___b_a_s_e.html#ab42a03daac21b148081959c6187a8d19">half_edge_mesh_elements.HMESH_CELL_BASE</a></li>
+<li>GetEdgeList()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a941560cbc6a4aa8255d13daba753cc1a">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>GetListOfAllCellVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a04567ef8e213b5438ae3ff29884cbff5">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>GetListOfCommonVertexNeighbors()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a39e0957e2c8e75f71b966e8e6f374bdb">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>GetListOfConsecutiveCellVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a44b192483d947f4adba259e52adbb039">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>GetVertexIndices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__CELL__BASE.html#ab42a03daac21b148081959c6187a8d19">half_edge_mesh_elements.HMESH_CELL_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_h" name="index_h"></a>- h -</h3><ul>
-<li>HalfEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#acc497b3b45c049cf973ae311a53ddf77">half_edge_mesh.HALF_EDGE_MESH_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___c_e_l_l___b_a_s_e.html#a4274769856ab5827827a327e22ae29a1">half_edge_mesh_elements.HMESH_CELL_BASE</a></li>
-<li>HalfEdgeIndices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#ae8c0b080433fe5fa90d0667553c50b10">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>HalfEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#acc497b3b45c049cf973ae311a53ddf77">half_edge_mesh.HALF_EDGE_MESH_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__CELL__BASE.html#a4274769856ab5827827a327e22ae29a1">half_edge_mesh_elements.HMESH_CELL_BASE</a></li>
+<li>HalfEdgeIndices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#ae8c0b080433fe5fa90d0667553c50b10">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
-<li>IncrementNumCellsWithAngleGELarge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o.html#a1b53fad946f03a264f04fa1588748a63">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
-<li>IncrementNumCellsWithAngleLESmall()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o.html#a39fc512a6fbb04ab52e79dc7915e50ff">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
-<li>Index()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___c_e_l_l___b_a_s_e.html#a3eeeb7bb6a6138b3b4fb2d0ae4e64876">half_edge_mesh_elements.HMESH_CELL_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#acb8d8aa139d330c982d3876945c5e018">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___v_e_r_t_e_x___b_a_s_e.html#af1f7f91c1cd0e7f43377521889e8ee99">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
-<li>IndexAndEndpointsStr()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#aa5c6c28c11b9b27b141c80c7d2b8fed1">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>Initialize()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o.html#ab5f5f99ac0052cb628f8e41d3f6faf97">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a>, <a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o.html#a356fe3df5676ff4ea50fa692ac3ce694">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
-<li>IsBoundary()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#a360ed7a5225875cd3b978a8a3903e30e">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___v_e_r_t_e_x___b_a_s_e.html#ab72e5da6a72a20ad5368f494a71219c5">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
-<li>IsIllegalEdgeCollapseH()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a1d2fb4863ed1e1ebf5e21702f8fa93a7">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>IsIllegalEdgeCollapseV()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a68082ba0b4bd8a430a51d288b07085dc">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>IsIllegalJoinTwoCells()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a71275fb6c1fb95cc85b5d3f96c9dc226">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>IsIllegalSplitCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a98f1b2177ab047306f744de8a09dae7a">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>IsInteriorEdgeWithBoundaryVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a0514c1cfd77f2a32bb6360e0f49d9854">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>IsInTetrahedron()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#af1c7f34242b46a976dacacb072be9138">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>IsInTriangle()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#adc1fd3b796fbdcaabfaa2cd5efd50a0a">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>IsIsolatedTriangle()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#ab11e7830192fe782793e1ec02733adba">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>IsTriangle()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___c_e_l_l___b_a_s_e.html#a6063373f4b0c2024be8173526d47abaa">half_edge_mesh_elements.HMESH_CELL_BASE</a></li>
-<li>IsVertexIncidentOnMoreThanTwoEdges()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a009fc2560d5bcb57663748155acef2f8">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>IsVertexVisited()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a061298b3974c39b611e75a447491863e">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>IncrementNumCellsWithAngleGELarge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__ANGLE__INFO.html#a1b53fad946f03a264f04fa1588748a63">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
+<li>IncrementNumCellsWithAngleLESmall()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__ANGLE__INFO.html#a39fc512a6fbb04ab52e79dc7915e50ff">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
+<li>Index()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__CELL__BASE.html#a3eeeb7bb6a6138b3b4fb2d0ae4e64876">half_edge_mesh_elements.HMESH_CELL_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#acb8d8aa139d330c982d3876945c5e018">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE.html#af1f7f91c1cd0e7f43377521889e8ee99">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
+<li>IndexAndEndpointsStr()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#aa5c6c28c11b9b27b141c80c7d2b8fed1">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>Initialize()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__ANGLE__INFO.html#ab5f5f99ac0052cb628f8e41d3f6faf97">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a>, <a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__MIN__MAX__ANGLE__INFO.html#a356fe3df5676ff4ea50fa692ac3ce694">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
+<li>IsBoundary()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#a360ed7a5225875cd3b978a8a3903e30e">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE.html#ab72e5da6a72a20ad5368f494a71219c5">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
+<li>IsIllegalEdgeCollapseH()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a1d2fb4863ed1e1ebf5e21702f8fa93a7">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>IsIllegalEdgeCollapseV()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a68082ba0b4bd8a430a51d288b07085dc">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>IsIllegalJoinTwoCells()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a71275fb6c1fb95cc85b5d3f96c9dc226">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>IsIllegalSplitCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a98f1b2177ab047306f744de8a09dae7a">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>IsInteriorEdgeWithBoundaryVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a0514c1cfd77f2a32bb6360e0f49d9854">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>IsInTetrahedron()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#af1c7f34242b46a976dacacb072be9138">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>IsInTriangle()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#adc1fd3b796fbdcaabfaa2cd5efd50a0a">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>IsIsolatedTriangle()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#ab11e7830192fe782793e1ec02733adba">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>IsTriangle()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__CELL__BASE.html#a6063373f4b0c2024be8173526d47abaa">half_edge_mesh_elements.HMESH_CELL_BASE</a></li>
+<li>IsVertexIncidentOnMoreThanTwoEdges()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a009fc2560d5bcb57663748155acef2f8">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>IsVertexVisited()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a061298b3974c39b611e75a447491863e">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_j" name="index_j"></a>- j -</h3><ul>
-<li>JoinTwoCells()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a9f5d9a47409d5b542a65434068355671">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>JoinTwoCells()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a9f5d9a47409d5b542a65434068355671">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_k" name="index_k"></a>- k -</h3><ul>
-<li>KthCoord()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___v_e_r_t_e_x___b_a_s_e.html#a6684016cd67f8877c72b038319c93a49">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
-<li>KthHalfEdgeFrom()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___v_e_r_t_e_x___b_a_s_e.html#a387f45fea2096a74f52124301e8d0ace">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
+<li>KthCoord()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE.html#a6684016cd67f8877c72b038319c93a49">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
+<li>KthHalfEdgeFrom()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE.html#a387f45fea2096a74f52124301e8d0ace">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_m" name="index_m"></a>- m -</h3><ul>
-<li>MaxCellIndex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a8faf78394491c3e650107d1030621c5e">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>MaxHalfEdgeIndex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#ad22e9563a0063cecc2e2cde2e0afab35">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>MaxVertexIndex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a115bdf9fde8303a52e7d2ff0dd894f9f">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>MinIndexHalfEdgeAroundEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#a49ea02f309e161b6fb0ee47c492f13e1">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>MoveBoundaryHalfEdgeToHalfEdgeFrom0()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___v_e_r_t_e_x___b_a_s_e.html#a9e7b4b25d5d57123ed38d2d3479eadf1">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
+<li>MaxCellIndex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a8faf78394491c3e650107d1030621c5e">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>MaxHalfEdgeIndex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#ad22e9563a0063cecc2e2cde2e0afab35">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>MaxVertexIndex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a115bdf9fde8303a52e7d2ff0dd894f9f">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>MinIndexHalfEdgeAroundEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#a49ea02f309e161b6fb0ee47c492f13e1">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>MoveBoundaryHalfEdgeToHalfEdgeFrom0()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE.html#a9e7b4b25d5d57123ed38d2d3479eadf1">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_n" name="index_n"></a>- n -</h3><ul>
-<li>NextHalfEdgeAroundEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#ac38bf8ec9830c4a638f99655124e4075">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>NextHalfEdgeInCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#aabba2b8790a6d9cfdc958496d2e6f071">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>NumCells()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a740cd65b3a813d3010ed89bfbcc10e95">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>NumHalfEdges()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#ab8e2f84e1b6c78c41277d43551c12601">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>NumHalfEdgesFrom()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___v_e_r_t_e_x___b_a_s_e.html#acf400a59c1ff1ec90f2a3caaea11ba71">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
-<li>NumVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#ab9305a41017da2e5f87358441a04ee32">half_edge_mesh.HALF_EDGE_MESH_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___c_e_l_l___b_a_s_e.html#a51a5bf1d4b007448373fdc4c239e3c40">half_edge_mesh_elements.HMESH_CELL_BASE</a></li>
+<li>NextHalfEdgeAroundEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#ac38bf8ec9830c4a638f99655124e4075">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>NextHalfEdgeInCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#aabba2b8790a6d9cfdc958496d2e6f071">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>NumCells()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a740cd65b3a813d3010ed89bfbcc10e95">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>NumHalfEdges()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#ab8e2f84e1b6c78c41277d43551c12601">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>NumHalfEdgesFrom()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE.html#acf400a59c1ff1ec90f2a3caaea11ba71">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
+<li>NumVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#ab9305a41017da2e5f87358441a04ee32">half_edge_mesh.HALF_EDGE_MESH_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__CELL__BASE.html#a51a5bf1d4b007448373fdc4c239e3c40">half_edge_mesh_elements.HMESH_CELL_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
-<li>PrevHalfEdgeAroundEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#a23da9dc4721a728fdc9d9d4c46178485">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>PrevHalfEdgeAroundFromVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#afe6ec2682401a8e4c87c21ce0082d13e">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>PrevHalfEdgeAroundVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#ab4612f85da335ebd5431e707c17026b0">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>PrevHalfEdgeInCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#a609946b35853b58b1f1914e64bf66d6d">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>PrintErrorMessage()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a6df24fef2023b99a4d283282d3052f48">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>PrintNonManifoldEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a380afd478f153853829f5701ac0df4b2">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>PrintNonManifoldVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a9f53b3cd9038686180a23d6af73b84df">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>PrintNotOriented()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a7c618cf11694a16dc53bced1b9459230">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>PrevHalfEdgeAroundEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#a23da9dc4721a728fdc9d9d4c46178485">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>PrevHalfEdgeAroundFromVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#afe6ec2682401a8e4c87c21ce0082d13e">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>PrevHalfEdgeAroundVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#ab4612f85da335ebd5431e707c17026b0">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>PrevHalfEdgeInCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#a609946b35853b58b1f1914e64bf66d6d">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>PrintErrorMessage()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a6df24fef2023b99a4d283282d3052f48">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>PrintNonManifoldEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a380afd478f153853829f5701ac0df4b2">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>PrintNonManifoldVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a9f53b3cd9038686180a23d6af73b84df">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>PrintNotOriented()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a7c618cf11694a16dc53bced1b9459230">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
-<li>SameEndpoints()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#a0711a70fd862c5a92a151ce797f04199">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>SetCoord()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a0e057e3f5e1a0c03215ea9db7c8f0bf7">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>SetLargeAngleBounds()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o.html#aea322b7bf5d0dbb34b877295cda8f3d9">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
-<li>SetMaxAngle()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o.html#a59385fe67dee5ec9bb41ca25debf9819">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
-<li>SetMinAngle()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o.html#a23c2e25cfbfaf248196ea13d9608a74e">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
-<li>SetMinMaxAngle()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o.html#a3908386a777d16a5950c65eaf2e45297">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
-<li>SetSmallAngleBounds()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o.html#a435ff75dbd990b54d7afd38d7772b07a">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
-<li>SetVertexVisitedFlag()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a658ed91ab35f5628150bd3c91a9cb895">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>SetVisitedFlagsInAdjacentVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#ae766ac536205a8ff9f7c622872e28361">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>SetVisitedFlagsInAllCellVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#aaf9312afc5def3773dfd58d4afc8ed01">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>SetVisitedFlagsInAllVerticesOfAllIncidentCells()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a343f5598a2638498f299c9b647df6794">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>SplitCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#abf8e7b735c75288fda827d6fbbec9ec1">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
-<li>SplitCellIntoQuads()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#aabdd12b16e747ac9217d47824a641620">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>SplitEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#aee6c328379a45d68602ffcde3770865b">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>SameEndpoints()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#a0711a70fd862c5a92a151ce797f04199">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>SetCoord()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a0e057e3f5e1a0c03215ea9db7c8f0bf7">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>SetLargeAngleBounds()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__ANGLE__INFO.html#aea322b7bf5d0dbb34b877295cda8f3d9">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
+<li>SetMaxAngle()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__MIN__MAX__ANGLE__INFO.html#a59385fe67dee5ec9bb41ca25debf9819">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
+<li>SetMinAngle()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__MIN__MAX__ANGLE__INFO.html#a23c2e25cfbfaf248196ea13d9608a74e">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
+<li>SetMinMaxAngle()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__MIN__MAX__ANGLE__INFO.html#a3908386a777d16a5950c65eaf2e45297">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
+<li>SetSmallAngleBounds()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__ANGLE__INFO.html#a435ff75dbd990b54d7afd38d7772b07a">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
+<li>SetVertexVisitedFlag()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a658ed91ab35f5628150bd3c91a9cb895">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>SetVisitedFlagsInAdjacentVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#ae766ac536205a8ff9f7c622872e28361">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>SetVisitedFlagsInAllCellVertices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#aaf9312afc5def3773dfd58d4afc8ed01">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>SetVisitedFlagsInAllVerticesOfAllIncidentCells()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a343f5598a2638498f299c9b647df6794">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>SplitCell()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#abf8e7b735c75288fda827d6fbbec9ec1">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>SplitCellIntoQuads()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#aabdd12b16e747ac9217d47824a641620">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>SplitEdge()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#aee6c328379a45d68602ffcde3770865b">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_t" name="index_t"></a>- t -</h3><ul>
-<li>ToVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#a3c5cd0c1adf5a39354c3b1c1aac56b2e">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>ToVertexIndex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#a6c772179cdc38342133966d0e7ea40de">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>TriangulateCellFromVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#ac886d25cd902ac9ce43f6095d70e39f9">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>ToVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#a3c5cd0c1adf5a39354c3b1c1aac56b2e">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>ToVertexIndex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#a6c772179cdc38342133966d0e7ea40de">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>TriangulateCellFromVertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#ac886d25cd902ac9ce43f6095d70e39f9">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_v" name="index_v"></a>- v -</h3><ul>
-<li>Vertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a742a7f4ad69193c542bedf682d33222e">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>VertexIndices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a6fab52ac508e7b8c6bc9431ac4778d4e">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>VerticesStr()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___c_e_l_l___b_a_s_e.html#a69009a0c3bc1f02719414c8c74692ca6">half_edge_mesh_elements.HMESH_CELL_BASE</a></li>
+<li>Vertex()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a742a7f4ad69193c542bedf682d33222e">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>VertexIndices()&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a6fab52ac508e7b8c6bc9431ac4778d4e">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>VerticesStr()&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__CELL__BASE.html#a69009a0c3bc1f02719414c8c74692ca6">half_edge_mesh_elements.HMESH_CELL_BASE</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

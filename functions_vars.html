@@ -9,9 +9,18 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -24,6 +33,18 @@
    <div id="projectname">HalfEdgeMesh-Python
    </div>
   </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Search" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
  </tr>
  </tbody>
 </table>
@@ -35,18 +56,23 @@
 var searchBox = new SearchBox("searchBox", "search/",'.html');
 /* @license-end */
 </script>
-<script type="text/javascript" src="menudata.js"></script>
-<script type="text/javascript" src="menu.js"></script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function() {
-  initMenu('',true,false,'search.php','Search');
-  $(document).ready(function() { init_search(); });
-});
+$(document).ready(function(){initNavTree('functions_vars.html',''); initResizable(); });
 /* @license-end */
 </script>
-<div id="main-nav"></div>
-</div><!-- top -->
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,77 +98,80 @@ $(function() {
 <div class="textblock">Here is a list of all variables with links to the classes they belong to:</div>
 
 <h3><a id="index__5F" name="index__5F"></a>- _ -</h3><ul>
-<li>_cell_dict&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a01df0c4b76894417f837d3f6ab1b218e">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_DIM&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___v_e_r_t_e_x___b_a_s_e.html#ad259da6e0c85cc13f9455660706a4ae5">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
-<li>_half_edge_dict&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a4a56529ecd755981e39f24ba85d87d2c">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_max_cell_index&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#af2173a975ab9116a27a44cc40d12d3a5">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_max_half_edge_index&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#ad67bf65a0f287316e91e2ff866091d70">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_max_vertex_index&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#aeb1b2c2ff9f6e689c1a3a8c570033114">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_vertex_dict&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#ad2f59c0d7341362df3bbff5890a67e6b">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>_vertex_visited_dict&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1_h_a_l_f___e_d_g_e___m_e_s_h___e_d_i_t___b_a_s_e.html#a42d62c625fc85ecb55e1fae1b549e7e7">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
+<li>_cell_dict&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a01df0c4b76894417f837d3f6ab1b218e">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_DIM&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE.html#ad259da6e0c85cc13f9455660706a4ae5">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
+<li>_half_edge_dict&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a4a56529ecd755981e39f24ba85d87d2c">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_max_cell_index&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#af2173a975ab9116a27a44cc40d12d3a5">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_max_half_edge_index&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#ad67bf65a0f287316e91e2ff866091d70">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_max_vertex_index&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#aeb1b2c2ff9f6e689c1a3a8c570033114">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_vertex_dict&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#ad2f59c0d7341362df3bbff5890a67e6b">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>_vertex_visited_dict&#160;:&#160;<a class="el" href="classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE.html#a42d62c625fc85ecb55e1fae1b549e7e7">half_edge_mesh_edit.HALF_EDGE_MESH_EDIT_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_c" name="index_c"></a>- c -</h3><ul>
-<li>cell&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#a5d212d5a169100d6476da72c7b6f6af8">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>CELL_TYPE&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a574fac384f1f4c7d48a10e1ed70d88b8">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
-<li>coord&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___v_e_r_t_e_x___b_a_s_e.html#a021f312fc85bc8319e8face538e58f1a">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
-<li>cos_max_angle&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o.html#ac281923e6d91589856bea73968ce3923">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
-<li>cos_min_angle&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o.html#a07277ccb5cd3ecc25ae24904dbdb72b1">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
+<li>cell&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#a5d212d5a169100d6476da72c7b6f6af8">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>CELL_TYPE&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a574fac384f1f4c7d48a10e1ed70d88b8">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>coord&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE.html#a021f312fc85bc8319e8face538e58f1a">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
+<li>cos_max_angle&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__MIN__MAX__ANGLE__INFO.html#ac281923e6d91589856bea73968ce3923">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
+<li>cos_min_angle&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__MIN__MAX__ANGLE__INFO.html#a07277ccb5cd3ecc25ae24904dbdb72b1">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
 </ul>
 
 
 <h3><a id="index_f" name="index_f"></a>- f -</h3><ul>
-<li>flag_zero&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o.html#a04f7ffdf6b0b4348885cd2e4f5638a0a">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
-<li>from_vertex&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#a196e8db5adcbf957a70f6b0ca707b296">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>flag_zero&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__MIN__MAX__ANGLE__INFO.html#a04f7ffdf6b0b4348885cd2e4f5638a0a">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
+<li>from_vertex&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#a196e8db5adcbf957a70f6b0ca707b296">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_h" name="index_h"></a>- h -</h3><ul>
-<li>half_edge&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___c_e_l_l___b_a_s_e.html#afd8923fa03cb8bc58432d6cc9ff4cb97">half_edge_mesh_elements.HMESH_CELL_BASE</a></li>
-<li>half_edge_from&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___v_e_r_t_e_x___b_a_s_e.html#aaf49e1679686be7e185ffc23600eb1ec">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
-<li>HALF_EDGE_TYPE&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a2c25d99b8184681403b4a8d81c378e9f">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>half_edge&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__CELL__BASE.html#afd8923fa03cb8bc58432d6cc9ff4cb97">half_edge_mesh_elements.HMESH_CELL_BASE</a></li>
+<li>half_edge_from&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE.html#aaf49e1679686be7e185ffc23600eb1ec">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
+<li>HALF_EDGE_TYPE&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a2c25d99b8184681403b4a8d81c378e9f">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_i" name="index_i"></a>- i -</h3><ul>
-<li>imax&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o.html#a92bdced21b79ff52d4d6a1d015a4bffa">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
-<li>imin&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___m_i_n___m_a_x___a_n_g_l_e___i_n_f_o.html#ae2e94652c645c48c95991eb0b1ddf619">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
-<li>index&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___c_e_l_l___b_a_s_e.html#ad7594ccfb1f667c4579a26e232d48e66">half_edge_mesh_elements.HMESH_CELL_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#a9b5549f65dcbba216d435feacfb15d8f">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___v_e_r_t_e_x___b_a_s_e.html#ad48a432ab286fb56559d936744154999">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
+<li>imax&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__MIN__MAX__ANGLE__INFO.html#a92bdced21b79ff52d4d6a1d015a4bffa">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
+<li>imin&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__MIN__MAX__ANGLE__INFO.html#ae2e94652c645c48c95991eb0b1ddf619">half_edge_mesh_angle_info.HMESH_MIN_MAX_ANGLE_INFO</a></li>
+<li>index&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__CELL__BASE.html#ad7594ccfb1f667c4579a26e232d48e66">half_edge_mesh_elements.HMESH_CELL_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#a9b5549f65dcbba216d435feacfb15d8f">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a>, <a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE.html#ad48a432ab286fb56559d936744154999">half_edge_mesh_elements.HMESH_VERTEX_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_l" name="index_l"></a>- l -</h3><ul>
-<li>large_angle_bounds&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o.html#af8774e6b3cbca61ac5f7442d193e0e17">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
+<li>large_angle_bounds&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__ANGLE__INFO.html#af8774e6b3cbca61ac5f7442d193e0e17">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
 </ul>
 
 
 <h3><a id="index_n" name="index_n"></a>- n -</h3><ul>
-<li>next_half_edge_around_edge&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#a0b6da1f3f03e31a58724ebf3b4be531a">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>next_half_edge_in_cell&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#a9b805002258170dc2cea961fef3121a1">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
-<li>num_cells_with_angle_ge_large&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o.html#acf3e2720a83c190cb164c7b99792d542">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
-<li>num_cells_with_angle_le_small&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o.html#a34a983bd3b94fd2cb165f6ba8da76ca1">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
-<li>num_vertices&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___c_e_l_l___b_a_s_e.html#a988ce06241c15945a0c0c36d7aad95c0">half_edge_mesh_elements.HMESH_CELL_BASE</a></li>
+<li>next_half_edge_around_edge&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#a0b6da1f3f03e31a58724ebf3b4be531a">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>next_half_edge_in_cell&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#a9b805002258170dc2cea961fef3121a1">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>num_cells_with_angle_ge_large&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__ANGLE__INFO.html#acf3e2720a83c190cb164c7b99792d542">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
+<li>num_cells_with_angle_le_small&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__ANGLE__INFO.html#a34a983bd3b94fd2cb165f6ba8da76ca1">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
+<li>num_vertices&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__CELL__BASE.html#a988ce06241c15945a0c0c36d7aad95c0">half_edge_mesh_elements.HMESH_CELL_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_p" name="index_p"></a>- p -</h3><ul>
-<li>prev_half_edge_in_cell&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1_h_m_e_s_h___h_a_l_f___e_d_g_e___b_a_s_e.html#a13b3c5c32edfa1de132ce80e37cc3d55">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
+<li>prev_half_edge_in_cell&#160;:&#160;<a class="el" href="classhalf__edge__mesh__elements_1_1HMESH__HALF__EDGE__BASE.html#a13b3c5c32edfa1de132ce80e37cc3d55">half_edge_mesh_elements.HMESH_HALF_EDGE_BASE</a></li>
 </ul>
 
 
 <h3><a id="index_s" name="index_s"></a>- s -</h3><ul>
-<li>small_angle_bounds&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1_h_m_e_s_h___a_n_g_l_e___i_n_f_o.html#a7104a853fdf77eac4bbf69566361d1bf">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
+<li>small_angle_bounds&#160;:&#160;<a class="el" href="classhalf__edge__mesh__angle__info_1_1HMESH__ANGLE__INFO.html#a7104a853fdf77eac4bbf69566361d1bf">half_edge_mesh_angle_info.HMESH_ANGLE_INFO</a></li>
 </ul>
 
 
 <h3><a id="index_v" name="index_v"></a>- v -</h3><ul>
-<li>VERTEX_TYPE&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1_h_a_l_f___e_d_g_e___m_e_s_h___b_a_s_e.html#a5bc31b58c5861c418a2d92a6bf8b55a1">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
+<li>VERTEX_TYPE&#160;:&#160;<a class="el" href="classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE.html#a5bc31b58c5861c418a2d92a6bf8b55a1">half_edge_mesh.HALF_EDGE_MESH_BASE</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>
