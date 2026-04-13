@@ -1,0 +1,42 @@
+\doxysection{test\+\_\+hmesh\+\_\+split\+\_\+edges.\+py File Reference}
+\hypertarget{test__hmesh__split__edges_8py}{}\label{test__hmesh__split__edges_8py}\index{test\_hmesh\_split\_edges.py@{test\_hmesh\_split\_edges.py}}
+
+
+Test splitting edges in half edge mesh data structure.  
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetest__hmesh__split__edges}{test\+\_\+hmesh\+\_\+split\+\_\+edges}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetest__hmesh__split__edges_a3e9af3b63c48b94b4d9a17008789f82a}{test\+\_\+hmesh\+\_\+split\+\_\+edges.\+main}} (argv)
+\item 
+\mbox{\hyperlink{namespacetest__hmesh__split__edges_a682368f06a1d275c48444839483c5e44}{test\+\_\+hmesh\+\_\+split\+\_\+edges.\+check\+\_\+mesh\+\_\+after\+\_\+split}} (mesh, flag\+\_\+manifold, flag\+\_\+oriented, num\+\_\+boundary\+\_\+edges)
+\begin{DoxyCompactList}\small\item\em Check mesh after split of edges. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacetest__hmesh__split__edges_a80c6f5c3f6b9ba516a00de60c636448a}{test\+\_\+hmesh\+\_\+split\+\_\+edges.\+print\+\_\+time}} (label, timeX)
+\item 
+\mbox{\hyperlink{namespacetest__hmesh__split__edges_a4e820150032c1c25dc88de6e28924804}{test\+\_\+hmesh\+\_\+split\+\_\+edges.\+parse\+\_\+command\+\_\+line}} (argv)
+\item 
+\mbox{\hyperlink{namespacetest__hmesh__split__edges_aa2e094eb3d095dae3738d815adf81bfa}{test\+\_\+hmesh\+\_\+split\+\_\+edges.\+usage\+\_\+msg}} (out)
+\item 
+\mbox{\hyperlink{namespacetest__hmesh__split__edges_ac6a0a19a450c2f7116de6d084fde050c}{test\+\_\+hmesh\+\_\+split\+\_\+edges.\+usage\+\_\+error}} ()
+\item 
+\mbox{\hyperlink{namespacetest__hmesh__split__edges_a109bf06394b7c1d40809972d87664266}{test\+\_\+hmesh\+\_\+split\+\_\+edges.\+help}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test splitting edges in half edge mesh data structure. 
+
+
+\begin{DoxyItemize}
+\item Reads a .off file into HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.
+\item Checks mesh, manifold and orientations properties of the mesh.
+\item Splits each mesh edge.
+\item Rechecks mesh, manifold and orientation properties of the mesh.
+\item Writes the mesh to a .off file. 
+\end{DoxyItemize}

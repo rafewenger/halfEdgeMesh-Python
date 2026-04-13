@@ -1,0 +1,321 @@
+\doxysection{half\+\_\+edge\+\_\+mesh\+\_\+compute Namespace Reference}
+\hypertarget{namespacehalf__edge__mesh__compute}{}\label{namespacehalf__edge__mesh__compute}\index{half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__compute_a6718d7df868930a3efd2dab917b1fa9e}{compute\+\_\+midpoint}} (coord0, coord1, coord2)
+\begin{DoxyCompactList}\small\item\em Return the midpoint of coord0\mbox{[}\mbox{]} and coord1\mbox{[}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__compute_af3397a58ace6d02dd96d97114b60a5f8}{compute\+\_\+squared\+\_\+distance}} (coord0, coord1)
+\begin{DoxyCompactList}\small\item\em Return squared distance between two coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__compute_a4599069124168e84e83d74338e72165e}{compute\+\_\+edge\+\_\+length\+\_\+squared}} (half\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Return edge length squared. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__compute_a34d337ae04892b6bab36b5d61fda58f6}{compute\+\_\+min\+\_\+max\+\_\+edge\+\_\+length\+\_\+squared}} (mesh)
+\begin{DoxyCompactList}\small\item\em Return square of min and max edge lengths and indices of half edges with min and max lengths. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__compute_a7d0f91accdcd0b66647e1e485d62990b}{compute\+\_\+cell\+\_\+min\+\_\+max\+\_\+edge\+\_\+length\+\_\+squared}} (cell)
+\begin{DoxyCompactList}\small\item\em Return square of min and max edge lengths in given CELL and indices of half edges with min and max lengths. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__compute_a78e653d8cf834166636a3a62aa1938b0}{compute\+\_\+cell\+\_\+edge\+\_\+length\+\_\+ratio\+\_\+squared}} (cell)
+\begin{DoxyCompactList}\small\item\em Return ratio of the min squared edge length to max squared edge length in cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__compute_a811d364c8b5b78b3e3d52d817c0e20d1}{compute\+\_\+min\+\_\+cell\+\_\+edge\+\_\+length\+\_\+ratio\+\_\+squared}} (mesh)
+\begin{DoxyCompactList}\small\item\em Return min squared ratio of the min to max edge in any cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__compute_a090d1d124df38cda1836411e11b8b0d0}{normalize\+\_\+vector}} (vectA)
+\begin{DoxyCompactList}\small\item\em Return normalized vector and magnitude of the original vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__compute_a283b2b33a1dd8cc5b2736a69ef30ad46}{compute\+\_\+cos\+\_\+angle}} (vect0, vect1)
+\begin{DoxyCompactList}\small\item\em Returns cosine of angle between two vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__compute_a7263f8fa9d7b083d9c6b14582a2d4644}{compute\+\_\+cos\+\_\+triangle\+\_\+angle}} (coord0, coord1, coord2)
+\begin{DoxyCompactList}\small\item\em Compute cos of triangle angle at coord1\mbox{[}\mbox{]} in triangle (coord0\mbox{[}\mbox{]},coord1\mbox{[}\mbox{]},coord2\mbox{[}\mbox{]}). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__compute_add51c6e7c75a479a207aa90a703ffb97}{compute\+\_\+cos\+\_\+vertex\+\_\+angle}} (half\+\_\+edge1)
+\begin{DoxyCompactList}\small\item\em Compute cos of angle at half\+\_\+edge1.\+From\+Vertex() in cell half\+\_\+edge1.\+Cell(). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__compute_a263f0313498404d9046ff09b4e745a97}{compute\+\_\+cos\+\_\+min\+\_\+max\+\_\+cell\+\_\+angles}} (cell)
+\begin{DoxyCompactList}\small\item\em Compute cos of min and max angles in cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__compute_a078afe3ba4d5440459f1458b98367f2a}{compute\+\_\+angle\+\_\+info}} (mesh, small\+\_\+angle\+\_\+bounds, large\+\_\+angle\+\_\+bounds)
+\begin{DoxyCompactList}\small\item\em Compute cos of min and max angles in mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__compute_a60265950aaac17c6abaaa12edc168c48}{print\+\_\+coord}} (out, coord, separator, precision)
+\begin{DoxyCompactList}\small\item\em Print coordinate array. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__compute_af397a323b642aacc2d8b2b884a488e4c}{print\+\_\+coordP}} (out, coord, separator, precision)
+\begin{DoxyCompactList}\small\item\em Print coordinate array surrounded by parentheses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacehalf__edge__mesh__compute_a078afe3ba4d5440459f1458b98367f2a}\label{namespacehalf__edge__mesh__compute_a078afe3ba4d5440459f1458b98367f2a} 
+\index{half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}!compute\_angle\_info@{compute\_angle\_info}}
+\index{compute\_angle\_info@{compute\_angle\_info}!half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}}
+\doxysubsubsection{\texorpdfstring{compute\_angle\_info()}{compute\_angle\_info()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+compute.\+compute\+\_\+angle\+\_\+info (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{small\+\_\+angle\+\_\+bounds,  }\item[{}]{large\+\_\+angle\+\_\+bounds }\end{DoxyParamCaption})}
+
+
+
+Compute cos of min and max angles in mesh. 
+
+
+\begin{DoxyItemize}
+\item Returns cos\+\_\+min\+\_\+max\+\_\+angle\+\_\+info.
+\item Ignore vertices incident on 0 length edges. 
+\begin{DoxyParams}{Parameters}
+{\em small\+\_\+angle\+\_\+bounds\mbox{[}$\,$\mbox{]}} & Array of small angle bounds.
+\begin{DoxyItemize}
+\item Computes number of cells with angles less than or equal to small\+\_\+angle\+\_\+bounds\mbox{[}i\mbox{]} for each i. 
+\end{DoxyItemize}\\
+\hline
+{\em large\+\_\+angle\+\_\+bounds\mbox{[}$\,$\mbox{]}} & Array of large angle bounds.
+\begin{DoxyItemize}
+\item Computes number of cells with angles greater than or equal to large\+\_\+angle\+\_\+bounds\mbox{[}i\mbox{]} for each i. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{namespacehalf__edge__mesh__compute_a78e653d8cf834166636a3a62aa1938b0}\label{namespacehalf__edge__mesh__compute_a78e653d8cf834166636a3a62aa1938b0} 
+\index{half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}!compute\_cell\_edge\_length\_ratio\_squared@{compute\_cell\_edge\_length\_ratio\_squared}}
+\index{compute\_cell\_edge\_length\_ratio\_squared@{compute\_cell\_edge\_length\_ratio\_squared}!half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}}
+\doxysubsubsection{\texorpdfstring{compute\_cell\_edge\_length\_ratio\_squared()}{compute\_cell\_edge\_length\_ratio\_squared()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+compute.\+compute\+\_\+cell\+\_\+edge\+\_\+length\+\_\+ratio\+\_\+squared (\begin{DoxyParamCaption}\item[{}]{cell }\end{DoxyParamCaption})}
+
+
+
+Return ratio of the min squared edge length to max squared edge length in cell. 
+
+
+\begin{DoxyItemize}
+\item Returns ratio, min edge length squared, max edge length squared, indices of half edges with min max edge lengths.
+\item Returns ratio 1.\+0 if all edges have length 0. 
+\begin{DoxyParams}{Parameters}
+{\em cell} & Cell. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{namespacehalf__edge__mesh__compute_a7d0f91accdcd0b66647e1e485d62990b}\label{namespacehalf__edge__mesh__compute_a7d0f91accdcd0b66647e1e485d62990b} 
+\index{half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}!compute\_cell\_min\_max\_edge\_length\_squared@{compute\_cell\_min\_max\_edge\_length\_squared}}
+\index{compute\_cell\_min\_max\_edge\_length\_squared@{compute\_cell\_min\_max\_edge\_length\_squared}!half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}}
+\doxysubsubsection{\texorpdfstring{compute\_cell\_min\_max\_edge\_length\_squared()}{compute\_cell\_min\_max\_edge\_length\_squared()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+compute.\+compute\+\_\+cell\+\_\+min\+\_\+max\+\_\+edge\+\_\+length\+\_\+squared (\begin{DoxyParamCaption}\item[{}]{cell }\end{DoxyParamCaption})}
+
+
+
+Return square of min and max edge lengths in given CELL and indices of half edges with min and max lengths. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cell} & Cell. Compute square of cell edge lengths. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacehalf__edge__mesh__compute_a283b2b33a1dd8cc5b2736a69ef30ad46}\label{namespacehalf__edge__mesh__compute_a283b2b33a1dd8cc5b2736a69ef30ad46} 
+\index{half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}!compute\_cos\_angle@{compute\_cos\_angle}}
+\index{compute\_cos\_angle@{compute\_cos\_angle}!half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}}
+\doxysubsubsection{\texorpdfstring{compute\_cos\_angle()}{compute\_cos\_angle()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+compute.\+compute\+\_\+cos\+\_\+angle (\begin{DoxyParamCaption}\item[{}]{vect0,  }\item[{}]{vect1 }\end{DoxyParamCaption})}
+
+
+
+Returns cosine of angle between two vectors. 
+
+
+\begin{DoxyItemize}
+\item Returns also flag\+\_\+zero, true if either vector is 0 (or very, very near 0).
+\item If either vector is zero, returns 0 as cosine. 
+\begin{DoxyParams}{Parameters}
+{\em vect0\mbox{[}$\,$\mbox{]}} & numpy array. Function modifies vect0\mbox{[}\mbox{]}. \\
+\hline
+{\em vect1\mbox{[}$\,$\mbox{]}} & numpy array. Function modifies vect1\mbox{[}\mbox{]}. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{namespacehalf__edge__mesh__compute_a263f0313498404d9046ff09b4e745a97}\label{namespacehalf__edge__mesh__compute_a263f0313498404d9046ff09b4e745a97} 
+\index{half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}!compute\_cos\_min\_max\_cell\_angles@{compute\_cos\_min\_max\_cell\_angles}}
+\index{compute\_cos\_min\_max\_cell\_angles@{compute\_cos\_min\_max\_cell\_angles}!half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}}
+\doxysubsubsection{\texorpdfstring{compute\_cos\_min\_max\_cell\_angles()}{compute\_cos\_min\_max\_cell\_angles()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+compute.\+compute\+\_\+cos\+\_\+min\+\_\+max\+\_\+cell\+\_\+angles (\begin{DoxyParamCaption}\item[{}]{cell }\end{DoxyParamCaption})}
+
+
+
+Compute cos of min and max angles in cell. 
+
+
+\begin{DoxyItemize}
+\item Returns cos\+\_\+min, cos\+\_\+max and half edges whose from vertices have the min and max angles.
+\item Returns also flag\+\_\+zero, true if some edge has zero length.
+\item Note\+: min angle has maximum cosine and max angle has minimum cosine.
+\item Returns 0.\+0, 0.\+0 if cell has no vertices.
+\item Ignore vertices incident on 0 length edges. 
+\end{DoxyItemize}\Hypertarget{namespacehalf__edge__mesh__compute_a7263f8fa9d7b083d9c6b14582a2d4644}\label{namespacehalf__edge__mesh__compute_a7263f8fa9d7b083d9c6b14582a2d4644} 
+\index{half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}!compute\_cos\_triangle\_angle@{compute\_cos\_triangle\_angle}}
+\index{compute\_cos\_triangle\_angle@{compute\_cos\_triangle\_angle}!half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}}
+\doxysubsubsection{\texorpdfstring{compute\_cos\_triangle\_angle()}{compute\_cos\_triangle\_angle()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+compute.\+compute\+\_\+cos\+\_\+triangle\+\_\+angle (\begin{DoxyParamCaption}\item[{}]{coord0,  }\item[{}]{coord1,  }\item[{}]{coord2 }\end{DoxyParamCaption})}
+
+
+
+Compute cos of triangle angle at coord1\mbox{[}\mbox{]} in triangle (coord0\mbox{[}\mbox{]},coord1\mbox{[}\mbox{]},coord2\mbox{[}\mbox{]}). 
+
+
+\begin{DoxyItemize}
+\item Returns also flag\+\_\+zero, true if either coord0\mbox{[}\mbox{]} or coord2\mbox{[}\mbox{]} are at coord1\mbox{[}\mbox{]} (or very, very close to coord1\mbox{[}\mbox{]}.)
+\item If coord0\mbox{[}\mbox{]} == coord1\mbox{[}\mbox{]} (or is very, very close,) or coord2\mbox{[}\mbox{]} == coord1\mbox{[}\mbox{]} (or is very, very close,) returns 0 as cosine. 
+\begin{DoxyParams}{Parameters}
+{\em coord0\mbox{[}$\,$\mbox{]}} & Python list (not a numpy array). \\
+\hline
+{\em coord1\mbox{[}$\,$\mbox{]}} & Python list (not a numpy array). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+len(coord1) == len(coord0). 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em coord2\mbox{[}$\,$\mbox{]}} & Python list (not a numpy array). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+len(coord2) == len(coord0). 
+\end{DoxyPrecond}
+
+\end{DoxyItemize}\Hypertarget{namespacehalf__edge__mesh__compute_add51c6e7c75a479a207aa90a703ffb97}\label{namespacehalf__edge__mesh__compute_add51c6e7c75a479a207aa90a703ffb97} 
+\index{half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}!compute\_cos\_vertex\_angle@{compute\_cos\_vertex\_angle}}
+\index{compute\_cos\_vertex\_angle@{compute\_cos\_vertex\_angle}!half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}}
+\doxysubsubsection{\texorpdfstring{compute\_cos\_vertex\_angle()}{compute\_cos\_vertex\_angle()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+compute.\+compute\+\_\+cos\+\_\+vertex\+\_\+angle (\begin{DoxyParamCaption}\item[{}]{half\+\_\+edge1 }\end{DoxyParamCaption})}
+
+
+
+Compute cos of angle at half\+\_\+edge1.\+From\+Vertex() in cell half\+\_\+edge1.\+Cell(). 
+
+
+\begin{DoxyItemize}
+\item Returns cosine of angle and flag\+\_\+zero.
+\item Returns also flag\+\_\+zero, true if either coord0\mbox{[}\mbox{]} or coord2\mbox{[}\mbox{]} are at coord1\mbox{[}\mbox{]} (or very, very close to coord1\mbox{[}\mbox{]}.) 
+\end{DoxyItemize}\Hypertarget{namespacehalf__edge__mesh__compute_a4599069124168e84e83d74338e72165e}\label{namespacehalf__edge__mesh__compute_a4599069124168e84e83d74338e72165e} 
+\index{half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}!compute\_edge\_length\_squared@{compute\_edge\_length\_squared}}
+\index{compute\_edge\_length\_squared@{compute\_edge\_length\_squared}!half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}}
+\doxysubsubsection{\texorpdfstring{compute\_edge\_length\_squared()}{compute\_edge\_length\_squared()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+compute.\+compute\+\_\+edge\+\_\+length\+\_\+squared (\begin{DoxyParamCaption}\item[{}]{half\+\_\+edge }\end{DoxyParamCaption})}
+
+
+
+Return edge length squared. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em half\+\_\+edge} & Half edge. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespacehalf__edge__mesh__compute_a6718d7df868930a3efd2dab917b1fa9e}\label{namespacehalf__edge__mesh__compute_a6718d7df868930a3efd2dab917b1fa9e} 
+\index{half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}!compute\_midpoint@{compute\_midpoint}}
+\index{compute\_midpoint@{compute\_midpoint}!half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}}
+\doxysubsubsection{\texorpdfstring{compute\_midpoint()}{compute\_midpoint()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+compute.\+compute\+\_\+midpoint (\begin{DoxyParamCaption}\item[{}]{coord0,  }\item[{}]{coord1,  }\item[{}]{coord2 }\end{DoxyParamCaption})}
+
+
+
+Return the midpoint of coord0\mbox{[}\mbox{]} and coord1\mbox{[}\mbox{]}. 
+
+
+\begin{DoxyItemize}
+\item Does not use numpy. 
+\begin{DoxyParams}{Parameters}
+{\em coord0\mbox{[}$\,$\mbox{]}} & Python list (not a numpy array). \\
+\hline
+{\em coord1\mbox{[}$\,$\mbox{]}} & Python list (not a numpy array). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+len(coord1) == len(coord0). 
+\end{DoxyPrecond}
+
+\end{DoxyItemize}\Hypertarget{namespacehalf__edge__mesh__compute_a811d364c8b5b78b3e3d52d817c0e20d1}\label{namespacehalf__edge__mesh__compute_a811d364c8b5b78b3e3d52d817c0e20d1} 
+\index{half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}!compute\_min\_cell\_edge\_length\_ratio\_squared@{compute\_min\_cell\_edge\_length\_ratio\_squared}}
+\index{compute\_min\_cell\_edge\_length\_ratio\_squared@{compute\_min\_cell\_edge\_length\_ratio\_squared}!half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}}
+\doxysubsubsection{\texorpdfstring{compute\_min\_cell\_edge\_length\_ratio\_squared()}{compute\_min\_cell\_edge\_length\_ratio\_squared()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+compute.\+compute\+\_\+min\+\_\+cell\+\_\+edge\+\_\+length\+\_\+ratio\+\_\+squared (\begin{DoxyParamCaption}\item[{}]{mesh }\end{DoxyParamCaption})}
+
+
+
+Return min squared ratio of the min to max edge in any cell. 
+
+
+\begin{DoxyItemize}
+\item Ignores cells with all edge lengths 0.
+\item Return also cell index and length and indices of shortest and longest half edges in the cell.
+\item Returns 1.\+0 if there are no cells or all edges are length 0. 
+\end{DoxyItemize}\Hypertarget{namespacehalf__edge__mesh__compute_a34d337ae04892b6bab36b5d61fda58f6}\label{namespacehalf__edge__mesh__compute_a34d337ae04892b6bab36b5d61fda58f6} 
+\index{half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}!compute\_min\_max\_edge\_length\_squared@{compute\_min\_max\_edge\_length\_squared}}
+\index{compute\_min\_max\_edge\_length\_squared@{compute\_min\_max\_edge\_length\_squared}!half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}}
+\doxysubsubsection{\texorpdfstring{compute\_min\_max\_edge\_length\_squared()}{compute\_min\_max\_edge\_length\_squared()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+compute.\+compute\+\_\+min\+\_\+max\+\_\+edge\+\_\+length\+\_\+squared (\begin{DoxyParamCaption}\item[{}]{mesh }\end{DoxyParamCaption})}
+
+
+
+Return square of min and max edge lengths and indices of half edges with min and max lengths. 
+
+\Hypertarget{namespacehalf__edge__mesh__compute_af3397a58ace6d02dd96d97114b60a5f8}\label{namespacehalf__edge__mesh__compute_af3397a58ace6d02dd96d97114b60a5f8} 
+\index{half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}!compute\_squared\_distance@{compute\_squared\_distance}}
+\index{compute\_squared\_distance@{compute\_squared\_distance}!half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}}
+\doxysubsubsection{\texorpdfstring{compute\_squared\_distance()}{compute\_squared\_distance()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+compute.\+compute\+\_\+squared\+\_\+distance (\begin{DoxyParamCaption}\item[{}]{coord0,  }\item[{}]{coord1 }\end{DoxyParamCaption})}
+
+
+
+Return squared distance between two coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coord0\mbox{[}$\,$\mbox{]}} & Python list (not a numpy array). \\
+\hline
+{\em coord1\mbox{[}$\,$\mbox{]}} & Python list (not a numpy array). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+len(coord1) == len(coord0). 
+\end{DoxyPrecond}
+\Hypertarget{namespacehalf__edge__mesh__compute_a090d1d124df38cda1836411e11b8b0d0}\label{namespacehalf__edge__mesh__compute_a090d1d124df38cda1836411e11b8b0d0} 
+\index{half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}!normalize\_vector@{normalize\_vector}}
+\index{normalize\_vector@{normalize\_vector}!half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}}
+\doxysubsubsection{\texorpdfstring{normalize\_vector()}{normalize\_vector()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+compute.\+normalize\+\_\+vector (\begin{DoxyParamCaption}\item[{}]{vectA }\end{DoxyParamCaption})}
+
+
+
+Return normalized vector and magnitude of the original vector. 
+
+
+\begin{DoxyItemize}
+\item If the vector has magnitude 0, returns vector (1,0,0,...) and 0. 
+\begin{DoxyParams}{Parameters}
+{\em vect\mbox{[}$\,$\mbox{]}} & numpy array. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{namespacehalf__edge__mesh__compute_a60265950aaac17c6abaaa12edc168c48}\label{namespacehalf__edge__mesh__compute_a60265950aaac17c6abaaa12edc168c48} 
+\index{half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}!print\_coord@{print\_coord}}
+\index{print\_coord@{print\_coord}!half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}}
+\doxysubsubsection{\texorpdfstring{print\_coord()}{print\_coord()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+compute.\+print\+\_\+coord (\begin{DoxyParamCaption}\item[{}]{out,  }\item[{}]{coord,  }\item[{}]{separator,  }\item[{}]{precision }\end{DoxyParamCaption})}
+
+
+
+Print coordinate array. 
+
+
+\begin{DoxyItemize}
+\item Does not print brackets around array. 
+\begin{DoxyParams}{Parameters}
+{\em out} & Output stream. \\
+\hline
+{\em coord} & Array of floating point coordinates. \\
+\hline
+{\em separator} & Separator between coordinates. \\
+\hline
+{\em precision} & Number of digits after decimal point.
+\begin{DoxyItemize}
+\item Non-\/negative integer. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{namespacehalf__edge__mesh__compute_af397a323b642aacc2d8b2b884a488e4c}\label{namespacehalf__edge__mesh__compute_af397a323b642aacc2d8b2b884a488e4c} 
+\index{half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}!print\_coordP@{print\_coordP}}
+\index{print\_coordP@{print\_coordP}!half\_edge\_mesh\_compute@{half\_edge\_mesh\_compute}}
+\doxysubsubsection{\texorpdfstring{print\_coordP()}{print\_coordP()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+compute.\+print\+\_\+coordP (\begin{DoxyParamCaption}\item[{}]{out,  }\item[{}]{coord,  }\item[{}]{separator,  }\item[{}]{precision }\end{DoxyParamCaption})}
+
+
+
+Print coordinate array surrounded by parentheses. 
+

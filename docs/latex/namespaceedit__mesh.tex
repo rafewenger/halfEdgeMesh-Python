@@ -1,0 +1,401 @@
+\doxysection{edit\+\_\+mesh Namespace Reference}
+\hypertarget{namespaceedit__mesh}{}\label{namespaceedit__mesh}\index{edit\_mesh@{edit\_mesh}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceedit__mesh_acbc11aaef2425bf467b7c6eca44e5ea7}{main}} (argv)
+\item 
+\mbox{\hyperlink{namespaceedit__mesh_a06306ea54ad9c1cb276f2fd341b6e631}{collapse\+\_\+edge}} (mesh, ihalf\+\_\+edge, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Collapse edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a8958dae57f82e6b4a29ac3e4bc2930f8}{prompt\+\_\+and\+\_\+collapse\+\_\+edges}} (mesh, flag\+\_\+terse, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Prompt and collapse edges. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a4695460f6f2e475aac569438648040f3}{print\+\_\+illegal\+\_\+edge\+\_\+collapse}} (half\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Print illegal edge collapse message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_aa68496479db0add1bd424fa864904d20}{print\+\_\+edge\+\_\+collapse\+\_\+topology\+\_\+change}} (mesh, half\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Print information about any topology changes caused by edge collapse. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a7e8b6ef55abbdde639d05bcf316a1b95}{print\+\_\+skipped\+\_\+edge\+\_\+collapse}} (half\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Print skipped edge collapse. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a46488013158cbcf38e24c810b72ec4e1}{split\+\_\+edge}} (mesh, half\+\_\+edge, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Split edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a53f60925fef11937be15e18bf7750d93}{prompt\+\_\+and\+\_\+split\+\_\+edges}} (mesh, flag\+\_\+terse, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Prompt and split edges. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a1e920d735a08307ca27327fa3f626ca5}{split\+\_\+cell}} (mesh, ihalf\+\_\+edgeA, ihalf\+\_\+edgeB, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\begin{DoxyCompactList}\small\item\em Split cell with diagonal (half\+\_\+edge\+A.\+From\+Vertex(), half\+\_\+edge\+B.\+From\+Vertex()) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a67b498bb4435490b73b57a31cca7b3c4}{get\+\_\+cells\+\_\+with\+\_\+more\+\_\+than\+\_\+three\+\_\+vertices}} (mesh, max\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Get at most max\+\_\+num cells with more than three vertices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a9471b4ca8206a4e335ed1f9fbb594f36}{prompt\+\_\+and\+\_\+split\+\_\+cells}} (mesh, flag\+\_\+terse, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Prompt and split cells. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a5120aa96f81ac5c2fd2d192be2b51286}{join\+\_\+two\+\_\+cells}} (mesh, ihalf\+\_\+edge, flag\+\_\+terse, flag\+\_\+no\+\_\+warn, flag\+\_\+check)
+\item 
+\mbox{\hyperlink{namespaceedit__mesh_a331957950c74c3ca0eefd4b3105d5f15}{prompt\+\_\+and\+\_\+join\+\_\+cells}} (mesh, flag\+\_\+terse, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Prompt and join cells. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a38c6c4c1d7eb65a2fa0ec58a81896fbf}{exit\+\_\+on\+\_\+non\+\_\+manifold}} ()
+\item 
+\mbox{\hyperlink{namespaceedit__mesh_a3421c12c392e6d5597055c0c9b6ff8e2}{check\+\_\+oriented\+\_\+manifold}} (mesh, flag\+\_\+no\+\_\+warn)
+\item 
+\mbox{\hyperlink{namespaceedit__mesh_ad0c9e2a21f035c8b7f559d8d7717b193}{check\+\_\+mesh}} (mesh, flag\+\_\+no\+\_\+warn)
+\item 
+\mbox{\hyperlink{namespaceedit__mesh_ab3934a758e25eb5c53adab81f92bbc33}{check\+\_\+input\+\_\+oriented\+\_\+manifold}} (mesh, input\+\_\+filename, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Check if input is an oriented manifold. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a7c7924d0557e1fdc7d3baa976f09874d}{check\+\_\+input\+\_\+mesh}} (mesh, input\+\_\+filename, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Check mesh read from input\+\_\+filename. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a21744533beb434ab26eb36f91eda3935}{check\+\_\+edge\+\_\+collapse}} (mesh, ihalf\+\_\+edge, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Print a warning message if collapsing half\+\_\+edge is illegal or will change mesh topology. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a4818f999586a399282593e2349a36a3b}{check\+\_\+split\+\_\+cell}} (mesh, ihalf\+\_\+edgeA, ihalf\+\_\+edgeB, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Print a warning message if splitting cell at diagonal (half\+\_\+edge\+A.\+From\+Vertex(), half\+\_\+edge\+B.\+From\+Vertex()) will change the mesh topology. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a75c9412de89f43654cc4438e050ea72a}{check\+\_\+join\+\_\+cell}} (mesh, ihalf\+\_\+edge, flag\+\_\+no\+\_\+warn)
+\begin{DoxyCompactList}\small\item\em Print a warning if joining cells separated by half\+\_\+edge is illegal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a62f735037c4b82131d87c1406ca95be7}{reduce\+\_\+checks\+\_\+on\+\_\+large\+\_\+datasets}} (mesh, flag\+\_\+no\+\_\+warn, large\+\_\+data\+\_\+num\+\_\+cells)
+\begin{DoxyCompactList}\small\item\em Return True and print warning message if data set is large. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_ab9d3e74b587ddeea90d4962effe02794}{Init\+Flags}} ()
+\begin{DoxyCompactList}\small\item\em Initialize global flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_afdd21610695fcd0b2eaf443dea75894e}{parse\+\_\+command\+\_\+line}} (argv)
+\item 
+\mbox{\hyperlink{namespaceedit__mesh_a722825e1138223a17b4770ac20127b8f}{prompt\+\_\+and\+\_\+get\+\_\+int\+\_\+list}} (prompt)
+\begin{DoxyCompactList}\small\item\em Get integer input. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a8206b66d6a96f454ce39d8486134acd8}{prompt\+\_\+for\+\_\+mesh\+\_\+edge}} (mesh, flag\+\_\+only\+\_\+internal)
+\begin{DoxyCompactList}\small\item\em Prompt for mesh edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a098c380af0a9cddeed3f81312e4149cc}{print\+\_\+vertices\+\_\+incident\+\_\+on\+\_\+cells}} (mesh, prefix, max\+\_\+num\+\_\+out)
+\begin{DoxyCompactList}\small\item\em Print vertices that are incident on cells. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a70d9c87fda0e38e694e9fcf8944da1ba}{print\+\_\+cells\+\_\+with\+\_\+more\+\_\+than\+\_\+three\+\_\+vertices}} (max\+\_\+num, cell\+\_\+list)
+\begin{DoxyCompactList}\small\item\em Print cells with more than three vertices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_aac21bfa8b69c625f8645d3fbf8d00aa3}{print\+\_\+time}} (label, timeX)
+\begin{DoxyCompactList}\small\item\em Print timeX in seconds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_a1910f85639d73156afd8e8549d25f30e}{print\+\_\+mesh\+\_\+info}} (mesh)
+\begin{DoxyCompactList}\small\item\em Print mesh information, such as number of vertices, edges, cells min and max edge lengths and cell angles. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceedit__mesh_abc9bb42ee156e5a5800030a37d919043}{usage\+\_\+msg}} (out)
+\item 
+\mbox{\hyperlink{namespaceedit__mesh_a1aa51fd4d770b5dcf4044999cf22f7d0}{usage\+\_\+error}} ()
+\item 
+\mbox{\hyperlink{namespaceedit__mesh_a6ca54712f1e60ea0b4c4154bcfcd9fd3}{help}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceedit__mesh_a21744533beb434ab26eb36f91eda3935}\label{namespaceedit__mesh_a21744533beb434ab26eb36f91eda3935} 
+\index{edit\_mesh@{edit\_mesh}!check\_edge\_collapse@{check\_edge\_collapse}}
+\index{check\_edge\_collapse@{check\_edge\_collapse}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_edge\_collapse()}{check\_edge\_collapse()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+check\+\_\+edge\+\_\+collapse (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{ihalf\+\_\+edge,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Print a warning message if collapsing half\+\_\+edge is illegal or will change mesh topology. 
+
+
+\begin{DoxyItemize}
+\item Return True if collapse is not illegal and does not change mesh topology. 
+\end{DoxyItemize}\Hypertarget{namespaceedit__mesh_a7c7924d0557e1fdc7d3baa976f09874d}\label{namespaceedit__mesh_a7c7924d0557e1fdc7d3baa976f09874d} 
+\index{edit\_mesh@{edit\_mesh}!check\_input\_mesh@{check\_input\_mesh}}
+\index{check\_input\_mesh@{check\_input\_mesh}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_input\_mesh()}{check\_input\_mesh()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+check\+\_\+input\+\_\+mesh (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{input\+\_\+filename,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Check mesh read from input\+\_\+filename. 
+
+\Hypertarget{namespaceedit__mesh_ab3934a758e25eb5c53adab81f92bbc33}\label{namespaceedit__mesh_ab3934a758e25eb5c53adab81f92bbc33} 
+\index{edit\_mesh@{edit\_mesh}!check\_input\_oriented\_manifold@{check\_input\_oriented\_manifold}}
+\index{check\_input\_oriented\_manifold@{check\_input\_oriented\_manifold}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_input\_oriented\_manifold()}{check\_input\_oriented\_manifold()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+check\+\_\+input\+\_\+oriented\+\_\+manifold (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{input\+\_\+filename,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Check if input is an oriented manifold. 
+
+\Hypertarget{namespaceedit__mesh_a75c9412de89f43654cc4438e050ea72a}\label{namespaceedit__mesh_a75c9412de89f43654cc4438e050ea72a} 
+\index{edit\_mesh@{edit\_mesh}!check\_join\_cell@{check\_join\_cell}}
+\index{check\_join\_cell@{check\_join\_cell}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_join\_cell()}{check\_join\_cell()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+check\+\_\+join\+\_\+cell (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{ihalf\+\_\+edge,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Print a warning if joining cells separated by half\+\_\+edge is illegal. 
+
+
+\begin{DoxyItemize}
+\item Return true if join is legal. 
+\end{DoxyItemize}\Hypertarget{namespaceedit__mesh_ad0c9e2a21f035c8b7f559d8d7717b193}\label{namespaceedit__mesh_ad0c9e2a21f035c8b7f559d8d7717b193} 
+\index{edit\_mesh@{edit\_mesh}!check\_mesh@{check\_mesh}}
+\index{check\_mesh@{check\_mesh}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_mesh()}{check\_mesh()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+check\+\_\+mesh (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceedit__mesh_a3421c12c392e6d5597055c0c9b6ff8e2}\label{namespaceedit__mesh_a3421c12c392e6d5597055c0c9b6ff8e2} 
+\index{edit\_mesh@{edit\_mesh}!check\_oriented\_manifold@{check\_oriented\_manifold}}
+\index{check\_oriented\_manifold@{check\_oriented\_manifold}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_oriented\_manifold()}{check\_oriented\_manifold()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+check\+\_\+oriented\+\_\+manifold (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceedit__mesh_a4818f999586a399282593e2349a36a3b}\label{namespaceedit__mesh_a4818f999586a399282593e2349a36a3b} 
+\index{edit\_mesh@{edit\_mesh}!check\_split\_cell@{check\_split\_cell}}
+\index{check\_split\_cell@{check\_split\_cell}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{check\_split\_cell()}{check\_split\_cell()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+check\+\_\+split\+\_\+cell (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{ihalf\+\_\+edgeA,  }\item[{}]{ihalf\+\_\+edgeB,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Print a warning message if splitting cell at diagonal (half\+\_\+edge\+A.\+From\+Vertex(), half\+\_\+edge\+B.\+From\+Vertex()) will change the mesh topology. 
+
+
+\begin{DoxyItemize}
+\item Return True if split does not change manifold topology. 
+\end{DoxyItemize}\Hypertarget{namespaceedit__mesh_a06306ea54ad9c1cb276f2fd341b6e631}\label{namespaceedit__mesh_a06306ea54ad9c1cb276f2fd341b6e631} 
+\index{edit\_mesh@{edit\_mesh}!collapse\_edge@{collapse\_edge}}
+\index{collapse\_edge@{collapse\_edge}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{collapse\_edge()}{collapse\_edge()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+collapse\+\_\+edge (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{ihalf\+\_\+edge,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn,  }\item[{}]{flag\+\_\+check }\end{DoxyParamCaption})}
+
+
+
+Collapse edge. 
+
+\Hypertarget{namespaceedit__mesh_a38c6c4c1d7eb65a2fa0ec58a81896fbf}\label{namespaceedit__mesh_a38c6c4c1d7eb65a2fa0ec58a81896fbf} 
+\index{edit\_mesh@{edit\_mesh}!exit\_on\_non\_manifold@{exit\_on\_non\_manifold}}
+\index{exit\_on\_non\_manifold@{exit\_on\_non\_manifold}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{exit\_on\_non\_manifold()}{exit\_on\_non\_manifold()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+exit\+\_\+on\+\_\+non\+\_\+manifold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceedit__mesh_a67b498bb4435490b73b57a31cca7b3c4}\label{namespaceedit__mesh_a67b498bb4435490b73b57a31cca7b3c4} 
+\index{edit\_mesh@{edit\_mesh}!get\_cells\_with\_more\_than\_three\_vertices@{get\_cells\_with\_more\_than\_three\_vertices}}
+\index{get\_cells\_with\_more\_than\_three\_vertices@{get\_cells\_with\_more\_than\_three\_vertices}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{get\_cells\_with\_more\_than\_three\_vertices()}{get\_cells\_with\_more\_than\_three\_vertices()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+get\+\_\+cells\+\_\+with\+\_\+more\+\_\+than\+\_\+three\+\_\+vertices (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{max\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Get at most max\+\_\+num cells with more than three vertices. 
+
+\Hypertarget{namespaceedit__mesh_a6ca54712f1e60ea0b4c4154bcfcd9fd3}\label{namespaceedit__mesh_a6ca54712f1e60ea0b4c4154bcfcd9fd3} 
+\index{edit\_mesh@{edit\_mesh}!help@{help}}
+\index{help@{help}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{help()}{help()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+help (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceedit__mesh_ab9d3e74b587ddeea90d4962effe02794}\label{namespaceedit__mesh_ab9d3e74b587ddeea90d4962effe02794} 
+\index{edit\_mesh@{edit\_mesh}!InitFlags@{InitFlags}}
+\index{InitFlags@{InitFlags}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{InitFlags()}{InitFlags()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+Init\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize global flags. 
+
+\Hypertarget{namespaceedit__mesh_a5120aa96f81ac5c2fd2d192be2b51286}\label{namespaceedit__mesh_a5120aa96f81ac5c2fd2d192be2b51286} 
+\index{edit\_mesh@{edit\_mesh}!join\_two\_cells@{join\_two\_cells}}
+\index{join\_two\_cells@{join\_two\_cells}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{join\_two\_cells()}{join\_two\_cells()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+join\+\_\+two\+\_\+cells (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{ihalf\+\_\+edge,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn,  }\item[{}]{flag\+\_\+check }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceedit__mesh_acbc11aaef2425bf467b7c6eca44e5ea7}\label{namespaceedit__mesh_acbc11aaef2425bf467b7c6eca44e5ea7} 
+\index{edit\_mesh@{edit\_mesh}!main@{main}}
+\index{main@{main}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+main (\begin{DoxyParamCaption}\item[{}]{argv }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceedit__mesh_afdd21610695fcd0b2eaf443dea75894e}\label{namespaceedit__mesh_afdd21610695fcd0b2eaf443dea75894e} 
+\index{edit\_mesh@{edit\_mesh}!parse\_command\_line@{parse\_command\_line}}
+\index{parse\_command\_line@{parse\_command\_line}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{parse\_command\_line()}{parse\_command\_line()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+parse\+\_\+command\+\_\+line (\begin{DoxyParamCaption}\item[{}]{argv }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceedit__mesh_a70d9c87fda0e38e694e9fcf8944da1ba}\label{namespaceedit__mesh_a70d9c87fda0e38e694e9fcf8944da1ba} 
+\index{edit\_mesh@{edit\_mesh}!print\_cells\_with\_more\_than\_three\_vertices@{print\_cells\_with\_more\_than\_three\_vertices}}
+\index{print\_cells\_with\_more\_than\_three\_vertices@{print\_cells\_with\_more\_than\_three\_vertices}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{print\_cells\_with\_more\_than\_three\_vertices()}{print\_cells\_with\_more\_than\_three\_vertices()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+print\+\_\+cells\+\_\+with\+\_\+more\+\_\+than\+\_\+three\+\_\+vertices (\begin{DoxyParamCaption}\item[{}]{max\+\_\+num,  }\item[{}]{cell\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Print cells with more than three vertices. 
+
+\Hypertarget{namespaceedit__mesh_aa68496479db0add1bd424fa864904d20}\label{namespaceedit__mesh_aa68496479db0add1bd424fa864904d20} 
+\index{edit\_mesh@{edit\_mesh}!print\_edge\_collapse\_topology\_change@{print\_edge\_collapse\_topology\_change}}
+\index{print\_edge\_collapse\_topology\_change@{print\_edge\_collapse\_topology\_change}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{print\_edge\_collapse\_topology\_change()}{print\_edge\_collapse\_topology\_change()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+print\+\_\+edge\+\_\+collapse\+\_\+topology\+\_\+change (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{half\+\_\+edge }\end{DoxyParamCaption})}
+
+
+
+Print information about any topology changes caused by edge collapse. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mesh} & Half edge mesh. \\
+\hline
+{\em half\+\_\+edge} & Half edge to be collapsed.
+\begin{DoxyItemize}
+\item Note\+: Data structure, not half edge index. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\Hypertarget{namespaceedit__mesh_a4695460f6f2e475aac569438648040f3}\label{namespaceedit__mesh_a4695460f6f2e475aac569438648040f3} 
+\index{edit\_mesh@{edit\_mesh}!print\_illegal\_edge\_collapse@{print\_illegal\_edge\_collapse}}
+\index{print\_illegal\_edge\_collapse@{print\_illegal\_edge\_collapse}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{print\_illegal\_edge\_collapse()}{print\_illegal\_edge\_collapse()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+print\+\_\+illegal\+\_\+edge\+\_\+collapse (\begin{DoxyParamCaption}\item[{}]{half\+\_\+edge }\end{DoxyParamCaption})}
+
+
+
+Print illegal edge collapse message. 
+
+\Hypertarget{namespaceedit__mesh_a1910f85639d73156afd8e8549d25f30e}\label{namespaceedit__mesh_a1910f85639d73156afd8e8549d25f30e} 
+\index{edit\_mesh@{edit\_mesh}!print\_mesh\_info@{print\_mesh\_info}}
+\index{print\_mesh\_info@{print\_mesh\_info}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{print\_mesh\_info()}{print\_mesh\_info()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+print\+\_\+mesh\+\_\+info (\begin{DoxyParamCaption}\item[{}]{mesh }\end{DoxyParamCaption})}
+
+
+
+Print mesh information, such as number of vertices, edges, cells min and max edge lengths and cell angles. 
+
+\Hypertarget{namespaceedit__mesh_a7e8b6ef55abbdde639d05bcf316a1b95}\label{namespaceedit__mesh_a7e8b6ef55abbdde639d05bcf316a1b95} 
+\index{edit\_mesh@{edit\_mesh}!print\_skipped\_edge\_collapse@{print\_skipped\_edge\_collapse}}
+\index{print\_skipped\_edge\_collapse@{print\_skipped\_edge\_collapse}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{print\_skipped\_edge\_collapse()}{print\_skipped\_edge\_collapse()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+print\+\_\+skipped\+\_\+edge\+\_\+collapse (\begin{DoxyParamCaption}\item[{}]{half\+\_\+edge }\end{DoxyParamCaption})}
+
+
+
+Print skipped edge collapse. 
+
+\Hypertarget{namespaceedit__mesh_aac21bfa8b69c625f8645d3fbf8d00aa3}\label{namespaceedit__mesh_aac21bfa8b69c625f8645d3fbf8d00aa3} 
+\index{edit\_mesh@{edit\_mesh}!print\_time@{print\_time}}
+\index{print\_time@{print\_time}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{print\_time()}{print\_time()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+print\+\_\+time (\begin{DoxyParamCaption}\item[{}]{label,  }\item[{}]{timeX }\end{DoxyParamCaption})}
+
+
+
+Print timeX in seconds. 
+
+\Hypertarget{namespaceedit__mesh_a098c380af0a9cddeed3f81312e4149cc}\label{namespaceedit__mesh_a098c380af0a9cddeed3f81312e4149cc} 
+\index{edit\_mesh@{edit\_mesh}!print\_vertices\_incident\_on\_cells@{print\_vertices\_incident\_on\_cells}}
+\index{print\_vertices\_incident\_on\_cells@{print\_vertices\_incident\_on\_cells}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{print\_vertices\_incident\_on\_cells()}{print\_vertices\_incident\_on\_cells()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+print\+\_\+vertices\+\_\+incident\+\_\+on\+\_\+cells (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{prefix,  }\item[{}]{max\+\_\+num\+\_\+out }\end{DoxyParamCaption})}
+
+
+
+Print vertices that are incident on cells. 
+
+
+\begin{DoxyItemize}
+\item Do not print more than max\+\_\+num\+\_\+out vertices. 
+\end{DoxyItemize}\Hypertarget{namespaceedit__mesh_a8958dae57f82e6b4a29ac3e4bc2930f8}\label{namespaceedit__mesh_a8958dae57f82e6b4a29ac3e4bc2930f8} 
+\index{edit\_mesh@{edit\_mesh}!prompt\_and\_collapse\_edges@{prompt\_and\_collapse\_edges}}
+\index{prompt\_and\_collapse\_edges@{prompt\_and\_collapse\_edges}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{prompt\_and\_collapse\_edges()}{prompt\_and\_collapse\_edges()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+prompt\+\_\+and\+\_\+collapse\+\_\+edges (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Prompt and collapse edges. 
+
+\Hypertarget{namespaceedit__mesh_a722825e1138223a17b4770ac20127b8f}\label{namespaceedit__mesh_a722825e1138223a17b4770ac20127b8f} 
+\index{edit\_mesh@{edit\_mesh}!prompt\_and\_get\_int\_list@{prompt\_and\_get\_int\_list}}
+\index{prompt\_and\_get\_int\_list@{prompt\_and\_get\_int\_list}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{prompt\_and\_get\_int\_list()}{prompt\_and\_get\_int\_list()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+prompt\+\_\+and\+\_\+get\+\_\+int\+\_\+list (\begin{DoxyParamCaption}\item[{}]{prompt }\end{DoxyParamCaption})}
+
+
+
+Get integer input. 
+
+
+\begin{DoxyItemize}
+\item Returns list of int.
+\item Always return list of length at least 1. 
+\end{DoxyItemize}\Hypertarget{namespaceedit__mesh_a331957950c74c3ca0eefd4b3105d5f15}\label{namespaceedit__mesh_a331957950c74c3ca0eefd4b3105d5f15} 
+\index{edit\_mesh@{edit\_mesh}!prompt\_and\_join\_cells@{prompt\_and\_join\_cells}}
+\index{prompt\_and\_join\_cells@{prompt\_and\_join\_cells}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{prompt\_and\_join\_cells()}{prompt\_and\_join\_cells()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+prompt\+\_\+and\+\_\+join\+\_\+cells (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Prompt and join cells. 
+
+\Hypertarget{namespaceedit__mesh_a9471b4ca8206a4e335ed1f9fbb594f36}\label{namespaceedit__mesh_a9471b4ca8206a4e335ed1f9fbb594f36} 
+\index{edit\_mesh@{edit\_mesh}!prompt\_and\_split\_cells@{prompt\_and\_split\_cells}}
+\index{prompt\_and\_split\_cells@{prompt\_and\_split\_cells}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{prompt\_and\_split\_cells()}{prompt\_and\_split\_cells()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+prompt\+\_\+and\+\_\+split\+\_\+cells (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Prompt and split cells. 
+
+\Hypertarget{namespaceedit__mesh_a53f60925fef11937be15e18bf7750d93}\label{namespaceedit__mesh_a53f60925fef11937be15e18bf7750d93} 
+\index{edit\_mesh@{edit\_mesh}!prompt\_and\_split\_edges@{prompt\_and\_split\_edges}}
+\index{prompt\_and\_split\_edges@{prompt\_and\_split\_edges}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{prompt\_and\_split\_edges()}{prompt\_and\_split\_edges()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+prompt\+\_\+and\+\_\+split\+\_\+edges (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn }\end{DoxyParamCaption})}
+
+
+
+Prompt and split edges. 
+
+\Hypertarget{namespaceedit__mesh_a8206b66d6a96f454ce39d8486134acd8}\label{namespaceedit__mesh_a8206b66d6a96f454ce39d8486134acd8} 
+\index{edit\_mesh@{edit\_mesh}!prompt\_for\_mesh\_edge@{prompt\_for\_mesh\_edge}}
+\index{prompt\_for\_mesh\_edge@{prompt\_for\_mesh\_edge}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{prompt\_for\_mesh\_edge()}{prompt\_for\_mesh\_edge()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+prompt\+\_\+for\+\_\+mesh\+\_\+edge (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{flag\+\_\+only\+\_\+internal }\end{DoxyParamCaption})}
+
+
+
+Prompt for mesh edge. 
+
+
+\begin{DoxyItemize}
+\item Return None if user enters -\/1. 
+\end{DoxyItemize}\Hypertarget{namespaceedit__mesh_a62f735037c4b82131d87c1406ca95be7}\label{namespaceedit__mesh_a62f735037c4b82131d87c1406ca95be7} 
+\index{edit\_mesh@{edit\_mesh}!reduce\_checks\_on\_large\_datasets@{reduce\_checks\_on\_large\_datasets}}
+\index{reduce\_checks\_on\_large\_datasets@{reduce\_checks\_on\_large\_datasets}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{reduce\_checks\_on\_large\_datasets()}{reduce\_checks\_on\_large\_datasets()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+reduce\+\_\+checks\+\_\+on\+\_\+large\+\_\+datasets (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{flag\+\_\+no\+\_\+warn,  }\item[{}]{large\+\_\+data\+\_\+num\+\_\+cells }\end{DoxyParamCaption})}
+
+
+
+Return True and print warning message if data set is large. 
+
+\Hypertarget{namespaceedit__mesh_a1e920d735a08307ca27327fa3f626ca5}\label{namespaceedit__mesh_a1e920d735a08307ca27327fa3f626ca5} 
+\index{edit\_mesh@{edit\_mesh}!split\_cell@{split\_cell}}
+\index{split\_cell@{split\_cell}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{split\_cell()}{split\_cell()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+split\+\_\+cell (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{ihalf\+\_\+edgeA,  }\item[{}]{ihalf\+\_\+edgeB,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn,  }\item[{}]{flag\+\_\+check }\end{DoxyParamCaption})}
+
+
+
+Split cell with diagonal (half\+\_\+edge\+A.\+From\+Vertex(), half\+\_\+edge\+B.\+From\+Vertex()) 
+
+
+\begin{DoxyItemize}
+\item Returns split edge.
+\item Returns None if split fails. 
+\end{DoxyItemize}\Hypertarget{namespaceedit__mesh_a46488013158cbcf38e24c810b72ec4e1}\label{namespaceedit__mesh_a46488013158cbcf38e24c810b72ec4e1} 
+\index{edit\_mesh@{edit\_mesh}!split\_edge@{split\_edge}}
+\index{split\_edge@{split\_edge}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{split\_edge()}{split\_edge()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+split\+\_\+edge (\begin{DoxyParamCaption}\item[{}]{mesh,  }\item[{}]{half\+\_\+edge,  }\item[{}]{flag\+\_\+terse,  }\item[{}]{flag\+\_\+no\+\_\+warn,  }\item[{}]{flag\+\_\+check }\end{DoxyParamCaption})}
+
+
+
+Split edge. 
+
+\Hypertarget{namespaceedit__mesh_a1aa51fd4d770b5dcf4044999cf22f7d0}\label{namespaceedit__mesh_a1aa51fd4d770b5dcf4044999cf22f7d0} 
+\index{edit\_mesh@{edit\_mesh}!usage\_error@{usage\_error}}
+\index{usage\_error@{usage\_error}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{usage\_error()}{usage\_error()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+usage\+\_\+error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{namespaceedit__mesh_abc9bb42ee156e5a5800030a37d919043}\label{namespaceedit__mesh_abc9bb42ee156e5a5800030a37d919043} 
+\index{edit\_mesh@{edit\_mesh}!usage\_msg@{usage\_msg}}
+\index{usage\_msg@{usage\_msg}!edit\_mesh@{edit\_mesh}}
+\doxysubsubsection{\texorpdfstring{usage\_msg()}{usage\_msg()}}
+{\footnotesize\ttfamily edit\+\_\+mesh.\+usage\+\_\+msg (\begin{DoxyParamCaption}\item[{}]{out }\end{DoxyParamCaption})}
+
