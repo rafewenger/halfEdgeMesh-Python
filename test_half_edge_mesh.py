@@ -122,7 +122,7 @@ def parse_command_line(argv):
 
 
 def usage_msg(out):
-    out.write("Usage: python3 test_half_edge_mesh [-s] [-no_warn] [-time] [-h] <input filename> [<output_filename>]")
+    out.write("Usage: python test_half_edge_mesh [-s] [-no_warn] [-time] [-h] <input filename> [<output_filename>]")
 
 def usage_error():
     usage_msg(sys.stderr)

@@ -17,7 +17,7 @@ from half_edge_mesh import HALF_EDGE_MESH_BASE
 
 def main(argv):
 
-    global input_filename, output_filename, flag_no_warn
+    global input_filename, output_filename
     global flag_verbose, flag_silent
     global flag_time
 
@@ -28,7 +28,6 @@ def main(argv):
     output_filename = None
     flag_silent = False
     flag_verbose = False
-    flag_no_warn = False
     flag_time = False
 
     parse_command_line(sys.argv)
@@ -42,8 +41,8 @@ def main(argv):
 
     flag, error_msg = mesh.CheckAll()
     if not flag:
-        mesh.PrintErrorMessge(sys.stderr, error_msg)
-        sys.stderr("  Exiting...\n")
+        mesh.PrintErrorMessage(sys.stderr, error_msg)
+        sys.stderr.write("  Exiting...\n")
         exit(-1)
 
     if (not flag_silent):
@@ -62,10 +61,13 @@ def main(argv):
                 ("Error detected in mesh data structure after deleting cell " + str(icell) + ".\n")
             if not(error_msg is None):
                 sys.stderr.write(error_msg + "\n")
+            sys.stderr.write("  Exiting...\n")
             exit(-1)
 
+    time3 = time()
+    
     if (mesh.NumCells() != 0):
-        sty.stderr.write\
+        sys.stderr.write\
             ("Error. All cells deleted but mesh.NumCells() = " + \
                 str(mesh.NumCells()) + ".\n")
 
@@ -89,7 +91,7 @@ def print_time(label, timeX):
 
 
 def parse_command_line(argv):
-    global input_filename, output_filename, flag_no_warn
+    global input_filename, output_filename
     global flag_silent, flag_verbose
     global flag_time
 
@@ -100,8 +102,6 @@ def parse_command_line(argv):
             flag_silent = True
         elif (s == "-verbose"):
             flag_verbose = True
-        elif (s == "-no_warn"):
-            flag_no_warn = True
         elif (s == "-time"):
             flag_time = True
         elif (s == "-h"):
@@ -124,7 +124,7 @@ def parse_command_line(argv):
 
 
 def usage_msg(out):
-    out.write("Usage: python3 test_hmesh_delete_cell [-s] [-no_warn] [-time] <input filename>")
+    out.write("Usage: python test_hmesh_delete_cell [-s] [-verbose] [-time] [-h] <input filename>")
 
 def usage_error():
     usage_msg(sys.stderr)
@@ -139,6 +139,7 @@ def help():
     print("  (Does not check manifold or orientation properties.)")
     print("\n\nOptions:")
     print("-s:        Silent. Output only warnings and error messages.")
+    print("-verbose:  Verbose mode. Print additional information.")
     print("-time:     Report run time.")
     print("-h:        Output this help message and exit.")
     exit(0)

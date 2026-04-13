@@ -20,9 +20,9 @@
 #    Such checks would be too time consuming for large meshes.
 #    The calling function is responsible to ensure that objects
 #    not None and indices are in a specified range.
-# - Version 0.0.3
+# - Version 0.5.0
 
-#  Copyright (C) 2021-2023 Rephael Wenger
+#  Copyright (C) 2021-2026 Rephael Wenger
 #
 #  This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public License
@@ -186,6 +186,24 @@ class HALF_EDGE_MESH_BASE:
                     "\n  in HALF_EDGE_MESH_BASE::_MoveBoundaryHalfEdgeFrom0().")
 
             v.MoveBoundaryHalfEdgeToHalfEdgeFrom0()
+
+
+    ## Remove half edge from cell.
+    def _RemoveHalfEdgeFromCell(self, half_edge):
+        cell = half_edge.Cell()
+        prev_half_edge_in_cell = half_edge.PrevHalfEdgeInCell()
+        next_half_edge_in_cell = half_edge.NextHalfEdgeInCell()
+        prev_half_edge_in_cell.next_half_edge_in_cell =\
+            next_half_edge_in_cell
+        next_half_edge_in_cell.prev_half_edge_in_cell =\
+            prev_half_edge_in_cell
+        cell.num_vertices = cell.num_vertices - 1
+        if (cell.HalfEdge() == half_edge):
+            cell.half_edge = next_half_edge_in_cell
+
+        # Unset prev_half_edge_in_cell and next_half_edge_in_cell.
+        half_edge.prev_half_edge_in_cell = None
+        half_edge.next_half_edge_in_cell = None
 
 
     ## Remove half edge from the half_edge_from list of its from_vertex.
@@ -443,16 +461,17 @@ class HALF_EDGE_MESH_BASE:
     def MaxCellIndex(self):
         return self._max_cell_index
 
-    ## Return half edge (v0,v1) or (v1,v0) if it exists
+    ## Return half edge (Vertex(iv0),Vertex(iv1)) or
+    #    (Vertex(iv1),Vertex(iv0)) if it exists
     #  - Return None if no edge found.
-    #  - Note: This routines takes vertices, not vertex indices as arguments.
-    def FindEdge(self, v0, v1):
-        half_edge = v0.FindHalfEdgeTo(v1.Index())
+    #  - Note: This routines takes vertex indices, not vertices, as arguments.
+    def FindEdge(self, iv0, iv1):
+        half_edge = self.Vertex(iv0).FindHalfEdgeTo(iv1)
 
         if not(half_edge is None):
             return half_edge
 
-        half_edge = v1.FindHalfEdgeTo(v0.Index())
+        half_edge = self.Vertex(iv1).FindHalfEdgeTo(iv0)
 
         return half_edge
 
@@ -821,7 +840,7 @@ class HALF_EDGE_MESH_BASE:
 
             if (prev_half_edge.Cell() != cell):
                 error_msg = "Half edge " + str(ihalf_edge) +\
-                    " and previous half edge " + str(previous_half_edge.Index()) +\
+                    " and previous half edge " + str(prev_half_edge.Index()) +\
                     " are in different cells."
                 return False, ihalf_edge, error_msg
 

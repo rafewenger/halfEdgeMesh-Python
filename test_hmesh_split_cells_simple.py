@@ -152,7 +152,7 @@ def parse_command_line(argv):
 
 
 def usage_msg(out):
-    out.write("Usage: python3 test_hmesh_split_cells_simple [-s] [-no_warn] [-time] [-h] <input filename> [<output_filename>]")
+    out.write("Usage: python test_hmesh_split_cells_simple [-s] [-no_warn] [-time] [-h] <input filename> [<output_filename>]")
 
 def usage_error():
     usage_msg(sys.stderr)

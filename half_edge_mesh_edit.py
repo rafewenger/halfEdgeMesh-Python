@@ -1,8 +1,9 @@
 ## \file half_edge_mesh_edit.py
 # Extension of half edge mesh supporting mesh edit operations.
-# Supports SplitCell, JoinTwoCells, and CollapseEdge.
+# - Supports SplitCell, JoinTwoCells, and CollapseEdge.
+# - Version 0.5.0
 
-#  Copyright (C) 2021-2023 Rephael Wenger
+#  Copyright (C) 2021-2026 Rephael Wenger
 #
 #  This library is free software; you can redistribute it and/or
 # modify it under the terms of the GNU Lesser General Public License
@@ -17,7 +18,6 @@
 # You should have received a copy of the GNU Lesser General Public
 # License along with this library; if not, write to the Free Software
 #  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-# - Version 0.4.0
 
 import half_edge_mesh
 
@@ -37,22 +37,6 @@ class HALF_EDGE_MESH_EDIT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
         ## Create a dictionary storing boolean flags indicating
         #   visited vertices.
         self._vertex_visited_dict = dict()
-
-    def _RemoveHalfEdgeFromCell(self, half_edge):
-        cell = half_edge.Cell()
-        prev_half_edge_in_cell = half_edge.PrevHalfEdgeInCell()
-        next_half_edge_in_cell = half_edge.NextHalfEdgeInCell()
-        prev_half_edge_in_cell.next_half_edge_in_cell =\
-            next_half_edge_in_cell
-        next_half_edge_in_cell.prev_half_edge_in_cell =\
-            prev_half_edge_in_cell
-        cell.num_vertices = cell.num_vertices - 1
-        if (cell.HalfEdge() == half_edge):
-            cell.half_edge = next_half_edge_in_cell
-
-        # Unset prev_half_edge_in_cell and next_half_edge_in_cell.
-        half_edge.prev_half_edge_in_cell = None
-        half_edge.next_half_edge_in_cell = None
 
 
     ## Move half edges in vA.half_edge_from[] to vB.half_edge_from[].
@@ -88,8 +72,8 @@ class HALF_EDGE_MESH_EDIT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
             self.GetListOfCommonVertexNeighbors(vA, vB)
 
         for vC in common_vneighbors_list:
-            half_edgeA = self.FindEdge(vA, vC)
-            half_edgeB = self.FindEdge(vB, vC)
+            half_edgeA = self.FindEdge(vA.Index(), vC.Index())
+            half_edgeB = self.FindEdge(vB.Index(), vC.Index())
             if (half_edgeA == None) or (half_edgeB == None):
                 raise Exception\
                     ("Programming error. Unable to find half edge with given endpoints.")
@@ -345,7 +329,7 @@ class HALF_EDGE_MESH_EDIT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
         self.AddNewCell(listA)
         self.AddNewCell(listB)
 
-        split_half_edge = self.FindEdge(vA, vB)
+        split_half_edge = self.FindEdge(vA.Index(), vB.Index())
 
         if (split_half_edge == None):
             raise Exception\
@@ -499,7 +483,7 @@ class HALF_EDGE_MESH_EDIT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
 
         vA = half_edgeA.FromVertex()
         vB = half_edgeB.FromVertex()
-        half_edge = self.FindEdge(vA,vB)
+        half_edge = self.FindEdge(vA.Index(),vB.Index())
         if not(half_edge is None):
             # Some cell in mesh intersects half_edgeA.Cell() in (vA,vB)
             #   but (vA,vB) is not an edge of half_edgeA.Cell().
@@ -526,7 +510,7 @@ class HALF_EDGE_MESH_EDIT_BASE(half_edge_mesh.HALF_EDGE_MESH_BASE):
         for i in range(2,cellA.NumVertices()-1):
             half_edgeB = half_edgeB.NextHalfEdgeInCell()
             vB = half_edgeB.FromVertex()
-            half_edge = self.FindEdge(vA,vB)
+            half_edge = self.FindEdge(vA.Index(),vB.Index())
             if not(half_edge is None):
                 # Some cell in mesh intersects half_edgeA.Cell() in (vA,vB)
                 #   but (vA,vB) is not an edge of half_edgeA.Cell().

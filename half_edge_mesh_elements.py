@@ -20,7 +20,7 @@
 #    Such checks would be too time consuming for large meshes.
 #    The calling function is responsible to ensure that objects
 #    not None and indices are in a specified range.
-# - Version 0.0.3
+# - Version 0.5.0
 
 #  Copyright (C) 2021-2023 Rephael Wenger
 #

@@ -1,7 +1,8 @@
 ## \file edit_mesh.py
 #  Some simple interactive routines for collapsing or splitting mesh edges,
 #    and splitting or joining mesh cells.
-#  Use data structure HALF_EDGE_MESH_DCMT_BASE (DCMT = decimate).
+#  - Use data structure HALF_EDGE_MESH_DCMT_BASE (DCMT = decimate).
+#  - Version 0.5.0
 
 import math
 from math import sqrt
@@ -661,7 +662,7 @@ def check_split_cell(mesh, ihalf_edgeA, ihalf_edgeB, flag_no_warn):
     ivA = vA.Index()
     ivB = vB.Index()
     icell = half_edgeA.CellIndex()
-    half_edgeC = mesh.FindEdge(vA, vB)
+    half_edgeC = mesh.FindEdge(ivA, ivB)
 
     flag_cell_edge = False
     return_flag = True

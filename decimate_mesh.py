@@ -2,7 +2,7 @@
 #  Some simple mesh decimation routines.
 #  - Collapse, join, split edges and cells.
 #  - Uses data structure HALF_EDGE_MESH_EDIT_BASE.
-#  @version 0.4.0
+#  - Version 0.5.0
 
 import math
 from math import sqrt
@@ -492,7 +492,8 @@ def triangulate_each_cell(mesh, flag_terse, flag_no_warn):
         flag = triangulate_cell_from_vertex_with_largest_angle\
             (mesh, icell, flag_terse, flag_no_warn, flag_check)
 
-        kount = kount+1
+        if (flag):
+            kount = kount+1
 
         if (flag_reduce_checks):
             if (kount == n/2):
@@ -778,7 +779,7 @@ def check_split_cell(mesh, ihalf_edgeA, ihalf_edgeB, flag_no_warn):
     ivA = vA.Index()
     ivB = vB.Index()
     icell = half_edgeA.CellIndex()
-    half_edgeC = mesh.FindEdge(vA, vB)
+    half_edgeC = mesh.FindEdge(ivA, ivB)
 
     flag_cell_edge = False
     return_flag = True
