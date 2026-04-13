@@ -1,0 +1,1078 @@
+\doxysection{half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE Class Reference}
+\hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE}{}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE}\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+
+
+Half edge mesh data structure.  
+
+
+Inheritance diagram for half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a74ba6943b761e58348ade3c53f2de45a}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, classV, class\+HE, classC)
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a742a7f4ad69193c542bedf682d33222e}{Vertex}} (self, iv)
+\begin{DoxyCompactList}\small\item\em Return vertex with index iv. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a6fab52ac508e7b8c6bc9431ac4778d4e}{Vertex\+Indices}} (self)
+\begin{DoxyCompactList}\small\item\em Return list of vertex indices (\+\_\+vertex\+\_\+dict keys). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_acc497b3b45c049cf973ae311a53ddf77}{Half\+Edge}} (self, ihalf\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Return half edge with index ihalf\+\_\+edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ae8c0b080433fe5fa90d0667553c50b10}{Half\+Edge\+Indices}} (self)
+\begin{DoxyCompactList}\small\item\em Return list of half edge indices (\+\_\+half\+\_\+edge\+\_\+dict keys). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a941560cbc6a4aa8255d13daba753cc1a}{Get\+Edge\+List}} (self)
+\begin{DoxyCompactList}\small\item\em Return list of edges. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_abd8374d79f2862f6b3fe16f30438a65f}{Cell}} (self, icell)
+\begin{DoxyCompactList}\small\item\em Return cell with index icell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ada70f8911bf190d53e3a4599731c63bb}{Cell\+Indices}} (self)
+\begin{DoxyCompactList}\small\item\em Return list of cell indices (\+\_\+cell\+\_\+dict keys). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ab9305a41017da2e5f87358441a04ee32}{Num\+Vertices}} (self)
+\begin{DoxyCompactList}\small\item\em Return number of vertices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ab8e2f84e1b6c78c41277d43551c12601}{Num\+Half\+Edges}} (self)
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a740cd65b3a813d3010ed89bfbcc10e95}{Num\+Cells}} (self)
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a115bdf9fde8303a52e7d2ff0dd894f9f}{Max\+Vertex\+Index}} (self)
+\begin{DoxyCompactList}\small\item\em Return max index (key) of vertices in \+\_\+vertex\+\_\+dict. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ad22e9563a0063cecc2e2cde2e0afab35}{Max\+Half\+Edge\+Index}} (self)
+\begin{DoxyCompactList}\small\item\em Return max index (key) of half edges in \+\_\+half\+\_\+edge\+\_\+dict. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a8faf78394491c3e650107d1030621c5e}{Max\+Cell\+Index}} (self)
+\begin{DoxyCompactList}\small\item\em Return max index (key) of cells in \+\_\+cell\+\_\+dict. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a89c6395f6e92befa522da36bee89abaa}{Find\+Edge}} (self, iv0, iv1)
+\begin{DoxyCompactList}\small\item\em Return half edge (Vertex(iv0),Vertex(iv1)) or (Vertex(iv1),Vertex(iv0)) if it exists. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a1bdf62e3f4c3b85996dd36293eca5eb1}{Count\+Num\+Isolated\+Vertices}} (self)
+\begin{DoxyCompactList}\small\item\em Count number of isolated vertices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a9503f85ed6bd679208818552c8617724}{Count\+Num\+Edges}} (self)
+\begin{DoxyCompactList}\small\item\em Count number of edges. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a034c299b1cc29a6ab06af93b6438f004}{Count\+Num\+Boundary\+Edges}} (self)
+\begin{DoxyCompactList}\small\item\em Count number of boundary edges. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a2a9869d271d60a2cb0b13245faede8d5}{Count\+Num\+Cells\+Of\+Size}} (self, numv)
+\begin{DoxyCompactList}\small\item\em Count number of cells with a given number of vertices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ababb54fabdc8cd7bf0871d727375cee7}{Count\+Num\+Cells\+Of\+Size\+GE}} (self, numv)
+\begin{DoxyCompactList}\small\item\em Count number of cells with number of vertices greater than or equal to. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aaac029ae628481b70d1a6a0445cc7574}{Count\+Num\+Triangles}} (self)
+\begin{DoxyCompactList}\small\item\em Count number of triangles. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a362dce76d1191529e9d5515f82bca0cb}{Count\+Num\+Quads}} (self)
+\begin{DoxyCompactList}\small\item\em Count number of quadrilaterals. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a5c190bd6a3e18854bd77d6a9703739ee}{Count\+Num\+Pentagons}} (self)
+\begin{DoxyCompactList}\small\item\em Count number of pentagons. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_af0067cad8873037adebd93760f7fc468}{Add\+Vertex}} (self, iv)
+\begin{DoxyCompactList}\small\item\em Add vertex with index iv. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a98ff9b14b7d0cd9ca7c4347b7d023599}{Add\+New\+Vertex}} (self)
+\begin{DoxyCompactList}\small\item\em Add new vertex with unassigned index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a7ec57736c09987dabbbad72ff28159f9}{Add\+Vertices}} (self, numv)
+\begin{DoxyCompactList}\small\item\em Add numv vertices ith indices from 0 to numv-\/1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aece390bf0e179a593237df381a6f10e1}{Add\+Cell}} (self, icell, cell\+\_\+vertex)
+\begin{DoxyCompactList}\small\item\em Add cell with index icell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_abc93e0ea64fa695cfcb79d3da269d90b}{Add\+New\+Cell}} (self, cell\+\_\+vertex)
+\begin{DoxyCompactList}\small\item\em Add new cell with unassigned index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a1b891c09f1c6a4ff39c3b799fcb84e63}{Delete\+Cell}} (self, icell)
+\begin{DoxyCompactList}\small\item\em Delete cell with index icell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a0e057e3f5e1a0c03215ea9db7c8f0bf7}{Set\+Coord}} (self, iv, coord)
+\begin{DoxyCompactList}\small\item\em Set coordinates of iv to coord\mbox{[}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aee6c328379a45d68602ffcde3770865b}{Split\+Edge}} (self, ihalf\+\_\+edgeA)
+\begin{DoxyCompactList}\small\item\em Split edge at midpoint. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aabdd12b16e747ac9217d47824a641620}{Split\+Cell\+Into\+Quads}} (self, ihalf\+\_\+edgeA)
+\begin{DoxyCompactList}\small\item\em Split the cell containing ihalf\+\_\+edgeA into quadrilaterals. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ac955789cc979257e3bdce2520ce07a96}{Check\+Vertices}} (self)
+\begin{DoxyCompactList}\small\item\em Check data structure vertices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_add3c2de5f0c57bf5a8ac3f9f94e0b183}{Check\+Half\+Edges}} (self)
+\begin{DoxyCompactList}\small\item\em Check data structure half edges. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a4bb2a60c8766b45e755af02f67976e86}{Check\+Cells}} (self)
+\begin{DoxyCompactList}\small\item\em Check data structure cells. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a3f568d32cf99000a1ee195a0335b40aa}{Check\+All}} (self)
+\begin{DoxyCompactList}\small\item\em Check vertices, half edges and cells. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aac3d121174a5e49ff82d01ad7b2cf604}{Check\+Orientation}} (self)
+\begin{DoxyCompactList}\small\item\em Check if mesh cells are consistently oriented. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ab620fa2ffc41d30f6c852f3e5f567a33}{Check\+Manifold\+Edges}} (self)
+\begin{DoxyCompactList}\small\item\em Check manifold edge property. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a8ff83c3762478f604bf8444e340c0dd1}{Check\+Manifold\+Vertices}} (self)
+\begin{DoxyCompactList}\small\item\em Check manifold vertex property. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ab58b7bf3d067554fa08f54ba96f9c0ed}{Check\+Manifold}} (self)
+\begin{DoxyCompactList}\small\item\em Check manifold vertex and edge properties. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a6d016947854e9bb3a737f15c1674bf67}{Check\+Vertex\+Index}} (self, iv)
+\begin{DoxyCompactList}\small\item\em Check vertex index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a6df24fef2023b99a4d283282d3052f48}{Print\+Error\+Message}} (self, out, error\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Print mesh data structure error and error message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a9f53b3cd9038686180a23d6af73b84df}{Print\+Non\+Manifold\+Vertex}} (self, out, error\+\_\+prefix, iv)
+\begin{DoxyCompactList}\small\item\em Print non-\/manifold vertex message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a380afd478f153853829f5701ac0df4b2}{Print\+Non\+Manifold\+Edge}} (self, out, error\+\_\+prefix, ihalf\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Print non-\/manifold edge message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a7c618cf11694a16dc53bced1b9459230}{Print\+Not\+Oriented}} (self, out, error\+\_\+prefix, ihalf\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Print not oriented. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a5bc31b58c5861c418a2d92a6bf8b55a1}{VERTEX\+\_\+\+TYPE}}
+\begin{DoxyCompactList}\small\item\em Set class types of vertices, half edges and cells. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a2c25d99b8184681403b4a8d81c378e9f}{HALF\+\_\+\+EDGE\+\_\+\+TYPE}}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a574fac384f1f4c7d48a10e1ed70d88b8}{CELL\+\_\+\+TYPE}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a5c3a231473393794dd9ca4332243a7ed}{\+\_\+\+Create\+Vertex}} (self, iv)
+\begin{DoxyCompactList}\small\item\em Create vertex with index iv, if vertex iv does not exist. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ab555197f8842a3db9082de2883cf2657}{\+\_\+\+Add\+Half\+Edge}} (self, ihalf\+\_\+edge, cell, vfrom)
+\begin{DoxyCompactList}\small\item\em Add half edge with index ihalf\+\_\+edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a910cc34b5c6fc75f0d866b60a381f2e9}{\+\_\+\+Add\+New\+Half\+Edge}} (self, cell, vfrom)
+\begin{DoxyCompactList}\small\item\em Add new half edge with unassigned index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a1bb9817ea50c394d8dc5a05bf4d82356}{\+\_\+\+Add\+And\+Link\+Half\+Edge}} (self, ihalf\+\_\+edge, cell, vfrom, vto, hprev)
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a6158b2b5c9c29a5e63f0b4231f78ec98}{\+\_\+\+Link\+Half\+Edges\+In\+Cell}} (self, hprev, hnext)
+\begin{DoxyCompactList}\small\item\em Set hprev and hnext as consecutive edges in a cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a952e09af8be3f21acf0c23d5c7aeeaac}{\+\_\+\+Link\+Half\+Edges\+Around\+Edge}} (self, half\+\_\+edgeA, half\+\_\+edgeB)
+\begin{DoxyCompactList}\small\item\em Add half\+\_\+edgeB into linked list of half edges around edge indicated by half\+\_\+edgeA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aac24aa9800fdff5cb92153ee09a590ba}{\+\_\+\+Move\+Boundary\+Half\+Edge\+To\+Half\+Edge\+From0}} (self, cell\+\_\+vertex)
+\begin{DoxyCompactList}\small\item\em Move boundary half edge to half\+\_\+edge\+\_\+from\mbox{[}0\mbox{]} for each vertex in array cell\+\_\+vertex\mbox{[}\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aba08eb63df7b51b5a7cec58625fa9ee6}{\+\_\+\+Remove\+Half\+Edge\+From\+Cell}} (self, half\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Remove half edge from cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a18ae7d03cdb750ecc0b1b9c29eac63ac}{\+\_\+\+Remove\+Half\+Edge\+From\+Vertex\+List}} (self, half\+\_\+edge0)
+\begin{DoxyCompactList}\small\item\em Remove half edge from the half\+\_\+edge\+\_\+from list of its from\+\_\+vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a8109823710f64df8642ae87054b3de22}{\+\_\+\+Unlink\+Half\+Edge\+From\+Half\+Edges\+Around\+Edge}} (self, half\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Unlink half edge from linked list of half edges around edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aa62efcad16d82ca884f53ff678e014e1}{\+\_\+\+Relink\+Half\+Edges\+In\+Cell}} (self, hprev, hnext)
+\begin{DoxyCompactList}\small\item\em Relink half edges in cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ad3c3eddb9f11d25ab38aeddd65305fad}{\+\_\+\+Add\+Cell}} (self, icell)
+\begin{DoxyCompactList}\small\item\em Add cell with index icell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_af1e520494f387e33d98899e70a0ae8d5}{\+\_\+\+Delete\+Vertex}} (self, v)
+\begin{DoxyCompactList}\small\item\em Delete vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ac6c3f5ed09f4c31dd523247b1328441f}{\+\_\+\+Delete\+Half\+Edge}} (self, half\+\_\+edge)
+\begin{DoxyCompactList}\small\item\em Delete half edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_afcbd09fcea68038e705b95d9816e1155}{\+\_\+\+Delete\+Cell\+Half\+Edges}} (self, cell)
+\begin{DoxyCompactList}\small\item\em Delete half edges in cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a04c937f3d0c0c66ca5e7c0c1aee803d1}{\+\_\+\+Delete\+Cell}} (self, cell)
+\begin{DoxyCompactList}\small\item\em Delete cell. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a377e9c29d0cd1b862e79f0ece01cfbe8}{\+\_\+\+Split\+Half\+Edge}} (self, half\+\_\+edge, vsplit)
+\begin{DoxyCompactList}\small\item\em Split half edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a624c16faa8a7a22d3c262687991c31d8}{\+\_\+\+Split\+Edge}} (self, half\+\_\+edge0)
+\begin{DoxyCompactList}\small\item\em Split edge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a42d773ea26171f5177a9dc0be107ceaa}{\+\_\+\+Split\+Cell\+Into\+Quads}} (self, half\+\_\+edge0)
+\begin{DoxyCompactList}\small\item\em Split the cell containing half\+\_\+edge into quadrilaterals. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ad2f59c0d7341362df3bbff5890a67e6b}{\+\_\+vertex\+\_\+dict}}
+\begin{DoxyCompactList}\small\item\em Dictionary of vertices. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a4a56529ecd755981e39f24ba85d87d2c}{\+\_\+half\+\_\+edge\+\_\+dict}}
+\begin{DoxyCompactList}\small\item\em Dictionary of half edges. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a01df0c4b76894417f837d3f6ab1b218e}{\+\_\+cell\+\_\+dict}}
+\begin{DoxyCompactList}\small\item\em Dictionary of cells. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aeb1b2c2ff9f6e689c1a3a8c570033114}{\+\_\+max\+\_\+vertex\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em Upper bound on the vertex index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ad67bf65a0f287316e91e2ff866091d70}{\+\_\+max\+\_\+half\+\_\+edge\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em Upper bound on the half edge index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_af2173a975ab9116a27a44cc40d12d3a5}{\+\_\+max\+\_\+cell\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em Upper bound on the cell index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Half edge mesh data structure. 
+
+
+\begin{DoxyItemize}
+\item Initiazed with vertex, half edge and cell classes.
+\item These classes should be derived from HMESH\+\_\+\+VERTEX\+\_\+\+BASE, HMESH\+\_\+\+HALF\+\_\+\+EDGE\+\_\+\+BASE, and HMESH\+\_\+\+CELL\+\_\+\+BASE. 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a74ba6943b761e58348ade3c53f2de45a}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a74ba6943b761e58348ade3c53f2de45a} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{classV,  }\item[{}]{class\+HE,  }\item[{}]{classC }\end{DoxyParamCaption})}
+
+
+
+Reimplemented in \mbox{\hyperlink{classhalf__edge__mesh__edit_1_1HALF__EDGE__MESH__EDIT__BASE_a51023c7dff04382ddee57bcd084fab58}{half\+\_\+edge\+\_\+mesh\+\_\+edit.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+EDIT\+\_\+\+BASE}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a1bb9817ea50c394d8dc5a05bf4d82356}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a1bb9817ea50c394d8dc5a05bf4d82356} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_AddAndLinkHalfEdge@{\_AddAndLinkHalfEdge}}
+\index{\_AddAndLinkHalfEdge@{\_AddAndLinkHalfEdge}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_AddAndLinkHalfEdge()}{\_AddAndLinkHalfEdge()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Add\+And\+Link\+Half\+Edge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ihalf\+\_\+edge,  }\item[{}]{cell,  }\item[{}]{vfrom,  }\item[{}]{vto,  }\item[{}]{hprev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ad3c3eddb9f11d25ab38aeddd65305fad}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ad3c3eddb9f11d25ab38aeddd65305fad} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_AddCell@{\_AddCell}}
+\index{\_AddCell@{\_AddCell}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_AddCell()}{\_AddCell()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Add\+Cell (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{icell }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add cell with index icell. 
+
+
+\begin{DoxyItemize}
+\item Raises an exception if some cell already has index icell.
+\item Use Max\+Cell\+Index() to find an unused cell index. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ab555197f8842a3db9082de2883cf2657}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ab555197f8842a3db9082de2883cf2657} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_AddHalfEdge@{\_AddHalfEdge}}
+\index{\_AddHalfEdge@{\_AddHalfEdge}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_AddHalfEdge()}{\_AddHalfEdge()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Add\+Half\+Edge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ihalf\+\_\+edge,  }\item[{}]{cell,  }\item[{}]{vfrom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add half edge with index ihalf\+\_\+edge. 
+
+
+\begin{DoxyItemize}
+\item Raises an exception if some half edge already has index ihalf\+\_\+edge.
+\item Use Max\+Half\+Edge\+Index() to find an unused half edge index. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a910cc34b5c6fc75f0d866b60a381f2e9}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a910cc34b5c6fc75f0d866b60a381f2e9} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_AddNewHalfEdge@{\_AddNewHalfEdge}}
+\index{\_AddNewHalfEdge@{\_AddNewHalfEdge}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_AddNewHalfEdge()}{\_AddNewHalfEdge()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Add\+New\+Half\+Edge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cell,  }\item[{}]{vfrom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add new half edge with unassigned index. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a5c3a231473393794dd9ca4332243a7ed}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a5c3a231473393794dd9ca4332243a7ed} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_CreateVertex@{\_CreateVertex}}
+\index{\_CreateVertex@{\_CreateVertex}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_CreateVertex()}{\_CreateVertex()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Create\+Vertex (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Create vertex with index iv, if vertex iv does not exist. 
+
+
+\begin{DoxyItemize}
+\item Return vertex.
+\item Returns vertex, even if vertex already exists. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a04c937f3d0c0c66ca5e7c0c1aee803d1}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a04c937f3d0c0c66ca5e7c0c1aee803d1} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_DeleteCell@{\_DeleteCell}}
+\index{\_DeleteCell@{\_DeleteCell}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_DeleteCell()}{\_DeleteCell()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Delete\+Cell (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cell }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Delete cell. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_afcbd09fcea68038e705b95d9816e1155}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_afcbd09fcea68038e705b95d9816e1155} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_DeleteCellHalfEdges@{\_DeleteCellHalfEdges}}
+\index{\_DeleteCellHalfEdges@{\_DeleteCellHalfEdges}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_DeleteCellHalfEdges()}{\_DeleteCellHalfEdges()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Delete\+Cell\+Half\+Edges (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cell }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Delete half edges in cell. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ac6c3f5ed09f4c31dd523247b1328441f}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ac6c3f5ed09f4c31dd523247b1328441f} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_DeleteHalfEdge@{\_DeleteHalfEdge}}
+\index{\_DeleteHalfEdge@{\_DeleteHalfEdge}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_DeleteHalfEdge()}{\_DeleteHalfEdge()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Delete\+Half\+Edge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{half\+\_\+edge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Delete half edge. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_af1e520494f387e33d98899e70a0ae8d5}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_af1e520494f387e33d98899e70a0ae8d5} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_DeleteVertex@{\_DeleteVertex}}
+\index{\_DeleteVertex@{\_DeleteVertex}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_DeleteVertex()}{\_DeleteVertex()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Delete\+Vertex (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Delete vertex. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a952e09af8be3f21acf0c23d5c7aeeaac}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a952e09af8be3f21acf0c23d5c7aeeaac} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_LinkHalfEdgesAroundEdge@{\_LinkHalfEdgesAroundEdge}}
+\index{\_LinkHalfEdgesAroundEdge@{\_LinkHalfEdgesAroundEdge}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_LinkHalfEdgesAroundEdge()}{\_LinkHalfEdgesAroundEdge()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Link\+Half\+Edges\+Around\+Edge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{half\+\_\+edgeA,  }\item[{}]{half\+\_\+edgeB }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add half\+\_\+edgeB into linked list of half edges around edge indicated by half\+\_\+edgeA. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a6158b2b5c9c29a5e63f0b4231f78ec98}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a6158b2b5c9c29a5e63f0b4231f78ec98} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_LinkHalfEdgesInCell@{\_LinkHalfEdgesInCell}}
+\index{\_LinkHalfEdgesInCell@{\_LinkHalfEdgesInCell}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_LinkHalfEdgesInCell()}{\_LinkHalfEdgesInCell()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Link\+Half\+Edges\+In\+Cell (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{hprev,  }\item[{}]{hnext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set hprev and hnext as consecutive edges in a cell. 
+
+\begin{DoxyPrecond}{Precondition}
+hprev and hnext must be in the same cell. 
+\end{DoxyPrecond}
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aac24aa9800fdff5cb92153ee09a590ba}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aac24aa9800fdff5cb92153ee09a590ba} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_MoveBoundaryHalfEdgeToHalfEdgeFrom0@{\_MoveBoundaryHalfEdgeToHalfEdgeFrom0}}
+\index{\_MoveBoundaryHalfEdgeToHalfEdgeFrom0@{\_MoveBoundaryHalfEdgeToHalfEdgeFrom0}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_MoveBoundaryHalfEdgeToHalfEdgeFrom0()}{\_MoveBoundaryHalfEdgeToHalfEdgeFrom0()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Move\+Boundary\+Half\+Edge\+To\+Half\+Edge\+From0 (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cell\+\_\+vertex }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Move boundary half edge to half\+\_\+edge\+\_\+from\mbox{[}0\mbox{]} for each vertex in array cell\+\_\+vertex\mbox{[}\mbox{]}. 
+
+
+\begin{DoxyItemize}
+\item Added\+: 12-\/02-\/2023 -\/ RW 
+\begin{DoxyParams}{Parameters}
+{\em cell\+\_\+vertex\mbox{[}$\,$\mbox{]}} & List of cell vertex indices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+Each vertex should already have been created. 
+\end{DoxyPrecond}
+
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aa62efcad16d82ca884f53ff678e014e1}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aa62efcad16d82ca884f53ff678e014e1} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_RelinkHalfEdgesInCell@{\_RelinkHalfEdgesInCell}}
+\index{\_RelinkHalfEdgesInCell@{\_RelinkHalfEdgesInCell}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_RelinkHalfEdgesInCell()}{\_RelinkHalfEdgesInCell()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Relink\+Half\+Edges\+In\+Cell (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{hprev,  }\item[{}]{hnext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Relink half edges in cell. 
+
+
+\begin{DoxyItemize}
+\item Overwrites previous links. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aba08eb63df7b51b5a7cec58625fa9ee6}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aba08eb63df7b51b5a7cec58625fa9ee6} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_RemoveHalfEdgeFromCell@{\_RemoveHalfEdgeFromCell}}
+\index{\_RemoveHalfEdgeFromCell@{\_RemoveHalfEdgeFromCell}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_RemoveHalfEdgeFromCell()}{\_RemoveHalfEdgeFromCell()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Remove\+Half\+Edge\+From\+Cell (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{half\+\_\+edge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Remove half edge from cell. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a18ae7d03cdb750ecc0b1b9c29eac63ac}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a18ae7d03cdb750ecc0b1b9c29eac63ac} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_RemoveHalfEdgeFromVertexList@{\_RemoveHalfEdgeFromVertexList}}
+\index{\_RemoveHalfEdgeFromVertexList@{\_RemoveHalfEdgeFromVertexList}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_RemoveHalfEdgeFromVertexList()}{\_RemoveHalfEdgeFromVertexList()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Remove\+Half\+Edge\+From\+Vertex\+List (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{half\+\_\+edge0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Remove half edge from the half\+\_\+edge\+\_\+from list of its from\+\_\+vertex. 
+
+
+\begin{DoxyItemize}
+\item Calls \+\_\+\+Move\+Boundary\+Half\+Edge\+To\+Half\+Edge\+From0(), if necessary, to ensure that first half edge in vertex list is a boundary edge. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a42d773ea26171f5177a9dc0be107ceaa}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a42d773ea26171f5177a9dc0be107ceaa} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_SplitCellIntoQuads@{\_SplitCellIntoQuads}}
+\index{\_SplitCellIntoQuads@{\_SplitCellIntoQuads}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_SplitCellIntoQuads()}{\_SplitCellIntoQuads()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Split\+Cell\+Into\+Quads (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{half\+\_\+edge0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Split the cell containing half\+\_\+edge into quadrilaterals. 
+
+\begin{DoxyPrecond}{Precondition}
+Cell has an even number of vertices.
+\begin{DoxyItemize}
+\item Add vertex vsplit to cell "{}interior"{} and edge from vsplit to every other cell vertex starting at half\+\_\+edge.\+From\+Vertex().
+\item Returns vertex vsplit. 
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a624c16faa8a7a22d3c262687991c31d8}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a624c16faa8a7a22d3c262687991c31d8} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_SplitEdge@{\_SplitEdge}}
+\index{\_SplitEdge@{\_SplitEdge}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_SplitEdge()}{\_SplitEdge()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Split\+Edge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{half\+\_\+edge0 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Split edge. 
+
+
+\begin{DoxyItemize}
+\item Return split vertex. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a377e9c29d0cd1b862e79f0ece01cfbe8}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a377e9c29d0cd1b862e79f0ece01cfbe8} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_SplitHalfEdge@{\_SplitHalfEdge}}
+\index{\_SplitHalfEdge@{\_SplitHalfEdge}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_SplitHalfEdge()}{\_SplitHalfEdge()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Split\+Half\+Edge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{half\+\_\+edge,  }\item[{}]{vsplit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Split half edge. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a8109823710f64df8642ae87054b3de22}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a8109823710f64df8642ae87054b3de22} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_UnlinkHalfEdgeFromHalfEdgesAroundEdge@{\_UnlinkHalfEdgeFromHalfEdgesAroundEdge}}
+\index{\_UnlinkHalfEdgeFromHalfEdgesAroundEdge@{\_UnlinkHalfEdgeFromHalfEdgesAroundEdge}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_UnlinkHalfEdgeFromHalfEdgesAroundEdge()}{\_UnlinkHalfEdgeFromHalfEdgesAroundEdge()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+\+Unlink\+Half\+Edge\+From\+Half\+Edges\+Around\+Edge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{half\+\_\+edge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Unlink half edge from linked list of half edges around edge. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aece390bf0e179a593237df381a6f10e1}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aece390bf0e179a593237df381a6f10e1} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!AddCell@{AddCell}}
+\index{AddCell@{AddCell}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{AddCell()}{AddCell()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Add\+Cell (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{icell,  }\item[{}]{cell\+\_\+vertex }\end{DoxyParamCaption})}
+
+
+
+Add cell with index icell. 
+
+
+\begin{DoxyItemize}
+\item Returns cell. 
+\begin{DoxyParams}{Parameters}
+{\em icell} & Cell index. Should not already be in Cell\+Indices(). \\
+\hline
+{\em cell\+\_\+vertex\mbox{[}$\,$\mbox{]}} & List of the cell vertex indices. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_abc93e0ea64fa695cfcb79d3da269d90b}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_abc93e0ea64fa695cfcb79d3da269d90b} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!AddNewCell@{AddNewCell}}
+\index{AddNewCell@{AddNewCell}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{AddNewCell()}{AddNewCell()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Add\+New\+Cell (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{cell\+\_\+vertex }\end{DoxyParamCaption})}
+
+
+
+Add new cell with unassigned index. 
+
+
+\begin{DoxyItemize}
+\item Returns cell. 
+\begin{DoxyParams}{Parameters}
+{\em cell\+\_\+vertex\mbox{[}$\,$\mbox{]}} & List of the cell vertex indices. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a98ff9b14b7d0cd9ca7c4347b7d023599}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a98ff9b14b7d0cd9ca7c4347b7d023599} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!AddNewVertex@{AddNewVertex}}
+\index{AddNewVertex@{AddNewVertex}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{AddNewVertex()}{AddNewVertex()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Add\+New\+Vertex (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Add new vertex with unassigned index. 
+
+
+\begin{DoxyItemize}
+\item Returns vertex. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_af0067cad8873037adebd93760f7fc468}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_af0067cad8873037adebd93760f7fc468} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!AddVertex@{AddVertex}}
+\index{AddVertex@{AddVertex}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{AddVertex()}{AddVertex()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Add\+Vertex (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iv }\end{DoxyParamCaption})}
+
+
+
+Add vertex with index iv. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iv} & Vertex index. Should not already be in Vertex\+Indices().
+\begin{DoxyItemize}
+\item Returns vertex. 
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a7ec57736c09987dabbbad72ff28159f9}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a7ec57736c09987dabbbad72ff28159f9} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!AddVertices@{AddVertices}}
+\index{AddVertices@{AddVertices}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{AddVertices()}{AddVertices()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Add\+Vertices (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{numv }\end{DoxyParamCaption})}
+
+
+
+Add numv vertices ith indices from 0 to numv-\/1. 
+
+\begin{DoxyPrecond}{Precondition}
+Half edge mesh has no vertices. 
+\end{DoxyPrecond}
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_abd8374d79f2862f6b3fe16f30438a65f}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_abd8374d79f2862f6b3fe16f30438a65f} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!Cell@{Cell}}
+\index{Cell@{Cell}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{Cell()}{Cell()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Cell (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{icell }\end{DoxyParamCaption})}
+
+
+
+Return cell with index icell. 
+
+
+\begin{DoxyItemize}
+\item Returns None if no cell has index icell. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ada70f8911bf190d53e3a4599731c63bb}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ada70f8911bf190d53e3a4599731c63bb} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CellIndices@{CellIndices}}
+\index{CellIndices@{CellIndices}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CellIndices()}{CellIndices()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Cell\+Indices (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Return list of cell indices (\+\_\+cell\+\_\+dict keys). 
+
+
+\begin{DoxyItemize}
+\item Note\+: This returns a view object, not a python list.
+\item Use list(obj.\+Cell\+Indices()) to get a python list. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a3f568d32cf99000a1ee195a0335b40aa}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a3f568d32cf99000a1ee195a0335b40aa} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CheckAll@{CheckAll}}
+\index{CheckAll@{CheckAll}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CheckAll()}{CheckAll()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Check\+All (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Check vertices, half edges and cells. 
+
+
+\begin{DoxyItemize}
+\item Return False if problem detected. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a4bb2a60c8766b45e755af02f67976e86}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a4bb2a60c8766b45e755af02f67976e86} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CheckCells@{CheckCells}}
+\index{CheckCells@{CheckCells}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CheckCells()}{CheckCells()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Check\+Cells (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Check data structure cells. 
+
+
+\begin{DoxyItemize}
+\item Return true if no problems found.
+\item Return index of problem cell and error message. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_add3c2de5f0c57bf5a8ac3f9f94e0b183}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_add3c2de5f0c57bf5a8ac3f9f94e0b183} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CheckHalfEdges@{CheckHalfEdges}}
+\index{CheckHalfEdges@{CheckHalfEdges}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CheckHalfEdges()}{CheckHalfEdges()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Check\+Half\+Edges (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Check data structure half edges. 
+
+
+\begin{DoxyItemize}
+\item Return true if no problems found.
+\item Return index of problem half edge and error message. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ab58b7bf3d067554fa08f54ba96f9c0ed}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ab58b7bf3d067554fa08f54ba96f9c0ed} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CheckManifold@{CheckManifold}}
+\index{CheckManifold@{CheckManifold}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CheckManifold()}{CheckManifold()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Check\+Manifold (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Check manifold vertex and edge properties. 
+
+
+\begin{DoxyItemize}
+\item Returns ( flagv, flag\+\_\+halfe, iv, ihalf\+\_\+edge ) where flagv is true if each vertex passes manifold check, and flag\+\_\+halfe is true if each edge passes manifold check. iv is the index of a non-\/manifold vertex, if one exists, ihalf\+\_\+edge is the index of a non-\/manifold edge, if one exist. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ab620fa2ffc41d30f6c852f3e5f567a33}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ab620fa2ffc41d30f6c852f3e5f567a33} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CheckManifoldEdges@{CheckManifoldEdges}}
+\index{CheckManifoldEdges@{CheckManifoldEdges}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CheckManifoldEdges()}{CheckManifoldEdges()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Check\+Manifold\+Edges (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Check manifold edge property. 
+
+
+\begin{DoxyItemize}
+\item Return true if all edges have 2 or fewer incident cells.
+\item Returns index of non-\/manifold edge. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a8ff83c3762478f604bf8444e340c0dd1}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a8ff83c3762478f604bf8444e340c0dd1} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CheckManifoldVertices@{CheckManifoldVertices}}
+\index{CheckManifoldVertices@{CheckManifoldVertices}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CheckManifoldVertices()}{CheckManifoldVertices()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Check\+Manifold\+Vertices (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Check manifold vertex property. 
+
+
+\begin{DoxyItemize}
+\item Return true if cells on each vertex form a fan.
+\item Returns index o non-\/manifold vertex. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aac3d121174a5e49ff82d01ad7b2cf604}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aac3d121174a5e49ff82d01ad7b2cf604} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CheckOrientation@{CheckOrientation}}
+\index{CheckOrientation@{CheckOrientation}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CheckOrientation()}{CheckOrientation()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Check\+Orientation (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Check if mesh cells are consistently oriented. 
+
+
+\begin{DoxyItemize}
+\item Returns true if all adjacent cells are consistently oriented.
+\item Returns index of half edge where half\+\_\+edge.\+Cell() and half\+\_\+edge.\+Next\+Half\+Edge\+Around\+Edge.\+Cell() have opposite orientations. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a6d016947854e9bb3a737f15c1674bf67}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a6d016947854e9bb3a737f15c1674bf67} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CheckVertexIndex@{CheckVertexIndex}}
+\index{CheckVertexIndex@{CheckVertexIndex}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CheckVertexIndex()}{CheckVertexIndex()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Check\+Vertex\+Index (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iv }\end{DoxyParamCaption})}
+
+
+
+Check vertex index. 
+
+
+\begin{DoxyItemize}
+\item Return true if iv is an index of some mesh vertex. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ac955789cc979257e3bdce2520ce07a96}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ac955789cc979257e3bdce2520ce07a96} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CheckVertices@{CheckVertices}}
+\index{CheckVertices@{CheckVertices}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CheckVertices()}{CheckVertices()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Check\+Vertices (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Check data structure vertices. 
+
+
+\begin{DoxyItemize}
+\item Return true if no problems found.
+\item Return index of problem vertex and error messge. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a034c299b1cc29a6ab06af93b6438f004}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a034c299b1cc29a6ab06af93b6438f004} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CountNumBoundaryEdges@{CountNumBoundaryEdges}}
+\index{CountNumBoundaryEdges@{CountNumBoundaryEdges}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CountNumBoundaryEdges()}{CountNumBoundaryEdges()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Count\+Num\+Boundary\+Edges (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Count number of boundary edges. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a2a9869d271d60a2cb0b13245faede8d5}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a2a9869d271d60a2cb0b13245faede8d5} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CountNumCellsOfSize@{CountNumCellsOfSize}}
+\index{CountNumCellsOfSize@{CountNumCellsOfSize}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CountNumCellsOfSize()}{CountNumCellsOfSize()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Count\+Num\+Cells\+Of\+Size (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{numv }\end{DoxyParamCaption})}
+
+
+
+Count number of cells with a given number of vertices. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ababb54fabdc8cd7bf0871d727375cee7}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ababb54fabdc8cd7bf0871d727375cee7} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CountNumCellsOfSizeGE@{CountNumCellsOfSizeGE}}
+\index{CountNumCellsOfSizeGE@{CountNumCellsOfSizeGE}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CountNumCellsOfSizeGE()}{CountNumCellsOfSizeGE()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Count\+Num\+Cells\+Of\+Size\+GE (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{numv }\end{DoxyParamCaption})}
+
+
+
+Count number of cells with number of vertices greater than or equal to. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a9503f85ed6bd679208818552c8617724}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a9503f85ed6bd679208818552c8617724} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CountNumEdges@{CountNumEdges}}
+\index{CountNumEdges@{CountNumEdges}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CountNumEdges()}{CountNumEdges()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Count\+Num\+Edges (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Count number of edges. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a1bdf62e3f4c3b85996dd36293eca5eb1}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a1bdf62e3f4c3b85996dd36293eca5eb1} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CountNumIsolatedVertices@{CountNumIsolatedVertices}}
+\index{CountNumIsolatedVertices@{CountNumIsolatedVertices}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CountNumIsolatedVertices()}{CountNumIsolatedVertices()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Count\+Num\+Isolated\+Vertices (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Count number of isolated vertices. 
+
+
+\begin{DoxyItemize}
+\item Isolated vertices are not in any mesh cell. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a5c190bd6a3e18854bd77d6a9703739ee}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a5c190bd6a3e18854bd77d6a9703739ee} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CountNumPentagons@{CountNumPentagons}}
+\index{CountNumPentagons@{CountNumPentagons}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CountNumPentagons()}{CountNumPentagons()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Count\+Num\+Pentagons (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Count number of pentagons. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a362dce76d1191529e9d5515f82bca0cb}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a362dce76d1191529e9d5515f82bca0cb} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CountNumQuads@{CountNumQuads}}
+\index{CountNumQuads@{CountNumQuads}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CountNumQuads()}{CountNumQuads()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Count\+Num\+Quads (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Count number of quadrilaterals. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aaac029ae628481b70d1a6a0445cc7574}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aaac029ae628481b70d1a6a0445cc7574} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CountNumTriangles@{CountNumTriangles}}
+\index{CountNumTriangles@{CountNumTriangles}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CountNumTriangles()}{CountNumTriangles()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Count\+Num\+Triangles (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Count number of triangles. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a1b891c09f1c6a4ff39c3b799fcb84e63}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a1b891c09f1c6a4ff39c3b799fcb84e63} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!DeleteCell@{DeleteCell}}
+\index{DeleteCell@{DeleteCell}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{DeleteCell()}{DeleteCell()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Delete\+Cell (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{icell }\end{DoxyParamCaption})}
+
+
+
+Delete cell with index icell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em icell} & Cell index. Should be in Cell\+Indices(). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a89c6395f6e92befa522da36bee89abaa}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a89c6395f6e92befa522da36bee89abaa} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!FindEdge@{FindEdge}}
+\index{FindEdge@{FindEdge}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{FindEdge()}{FindEdge()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Find\+Edge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iv0,  }\item[{}]{iv1 }\end{DoxyParamCaption})}
+
+
+
+Return half edge (Vertex(iv0),Vertex(iv1)) or (Vertex(iv1),Vertex(iv0)) if it exists. 
+
+
+\begin{DoxyItemize}
+\item Return None if no edge found.
+\item Note\+: This routines takes vertex indices, not vertices, as arguments. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a941560cbc6a4aa8255d13daba753cc1a}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a941560cbc6a4aa8255d13daba753cc1a} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!GetEdgeList@{GetEdgeList}}
+\index{GetEdgeList@{GetEdgeList}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{GetEdgeList()}{GetEdgeList()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Get\+Edge\+List (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Return list of edges. 
+
+
+\begin{DoxyItemize}
+\item Edges are represented by half\+\_\+edges, one half\+\_\+edge per edge. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_acc497b3b45c049cf973ae311a53ddf77}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_acc497b3b45c049cf973ae311a53ddf77} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!HalfEdge@{HalfEdge}}
+\index{HalfEdge@{HalfEdge}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{HalfEdge()}{HalfEdge()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Half\+Edge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ihalf\+\_\+edge }\end{DoxyParamCaption})}
+
+
+
+Return half edge with index ihalf\+\_\+edge. 
+
+
+\begin{DoxyItemize}
+\item Returns None if no half edge has index ihalf\+\_\+edge. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ae8c0b080433fe5fa90d0667553c50b10}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ae8c0b080433fe5fa90d0667553c50b10} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!HalfEdgeIndices@{HalfEdgeIndices}}
+\index{HalfEdgeIndices@{HalfEdgeIndices}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{HalfEdgeIndices()}{HalfEdgeIndices()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Half\+Edge\+Indices (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Return list of half edge indices (\+\_\+half\+\_\+edge\+\_\+dict keys). 
+
+
+\begin{DoxyItemize}
+\item Note\+: This returns a view object, not a python list.
+\item Use list(obj.\+Half\+Edge\+Indices()) to get a python list. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a8faf78394491c3e650107d1030621c5e}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a8faf78394491c3e650107d1030621c5e} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!MaxCellIndex@{MaxCellIndex}}
+\index{MaxCellIndex@{MaxCellIndex}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{MaxCellIndex()}{MaxCellIndex()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Max\+Cell\+Index (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Return max index (key) of cells in \+\_\+cell\+\_\+dict. 
+
+
+\begin{DoxyItemize}
+\item Return -\/1 if \+\_\+cell\+\_\+dict is empty. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ad22e9563a0063cecc2e2cde2e0afab35}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ad22e9563a0063cecc2e2cde2e0afab35} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!MaxHalfEdgeIndex@{MaxHalfEdgeIndex}}
+\index{MaxHalfEdgeIndex@{MaxHalfEdgeIndex}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{MaxHalfEdgeIndex()}{MaxHalfEdgeIndex()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Max\+Half\+Edge\+Index (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Return max index (key) of half edges in \+\_\+half\+\_\+edge\+\_\+dict. 
+
+
+\begin{DoxyItemize}
+\item Return -\/1 if \+\_\+half\+\_\+edge\+\_\+dict is empty. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a115bdf9fde8303a52e7d2ff0dd894f9f}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a115bdf9fde8303a52e7d2ff0dd894f9f} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!MaxVertexIndex@{MaxVertexIndex}}
+\index{MaxVertexIndex@{MaxVertexIndex}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{MaxVertexIndex()}{MaxVertexIndex()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Max\+Vertex\+Index (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Return max index (key) of vertices in \+\_\+vertex\+\_\+dict. 
+
+
+\begin{DoxyItemize}
+\item Return -\/1 if \+\_\+vertex\+\_\+dict is empty. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a740cd65b3a813d3010ed89bfbcc10e95}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a740cd65b3a813d3010ed89bfbcc10e95} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!NumCells@{NumCells}}
+\index{NumCells@{NumCells}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{NumCells()}{NumCells()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Num\+Cells (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ab8e2f84e1b6c78c41277d43551c12601}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ab8e2f84e1b6c78c41277d43551c12601} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!NumHalfEdges@{NumHalfEdges}}
+\index{NumHalfEdges@{NumHalfEdges}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{NumHalfEdges()}{NumHalfEdges()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Num\+Half\+Edges (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ab9305a41017da2e5f87358441a04ee32}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ab9305a41017da2e5f87358441a04ee32} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!NumVertices@{NumVertices}}
+\index{NumVertices@{NumVertices}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{NumVertices()}{NumVertices()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Num\+Vertices (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Return number of vertices. 
+
+
+\begin{DoxyItemize}
+\item Note\+: If vertices are deleted, Max\+Vertex\+Index() may be greater than Num\+Vertices(). 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a6df24fef2023b99a4d283282d3052f48}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a6df24fef2023b99a4d283282d3052f48} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!PrintErrorMessage@{PrintErrorMessage}}
+\index{PrintErrorMessage@{PrintErrorMessage}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{PrintErrorMessage()}{PrintErrorMessage()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Print\+Error\+Message (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{out,  }\item[{}]{error\+\_\+msg }\end{DoxyParamCaption})}
+
+
+
+Print mesh data structure error and error message. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a380afd478f153853829f5701ac0df4b2}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a380afd478f153853829f5701ac0df4b2} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!PrintNonManifoldEdge@{PrintNonManifoldEdge}}
+\index{PrintNonManifoldEdge@{PrintNonManifoldEdge}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{PrintNonManifoldEdge()}{PrintNonManifoldEdge()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Print\+Non\+Manifold\+Edge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{out,  }\item[{}]{error\+\_\+prefix,  }\item[{}]{ihalf\+\_\+edge }\end{DoxyParamCaption})}
+
+
+
+Print non-\/manifold edge message. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a9f53b3cd9038686180a23d6af73b84df}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a9f53b3cd9038686180a23d6af73b84df} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!PrintNonManifoldVertex@{PrintNonManifoldVertex}}
+\index{PrintNonManifoldVertex@{PrintNonManifoldVertex}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{PrintNonManifoldVertex()}{PrintNonManifoldVertex()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Print\+Non\+Manifold\+Vertex (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{out,  }\item[{}]{error\+\_\+prefix,  }\item[{}]{iv }\end{DoxyParamCaption})}
+
+
+
+Print non-\/manifold vertex message. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a7c618cf11694a16dc53bced1b9459230}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a7c618cf11694a16dc53bced1b9459230} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!PrintNotOriented@{PrintNotOriented}}
+\index{PrintNotOriented@{PrintNotOriented}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{PrintNotOriented()}{PrintNotOriented()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Print\+Not\+Oriented (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{out,  }\item[{}]{error\+\_\+prefix,  }\item[{}]{ihalf\+\_\+edge }\end{DoxyParamCaption})}
+
+
+
+Print not oriented. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a0e057e3f5e1a0c03215ea9db7c8f0bf7}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a0e057e3f5e1a0c03215ea9db7c8f0bf7} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!SetCoord@{SetCoord}}
+\index{SetCoord@{SetCoord}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{SetCoord()}{SetCoord()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Set\+Coord (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iv,  }\item[{}]{coord }\end{DoxyParamCaption})}
+
+
+
+Set coordinates of iv to coord\mbox{[}\mbox{]}. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aabdd12b16e747ac9217d47824a641620}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aabdd12b16e747ac9217d47824a641620} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!SplitCellIntoQuads@{SplitCellIntoQuads}}
+\index{SplitCellIntoQuads@{SplitCellIntoQuads}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{SplitCellIntoQuads()}{SplitCellIntoQuads()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Split\+Cell\+Into\+Quads (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ihalf\+\_\+edgeA }\end{DoxyParamCaption})}
+
+
+
+Split the cell containing ihalf\+\_\+edgeA into quadrilaterals. 
+
+\begin{DoxyPrecond}{Precondition}
+Cell has an even number of vertices.
+\begin{DoxyItemize}
+\item Add vsplit in cell "{}interior"{} and edge from vsplit to every other cell vertex starting at half\+\_\+edge.\+From\+Vertex(). 
+\end{DoxyItemize}
+\end{DoxyPrecond}
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aee6c328379a45d68602ffcde3770865b}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aee6c328379a45d68602ffcde3770865b} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!SplitEdge@{SplitEdge}}
+\index{SplitEdge@{SplitEdge}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{SplitEdge()}{SplitEdge()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Split\+Edge (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{ihalf\+\_\+edgeA }\end{DoxyParamCaption})}
+
+
+
+Split edge at midpoint. 
+
+
+\begin{DoxyItemize}
+\item Returns new vertex.
+\item Splits all half edges around edge containing ihalf\+\_\+edgeA. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a742a7f4ad69193c542bedf682d33222e}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a742a7f4ad69193c542bedf682d33222e} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{Vertex()}{Vertex()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Vertex (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iv }\end{DoxyParamCaption})}
+
+
+
+Return vertex with index iv. 
+
+
+\begin{DoxyItemize}
+\item Returns None if no vertex has index iv. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a6fab52ac508e7b8c6bc9431ac4778d4e}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a6fab52ac508e7b8c6bc9431ac4778d4e} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!VertexIndices@{VertexIndices}}
+\index{VertexIndices@{VertexIndices}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{VertexIndices()}{VertexIndices()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+Vertex\+Indices (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Return list of vertex indices (\+\_\+vertex\+\_\+dict keys). 
+
+
+\begin{DoxyItemize}
+\item Note\+: This returns a view object, not a python list.
+\item Use list(obj.\+Vertex\+Indices()) to get a python list. 
+\end{DoxyItemize}
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a01df0c4b76894417f837d3f6ab1b218e}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a01df0c4b76894417f837d3f6ab1b218e} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_cell\_dict@{\_cell\_dict}}
+\index{\_cell\_dict@{\_cell\_dict}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_cell\_dict}{\_cell\_dict}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+cell\+\_\+dict\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Dictionary of cells. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a4a56529ecd755981e39f24ba85d87d2c}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a4a56529ecd755981e39f24ba85d87d2c} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_half\_edge\_dict@{\_half\_edge\_dict}}
+\index{\_half\_edge\_dict@{\_half\_edge\_dict}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_half\_edge\_dict}{\_half\_edge\_dict}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+half\+\_\+edge\+\_\+dict\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Dictionary of half edges. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_af2173a975ab9116a27a44cc40d12d3a5}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_af2173a975ab9116a27a44cc40d12d3a5} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_max\_cell\_index@{\_max\_cell\_index}}
+\index{\_max\_cell\_index@{\_max\_cell\_index}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_max\_cell\_index}{\_max\_cell\_index}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+max\+\_\+cell\+\_\+index\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Upper bound on the cell index. 
+
+
+\begin{DoxyItemize}
+\item Could be greater than the maximum index if some cells are deleted. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ad67bf65a0f287316e91e2ff866091d70}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ad67bf65a0f287316e91e2ff866091d70} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_max\_half\_edge\_index@{\_max\_half\_edge\_index}}
+\index{\_max\_half\_edge\_index@{\_max\_half\_edge\_index}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_max\_half\_edge\_index}{\_max\_half\_edge\_index}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+max\+\_\+half\+\_\+edge\+\_\+index\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Upper bound on the half edge index. 
+
+
+\begin{DoxyItemize}
+\item Could be greater than the maximum index if some half edges are deleted. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aeb1b2c2ff9f6e689c1a3a8c570033114}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_aeb1b2c2ff9f6e689c1a3a8c570033114} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_max\_vertex\_index@{\_max\_vertex\_index}}
+\index{\_max\_vertex\_index@{\_max\_vertex\_index}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_max\_vertex\_index}{\_max\_vertex\_index}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+max\+\_\+vertex\+\_\+index\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Upper bound on the vertex index. 
+
+
+\begin{DoxyItemize}
+\item Could be greater than the maximum index if some vertices are deleted. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ad2f59c0d7341362df3bbff5890a67e6b}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_ad2f59c0d7341362df3bbff5890a67e6b} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!\_vertex\_dict@{\_vertex\_dict}}
+\index{\_vertex\_dict@{\_vertex\_dict}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_vertex\_dict}{\_vertex\_dict}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+\_\+vertex\+\_\+dict\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Dictionary of vertices. 
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a574fac384f1f4c7d48a10e1ed70d88b8}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a574fac384f1f4c7d48a10e1ed70d88b8} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!CELL\_TYPE@{CELL\_TYPE}}
+\index{CELL\_TYPE@{CELL\_TYPE}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{CELL\_TYPE}{CELL\_TYPE}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+CELL\+\_\+\+TYPE}
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a2c25d99b8184681403b4a8d81c378e9f}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a2c25d99b8184681403b4a8d81c378e9f} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!HALF\_EDGE\_TYPE@{HALF\_EDGE\_TYPE}}
+\index{HALF\_EDGE\_TYPE@{HALF\_EDGE\_TYPE}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{HALF\_EDGE\_TYPE}{HALF\_EDGE\_TYPE}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+HALF\+\_\+\+EDGE\+\_\+\+TYPE}
+
+\Hypertarget{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a5bc31b58c5861c418a2d92a6bf8b55a1}\label{classhalf__edge__mesh_1_1HALF__EDGE__MESH__BASE_a5bc31b58c5861c418a2d92a6bf8b55a1} 
+\index{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}!VERTEX\_TYPE@{VERTEX\_TYPE}}
+\index{VERTEX\_TYPE@{VERTEX\_TYPE}!half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE@{half\_edge\_mesh.HALF\_EDGE\_MESH\_BASE}}
+\doxysubsubsection{\texorpdfstring{VERTEX\_TYPE}{VERTEX\_TYPE}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh.\+HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE.\+VERTEX\+\_\+\+TYPE}
+
+
+
+Set class types of vertices, half edges and cells. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{half__edge__mesh_8py}{half\+\_\+edge\+\_\+mesh.\+py}}\end{DoxyCompactItemize}

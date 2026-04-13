@@ -1,0 +1,96 @@
+\doxysection{half\+\_\+edge\+\_\+mesh\+\_\+\+IO Namespace Reference}
+\hypertarget{namespacehalf__edge__mesh__IO}{}\label{namespacehalf__edge__mesh__IO}\index{half\_edge\_mesh\_IO@{half\_edge\_mesh\_IO}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__IO_abe66324c4353a60cbd435925bc0ef8c2}{get\+\_\+next\+\_\+non\+\_\+comment\+\_\+line}} (infile)
+\begin{DoxyCompactList}\small\item\em Get first line that is not blank or a comment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__IO_ad803eb8d4dd57a153f4b3cbd780cd87d}{read\+\_\+off\+\_\+file}} (infile, mesh)
+\begin{DoxyCompactList}\small\item\em Read off file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__IO_a17d0912ced5714fbd2ecbc594cc4d85a}{open\+\_\+and\+\_\+read\+\_\+off\+\_\+file}} (input\+\_\+filename, mesh)
+\begin{DoxyCompactList}\small\item\em Open and read off file into mesh. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__IO_a492dbd25de9a15411269080df0639a45}{write\+\_\+off\+\_\+file}} (outfile, mesh)
+\begin{DoxyCompactList}\small\item\em Write off file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacehalf__edge__mesh__IO_ae72cb1098219086371cc88ae6bc07526}{open\+\_\+and\+\_\+write\+\_\+file}} (output\+\_\+filename, mesh)
+\begin{DoxyCompactList}\small\item\em half\+\_\+edge = poly.\+Half\+Edge() for k in range (0, poly.\+Num\+Vertices())\+: s += "{} "{} + str(half\+\_\+edge.\+From\+Vertex\+Index()) half\+\_\+edge = half\+\_\+edge.\+Next\+Half\+Edge\+In\+Cell() outfile.\+write(s + "{}\textbackslash{}n"{}) num\+\_\+poly += 1 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacehalf__edge__mesh__IO_abe66324c4353a60cbd435925bc0ef8c2}\label{namespacehalf__edge__mesh__IO_abe66324c4353a60cbd435925bc0ef8c2} 
+\index{half\_edge\_mesh\_IO@{half\_edge\_mesh\_IO}!get\_next\_non\_comment\_line@{get\_next\_non\_comment\_line}}
+\index{get\_next\_non\_comment\_line@{get\_next\_non\_comment\_line}!half\_edge\_mesh\_IO@{half\_edge\_mesh\_IO}}
+\doxysubsubsection{\texorpdfstring{get\_next\_non\_comment\_line()}{get\_next\_non\_comment\_line()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+\+IO.\+get\+\_\+next\+\_\+non\+\_\+comment\+\_\+line (\begin{DoxyParamCaption}\item[{}]{infile }\end{DoxyParamCaption})}
+
+
+
+Get first line that is not blank or a comment. 
+
+
+\begin{DoxyItemize}
+\item First non-\/blank character in a comment line is \textquotesingle{}\#\textquotesingle{}. 
+\end{DoxyItemize}\Hypertarget{namespacehalf__edge__mesh__IO_a17d0912ced5714fbd2ecbc594cc4d85a}\label{namespacehalf__edge__mesh__IO_a17d0912ced5714fbd2ecbc594cc4d85a} 
+\index{half\_edge\_mesh\_IO@{half\_edge\_mesh\_IO}!open\_and\_read\_off\_file@{open\_and\_read\_off\_file}}
+\index{open\_and\_read\_off\_file@{open\_and\_read\_off\_file}!half\_edge\_mesh\_IO@{half\_edge\_mesh\_IO}}
+\doxysubsubsection{\texorpdfstring{open\_and\_read\_off\_file()}{open\_and\_read\_off\_file()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+\+IO.\+open\+\_\+and\+\_\+read\+\_\+off\+\_\+file (\begin{DoxyParamCaption}\item[{}]{input\+\_\+filename,  }\item[{}]{mesh }\end{DoxyParamCaption})}
+
+
+
+Open and read off file into mesh. 
+
+
+\begin{DoxyItemize}
+\item mesh is derived from HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE. \begin{DoxyPrecond}{Precondition}
+Dimension of vertices is 3. 
+\end{DoxyPrecond}
+
+\end{DoxyItemize}\Hypertarget{namespacehalf__edge__mesh__IO_ae72cb1098219086371cc88ae6bc07526}\label{namespacehalf__edge__mesh__IO_ae72cb1098219086371cc88ae6bc07526} 
+\index{half\_edge\_mesh\_IO@{half\_edge\_mesh\_IO}!open\_and\_write\_file@{open\_and\_write\_file}}
+\index{open\_and\_write\_file@{open\_and\_write\_file}!half\_edge\_mesh\_IO@{half\_edge\_mesh\_IO}}
+\doxysubsubsection{\texorpdfstring{open\_and\_write\_file()}{open\_and\_write\_file()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+\+IO.\+open\+\_\+and\+\_\+write\+\_\+file (\begin{DoxyParamCaption}\item[{}]{output\+\_\+filename,  }\item[{}]{mesh }\end{DoxyParamCaption})}
+
+
+
+half\+\_\+edge = poly.\+Half\+Edge() for k in range (0, poly.\+Num\+Vertices())\+: s += "{} "{} + str(half\+\_\+edge.\+From\+Vertex\+Index()) half\+\_\+edge = half\+\_\+edge.\+Next\+Half\+Edge\+In\+Cell() outfile.\+write(s + "{}\textbackslash{}n"{}) num\+\_\+poly += 1 
+
+Open and write mesh into off file.
+\begin{DoxyItemize}
+\item mesh is derived from HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE. \begin{DoxyPrecond}{Precondition}
+Dimension of vertices is 3. 
+\end{DoxyPrecond}
+
+\end{DoxyItemize}\Hypertarget{namespacehalf__edge__mesh__IO_ad803eb8d4dd57a153f4b3cbd780cd87d}\label{namespacehalf__edge__mesh__IO_ad803eb8d4dd57a153f4b3cbd780cd87d} 
+\index{half\_edge\_mesh\_IO@{half\_edge\_mesh\_IO}!read\_off\_file@{read\_off\_file}}
+\index{read\_off\_file@{read\_off\_file}!half\_edge\_mesh\_IO@{half\_edge\_mesh\_IO}}
+\doxysubsubsection{\texorpdfstring{read\_off\_file()}{read\_off\_file()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+\+IO.\+read\+\_\+off\+\_\+file (\begin{DoxyParamCaption}\item[{}]{infile,  }\item[{}]{mesh }\end{DoxyParamCaption})}
+
+
+
+Read off file. 
+
+
+\begin{DoxyItemize}
+\item mesh is derived from HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE. \begin{DoxyPrecond}{Precondition}
+Dimension of vertices is 3. 
+\end{DoxyPrecond}
+
+\end{DoxyItemize}\Hypertarget{namespacehalf__edge__mesh__IO_a492dbd25de9a15411269080df0639a45}\label{namespacehalf__edge__mesh__IO_a492dbd25de9a15411269080df0639a45} 
+\index{half\_edge\_mesh\_IO@{half\_edge\_mesh\_IO}!write\_off\_file@{write\_off\_file}}
+\index{write\_off\_file@{write\_off\_file}!half\_edge\_mesh\_IO@{half\_edge\_mesh\_IO}}
+\doxysubsubsection{\texorpdfstring{write\_off\_file()}{write\_off\_file()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+\+IO.\+write\+\_\+off\+\_\+file (\begin{DoxyParamCaption}\item[{}]{outfile,  }\item[{}]{mesh }\end{DoxyParamCaption})}
+
+
+
+Write off file. 
+
+
+\begin{DoxyItemize}
+\item mesh is derived from HALF\+\_\+\+EDGE\+\_\+\+MESH\+\_\+\+BASE. \begin{DoxyPrecond}{Precondition}
+Dimension of vertices is 3. 
+\end{DoxyPrecond}
+
+\end{DoxyItemize}
