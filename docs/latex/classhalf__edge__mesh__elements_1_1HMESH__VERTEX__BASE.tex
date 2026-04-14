@@ -1,0 +1,225 @@
+\doxysection{half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE Class Reference}
+\hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE}{}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE}\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a949be5bcfbdaa2235ea876393f93f275}{Dimension}} (self)
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a6684016cd67f8877c72b038319c93a49}{Kth\+Coord}} (self, k)
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_af1f7f91c1cd0e7f43377521889e8ee99}{Index}} (self)
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_acf400a59c1ff1ec90f2a3caaea11ba71}{Num\+Half\+Edges\+From}} (self)
+\begin{DoxyCompactList}\small\item\em Return number of half edges with from vertex equal to this. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a387f45fea2096a74f52124301e8d0ace}{Kth\+Half\+Edge\+From}} (self, k)
+\begin{DoxyCompactList}\small\item\em Return k\textquotesingle{}th incident half edge with from vertex equal to this. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_ab72e5da6a72a20ad5368f494a71219c5}{Is\+Boundary}} (self)
+\begin{DoxyCompactList}\small\item\em Return true if vertex is on the boundary or vertex is is not incident on any cells. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a35c3005d244108995e9c18be56854688}{Find\+Half\+Edge\+To}} (self, iv)
+\begin{DoxyCompactList}\small\item\em Find half edge with from vertex self and To\+Vertex\+Index() iv. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_ac1a7ef01509876781f0a4ec8ba59fbc3}{Count\+Num\+Incident\+Half\+Edges}} (self, iv)
+\begin{DoxyCompactList}\small\item\em Count number of half edges with from vertex self and To\+Vertex\+Index() iv. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a9e7b4b25d5d57123ed38d2d3479eadf1}{Move\+Boundary\+Half\+Edge\+To\+Half\+Edge\+From0}} (self)
+\begin{DoxyCompactList}\small\item\em Move boundary half edge to half\+\_\+edge\+\_\+from\mbox{[}0\mbox{]}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a060438cb3f4e95c474d0ac1df80b638c}{Coord\+Str}} (self)
+\begin{DoxyCompactList}\small\item\em Return string containing coordinates separated by spaces. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a268052b8ed029f231e3629a80a64f0a6}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self)
+\begin{DoxyCompactList}\small\item\em Initialize. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_aaf49e1679686be7e185ffc23600eb1ec}{half\+\_\+edge\+\_\+from}}
+\begin{DoxyCompactList}\small\item\em List of all half edges originating at vertex in case mesh is not a manifold and cells incident on vertex do not form a fan. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_ad48a432ab286fb56559d936744154999}{index}}
+\begin{DoxyCompactList}\small\item\em Unique non-\/negative integer identifying the vertex. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a021f312fc85bc8319e8face538e58f1a}{coord}}
+\begin{DoxyCompactList}\small\item\em Vertex coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a734b779f4745176b8eb269915563c5ac}{\+\_\+\+Swap\+Half\+Edges\+In\+Half\+Edge\+From\+List}} (self, k0, k1)
+\begin{DoxyCompactList}\small\item\em Swap half edges in list half\+\_\+edge\+\_\+from\mbox{[}\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_ad259da6e0c85cc13f9455660706a4ae5}{\+\_\+\+DIM}} = 3;
+\begin{DoxyCompactList}\small\item\em Dimension = Number of coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a268052b8ed029f231e3629a80a64f0a6}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a268052b8ed029f231e3629a80a64f0a6} 
+\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Initialize. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a734b779f4745176b8eb269915563c5ac}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a734b779f4745176b8eb269915563c5ac} 
+\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}!\_SwapHalfEdgesInHalfEdgeFromList@{\_SwapHalfEdgesInHalfEdgeFromList}}
+\index{\_SwapHalfEdgesInHalfEdgeFromList@{\_SwapHalfEdgesInHalfEdgeFromList}!half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_SwapHalfEdgesInHalfEdgeFromList()}{\_SwapHalfEdgesInHalfEdgeFromList()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE.\+\_\+\+Swap\+Half\+Edges\+In\+Half\+Edge\+From\+List (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{k0,  }\item[{}]{k1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Swap half edges in list half\+\_\+edge\+\_\+from\mbox{[}\mbox{]}. 
+
+
+\begin{DoxyItemize}
+\item Internal (protected) routine. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a060438cb3f4e95c474d0ac1df80b638c}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a060438cb3f4e95c474d0ac1df80b638c} 
+\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}!CoordStr@{CoordStr}}
+\index{CoordStr@{CoordStr}!half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection{\texorpdfstring{CoordStr()}{CoordStr()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE.\+Coord\+Str (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Return string containing coordinates separated by spaces. 
+
+\Hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_ac1a7ef01509876781f0a4ec8ba59fbc3}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_ac1a7ef01509876781f0a4ec8ba59fbc3} 
+\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}!CountNumIncidentHalfEdges@{CountNumIncidentHalfEdges}}
+\index{CountNumIncidentHalfEdges@{CountNumIncidentHalfEdges}!half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection{\texorpdfstring{CountNumIncidentHalfEdges()}{CountNumIncidentHalfEdges()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE.\+Count\+Num\+Incident\+Half\+Edges (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iv }\end{DoxyParamCaption})}
+
+
+
+Count number of half edges with from vertex self and To\+Vertex\+Index() iv. 
+
+\Hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a949be5bcfbdaa2235ea876393f93f275}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a949be5bcfbdaa2235ea876393f93f275} 
+\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}!Dimension@{Dimension}}
+\index{Dimension@{Dimension}!half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection{\texorpdfstring{Dimension()}{Dimension()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE.\+Dimension (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a35c3005d244108995e9c18be56854688}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a35c3005d244108995e9c18be56854688} 
+\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}!FindHalfEdgeTo@{FindHalfEdgeTo}}
+\index{FindHalfEdgeTo@{FindHalfEdgeTo}!half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection{\texorpdfstring{FindHalfEdgeTo()}{FindHalfEdgeTo()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE.\+Find\+Half\+Edge\+To (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{iv }\end{DoxyParamCaption})}
+
+
+
+Find half edge with from vertex self and To\+Vertex\+Index() iv. 
+
+
+\begin{DoxyItemize}
+\item Return None if no half edge found. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_af1f7f91c1cd0e7f43377521889e8ee99}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_af1f7f91c1cd0e7f43377521889e8ee99} 
+\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}!Index@{Index}}
+\index{Index@{Index}!half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE.\+Index (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\Hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_ab72e5da6a72a20ad5368f494a71219c5}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_ab72e5da6a72a20ad5368f494a71219c5} 
+\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}!IsBoundary@{IsBoundary}}
+\index{IsBoundary@{IsBoundary}!half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection{\texorpdfstring{IsBoundary()}{IsBoundary()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE.\+Is\+Boundary (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Return true if vertex is on the boundary or vertex is is not incident on any cells. 
+
+\Hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a6684016cd67f8877c72b038319c93a49}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a6684016cd67f8877c72b038319c93a49} 
+\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}!KthCoord@{KthCoord}}
+\index{KthCoord@{KthCoord}!half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection{\texorpdfstring{KthCoord()}{KthCoord()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE.\+Kth\+Coord (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{k }\end{DoxyParamCaption})}
+
+\Hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a387f45fea2096a74f52124301e8d0ace}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a387f45fea2096a74f52124301e8d0ace} 
+\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}!KthHalfEdgeFrom@{KthHalfEdgeFrom}}
+\index{KthHalfEdgeFrom@{KthHalfEdgeFrom}!half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection{\texorpdfstring{KthHalfEdgeFrom()}{KthHalfEdgeFrom()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE.\+Kth\+Half\+Edge\+From (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{k }\end{DoxyParamCaption})}
+
+
+
+Return k\textquotesingle{}th incident half edge with from vertex equal to this. 
+
+\begin{DoxyPrecond}{Precondition}
+k \texorpdfstring{$<$}{<} Num\+Half\+Edges\+From() and k \texorpdfstring{$>$}{>}= 0. 
+\end{DoxyPrecond}
+\Hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a9e7b4b25d5d57123ed38d2d3479eadf1}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a9e7b4b25d5d57123ed38d2d3479eadf1} 
+\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}!MoveBoundaryHalfEdgeToHalfEdgeFrom0@{MoveBoundaryHalfEdgeToHalfEdgeFrom0}}
+\index{MoveBoundaryHalfEdgeToHalfEdgeFrom0@{MoveBoundaryHalfEdgeToHalfEdgeFrom0}!half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection{\texorpdfstring{MoveBoundaryHalfEdgeToHalfEdgeFrom0()}{MoveBoundaryHalfEdgeToHalfEdgeFrom0()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE.\+Move\+Boundary\+Half\+Edge\+To\+Half\+Edge\+From0 (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Move boundary half edge to half\+\_\+edge\+\_\+from\mbox{[}0\mbox{]}. 
+
+
+\begin{DoxyItemize}
+\item If there are no boundary half edges in half\+\_\+edge\+\_\+from\mbox{[}\mbox{]}, but half\+\_\+edge\+\_\+from\mbox{[}k\mbox{]}.Prev\+Half\+Edge\+In\+Cell() is a boundary half edge, move half\+\_\+edge\+\_\+from\mbox{[}k\mbox{]} to half\+\_\+edge\+\_\+from\mbox{[}0\mbox{]}.
+\item If cells are inconsistenly oriented and there are no boundary half edges in half\+\_\+edge\+\_\+from\mbox{[}\mbox{]} but half\+\_\+edge\+\_\+from\mbox{[}k\mbox{]}.Prev\+Half\+Edge\+In\+Cell() is a boundary half edge move half\+\_\+edge\+\_\+from\mbox{[}k\mbox{]} to half\+\_\+edge\+\_\+from\mbox{[}0\mbox{]}.
+\item Does nothing if half\+\_\+edge\+\_\+from\mbox{[}0\mbox{]} is a boundary half edge or if vertex is not incident on any boundary half edges (from or to). 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_acf400a59c1ff1ec90f2a3caaea11ba71}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_acf400a59c1ff1ec90f2a3caaea11ba71} 
+\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}!NumHalfEdgesFrom@{NumHalfEdgesFrom}}
+\index{NumHalfEdgesFrom@{NumHalfEdgesFrom}!half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection{\texorpdfstring{NumHalfEdgesFrom()}{NumHalfEdgesFrom()}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE.\+Num\+Half\+Edges\+From (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Return number of half edges with from vertex equal to this. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_ad259da6e0c85cc13f9455660706a4ae5}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_ad259da6e0c85cc13f9455660706a4ae5} 
+\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}!\_DIM@{\_DIM}}
+\index{\_DIM@{\_DIM}!half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection{\texorpdfstring{\_DIM}{\_DIM}}
+{\footnotesize\ttfamily int half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE.\+\_\+\+DIM = 3;\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Dimension = Number of coordinates. 
+
+
+\begin{DoxyItemize}
+\item All vertices have the same dimension. 
+\end{DoxyItemize}\Hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a021f312fc85bc8319e8face538e58f1a}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_a021f312fc85bc8319e8face538e58f1a} 
+\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}!coord@{coord}}
+\index{coord@{coord}!half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection{\texorpdfstring{coord}{coord}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE.\+coord}
+
+
+
+Vertex coordinates. 
+
+\Hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_aaf49e1679686be7e185ffc23600eb1ec}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_aaf49e1679686be7e185ffc23600eb1ec} 
+\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}!half\_edge\_from@{half\_edge\_from}}
+\index{half\_edge\_from@{half\_edge\_from}!half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection{\texorpdfstring{half\_edge\_from}{half\_edge\_from}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE.\+half\+\_\+edge\+\_\+from}
+
+
+
+List of all half edges originating at vertex in case mesh is not a manifold and cells incident on vertex do not form a fan. 
+
+\Hypertarget{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_ad48a432ab286fb56559d936744154999}\label{classhalf__edge__mesh__elements_1_1HMESH__VERTEX__BASE_ad48a432ab286fb56559d936744154999} 
+\index{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}!index@{index}}
+\index{index@{index}!half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE@{half\_edge\_mesh\_elements.HMESH\_VERTEX\_BASE}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily half\+\_\+edge\+\_\+mesh\+\_\+elements.\+HMESH\+\_\+\+VERTEX\+\_\+\+BASE.\+index}
+
+
+
+Unique non-\/negative integer identifying the vertex. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{half__edge__mesh__elements_8py}{half\+\_\+edge\+\_\+mesh\+\_\+elements.\+py}}\end{DoxyCompactItemize}

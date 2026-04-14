@@ -1,8 +1,6 @@
 ## \file half_edge_mesh_elements.py
 # Mesh elements (vertices, edges, cells) for half edge mesh data structure.
 # Classes for vertices, edges, cells of half edge mesh.
-#
-# \mainpage Half Edge Mesh Elements (Python implementation):
 # - Class HMESH_VERTEX_BASE: Half edge mesh vertices.
 # - Class HMESH_HALF_EDGE_BASE: Mesh half edges.
 # - Class HMESH_CELL_BASE: Half edge mesh cells (2-cells).
